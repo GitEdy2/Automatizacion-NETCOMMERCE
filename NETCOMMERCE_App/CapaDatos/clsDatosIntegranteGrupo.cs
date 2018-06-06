@@ -54,10 +54,26 @@ namespace CapaDatos
         {
             MySqlConnection con = new MySqlConnection(cadenaConexion);
             MySqlCommand cmd = new MySqlCommand("insert into tbl_TipoIntegrante(idtbl_TipoIntegrante,descripcion_tipointegrante)" +
-                                                "values(@integranteid,@nombreintegrante,@tipointegrante)", con);
+                                                "values(@tipointegranteid,@descripciontipointegrante)", con);
+
+            cmd.Parameters.Add("@tipointegranteid", MySqlDbType.Int32).Value = tipointegrante.Idtipointegrante;
+            cmd.Parameters.Add("@descripciontipointegrante", MySqlDbType.VarChar).Value = tipointegrante.Descripciontipointegrante;
+
+            con.Open();
+
+            int exito = cmd.ExecuteNonQuery();
+
+            if (exito == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
         }
-
-
 
 
         public bool IngresarIntegranteGrupo (clsIntegranteGrupo integrante)
