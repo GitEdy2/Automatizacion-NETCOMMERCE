@@ -43,6 +43,7 @@
     <Compile Include="clsDetalleGrupoTrabajo.cs" />
     <Compile Include="clsDetalleTrabajo.cs" />
     <Compile Include="clsIntegranteGrupo.cs" />
+    <Compile Include="clsPlantillaTrabajo.cs" />
     <Compile Include="clsRuta.cs" />
     <Compile Include="clsUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
