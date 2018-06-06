@@ -50,6 +50,7 @@
     <Compile Include="clsDatosDetalleGrupoTrabajo.cs" />
     <Compile Include="clsDatosDetalleTrabajo.cs" />
     <Compile Include="clsDatosIntegranteGrupo.cs" />
+    <Compile Include="clsDatosPlantillaTrabajo.cs" />
     <Compile Include="clsDatosRuta.cs" />
     <Compile Include="clsDatosUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
