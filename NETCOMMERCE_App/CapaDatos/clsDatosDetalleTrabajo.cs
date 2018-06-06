@@ -162,11 +162,142 @@ namespace CapaDatos
         public bool IngresarDetalleTrabajo(clsDetalleTrabajo trabajo)
         {
             MySqlConnection con = new MySqlConnection(cadenaConexion);
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(idtbl_DetalleTrabajo,tbl_Fibra_id,tbl_KitsRetenida_id,tbl_Postes_id,tbl_TipoTrabajo_id)" +
+                                                "values(@trabajoid,@fibraid,@retenidasid,@postesid,@tipotrabajoid)", con);
+
+            cmd.Parameters.Add("@trabajoid", MySqlDbType.Int32).Value = trabajo.Detalletrabajoid;
+            cmd.Parameters.Add("@fibraid", MySqlDbType.Int32).Value = trabajo.Fibraid;
+            cmd.Parameters.Add("@retenidasid", MySqlDbType.Int32).Value = trabajo.Retenidasid;
+            cmd.Parameters.Add("@postesid", MySqlDbType.Int32).Value = trabajo.Postesid;
+            cmd.Parameters.Add("@tipotrabajoid", MySqlDbType.Int32).Value = trabajo.Tipotrabajoid;
+
+            con.Open();
+
+            int exito = cmd.ExecuteNonQuery();
+
+            if (exito == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
-        
+        public bool IngresarTipoTrabajo(clsDetalleTrabajo tipotrabajo)
+        {
+            MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(idtbl_TipoTrabajo,descripcion_tipotrabajo,descripcion2_tipotrabajo)" +
+                                                "values(@tipotrabajoid,@descripcion1,@descripcion2)", con);
+
+            cmd.Parameters.Add("@tipotrabajoid", MySqlDbType.Int32).Value = tipotrabajo.Tipotrabajoid;
+            cmd.Parameters.Add("@descripcion1", MySqlDbType.VarChar).Value = tipotrabajo.Descripcion1tipotrabajo;
+            cmd.Parameters.Add("@descripcion2", MySqlDbType.VarChar).Value = tipotrabajo.Descripcion2tipotrabajo;
+            
+
+            con.Open();
+
+            int exito = cmd.ExecuteNonQuery();
+
+            if (exito == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public bool IngresarFibra(clsDetalleTrabajo fibra)
+        {
+            MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_Fibra(idtbl_Fibra,detalle_fibra,metros_fibra)" +
+                                                "values(@fibraid,@detallefibra,@metrosfibra)", con);
+
+            cmd.Parameters.Add("@fibraid", MySqlDbType.Int32).Value = fibra.Fibraid;
+            cmd.Parameters.Add("@detallefibra", MySqlDbType.VarChar).Value = fibra.Detallefibra;
+            cmd.Parameters.Add("@metrosfibra", MySqlDbType.Int32).Value = fibra.Metrosfibra;
+
+
+            con.Open();
+
+            int exito = cmd.ExecuteNonQuery();
+
+            if (exito == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool IngresarPostes(clsDetalleTrabajo postes)
+        {
+            MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_Postes(idtbl_Postes,detalle_postes,numero_postes)" +
+                                                "values(@postesid,@detallepostes,@numeropostes)", con);
+
+            cmd.Parameters.Add("@postesid", MySqlDbType.Int32).Value = postes.Postesid;
+            cmd.Parameters.Add("@detallepostes", MySqlDbType.VarChar).Value = postes.Detallepostes;
+            cmd.Parameters.Add("@numeropostes", MySqlDbType.Int32).Value = postes.Numeropostes;
+
+
+            con.Open();
+
+            int exito = cmd.ExecuteNonQuery();
+
+            if (exito == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public bool IngresarRetenidas(clsDetalleTrabajo retenidas)
+        {
+            MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_KitsRetenida(idtbl_KitsRetenida,detalle_retenidas,numero_retenidas)" +
+                                                "values(@retenidasid,@detalleretenidas,@numeroretenidas)", con);
+
+            cmd.Parameters.Add("@retenidasid", MySqlDbType.Int32).Value = retenidas.Retenidasid;
+            cmd.Parameters.Add("@detalleretenidas", MySqlDbType.VarChar).Value = retenidas.Detalleretenidas;
+            cmd.Parameters.Add("@numeroretenidas", MySqlDbType.Int32).Value = retenidas.Numeroretenidas;
+
+
+            con.Open();
+
+            int exito = cmd.ExecuteNonQuery();
+
+            if (exito == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

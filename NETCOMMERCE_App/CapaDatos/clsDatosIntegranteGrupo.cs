@@ -50,6 +50,16 @@ namespace CapaDatos
         }
 
 
+        public bool IngresarTipoIntegrante (clsIntegranteGrupo tipointegrante)
+        {
+            MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_TipoIntegrante(idtbl_TipoIntegrante,descripcion_tipointegrante)" +
+                                                "values(@integranteid,@nombreintegrante,@tipointegrante)", con);
+        }
+
+
+
+
         public bool IngresarIntegranteGrupo (clsIntegranteGrupo integrante)
         {
             MySqlConnection con = new MySqlConnection(cadenaConexion);
