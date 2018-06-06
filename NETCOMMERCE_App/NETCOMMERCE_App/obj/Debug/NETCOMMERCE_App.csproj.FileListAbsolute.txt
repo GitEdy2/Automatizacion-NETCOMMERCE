@@ -1,0 +1,9 @@
+D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\bin\Debug\NETCOMMERCE_App.exe.config
+D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\bin\Debug\NETCOMMERCE_App.exe
+D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\bin\Debug\NETCOMMERCE_App.pdb
+D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.csprojAssemblyReference.cache
+D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.Properties.Resources.resources
+D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.csproj.GenerateResource.cache
+D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.csproj.CoreCompileInputs.cache
+D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.exe
+D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.pdb
