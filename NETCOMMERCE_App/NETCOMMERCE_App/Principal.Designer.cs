@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.tcRuta = new System.Windows.Forms.TabControl();
-            this.Ruta = new System.Windows.Forms.TabPage();
-            this.dtTrabajo = new System.Windows.Forms.TabPage();
+            this.tbRuta = new System.Windows.Forms.TabPage();
+            this.tbTrabajo = new System.Windows.Forms.TabPage();
             this.txtNombreRuta = new System.Windows.Forms.TextBox();
             this.lblNombreRuta = new System.Windows.Forms.Label();
             this.lblClienteRuta = new System.Windows.Forms.Label();
@@ -65,19 +65,33 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnCrearTrabajo = new System.Windows.Forms.Button();
+            this.tbTrabajadores = new System.Windows.Forms.TabPage();
+            this.lblNombreTrabajador = new System.Windows.Forms.Label();
+            this.txtNombreTrabajador = new System.Windows.Forms.TextBox();
+            this.lblEmpresa = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblOcupacion = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnCrearTrabajador = new System.Windows.Forms.Button();
+            this.pbNet = new System.Windows.Forms.PictureBox();
+            this.pbQRTelcom = new System.Windows.Forms.PictureBox();
             this.tcRuta.SuspendLayout();
-            this.Ruta.SuspendLayout();
-            this.dtTrabajo.SuspendLayout();
+            this.tbRuta.SuspendLayout();
+            this.tbTrabajo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNETCOMMERCE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tbTrabajadores.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbQRTelcom)).BeginInit();
             this.SuspendLayout();
             // 
             // tcRuta
             // 
-            this.tcRuta.Controls.Add(this.Ruta);
-            this.tcRuta.Controls.Add(this.dtTrabajo);
+            this.tcRuta.Controls.Add(this.tbRuta);
+            this.tcRuta.Controls.Add(this.tbTrabajo);
+            this.tcRuta.Controls.Add(this.tbTrabajadores);
             this.tcRuta.Location = new System.Drawing.Point(-1, 3);
             this.tcRuta.Name = "tcRuta";
             this.tcRuta.SelectedIndex = 0;
@@ -85,59 +99,59 @@
             this.tcRuta.TabIndex = 0;
             this.tcRuta.Tag = "";
             // 
-            // Ruta
+            // tbRuta
             // 
-            this.Ruta.Controls.Add(this.btnCrearRuta);
-            this.Ruta.Controls.Add(this.pbQR);
-            this.Ruta.Controls.Add(this.pbNETCOMMERCE);
-            this.Ruta.Controls.Add(this.txtReferencia);
-            this.Ruta.Controls.Add(this.lblReferencia);
-            this.Ruta.Controls.Add(this.txtParroquia);
-            this.Ruta.Controls.Add(this.txtCanton);
-            this.Ruta.Controls.Add(this.lblParroquia);
-            this.Ruta.Controls.Add(this.lblCanton);
-            this.Ruta.Controls.Add(this.cbProvincia);
-            this.Ruta.Controls.Add(this.lblProvincia);
-            this.Ruta.Controls.Add(this.txtClienteRuta);
-            this.Ruta.Controls.Add(this.lblClienteRuta);
-            this.Ruta.Controls.Add(this.lblNombreRuta);
-            this.Ruta.Controls.Add(this.txtNombreRuta);
-            this.Ruta.Location = new System.Drawing.Point(4, 22);
-            this.Ruta.Name = "Ruta";
-            this.Ruta.Padding = new System.Windows.Forms.Padding(3);
-            this.Ruta.Size = new System.Drawing.Size(792, 418);
-            this.Ruta.TabIndex = 0;
-            this.Ruta.Text = "Ruta";
-            this.Ruta.UseVisualStyleBackColor = true;
+            this.tbRuta.Controls.Add(this.btnCrearRuta);
+            this.tbRuta.Controls.Add(this.pbQR);
+            this.tbRuta.Controls.Add(this.pbNETCOMMERCE);
+            this.tbRuta.Controls.Add(this.txtReferencia);
+            this.tbRuta.Controls.Add(this.lblReferencia);
+            this.tbRuta.Controls.Add(this.txtParroquia);
+            this.tbRuta.Controls.Add(this.txtCanton);
+            this.tbRuta.Controls.Add(this.lblParroquia);
+            this.tbRuta.Controls.Add(this.lblCanton);
+            this.tbRuta.Controls.Add(this.cbProvincia);
+            this.tbRuta.Controls.Add(this.lblProvincia);
+            this.tbRuta.Controls.Add(this.txtClienteRuta);
+            this.tbRuta.Controls.Add(this.lblClienteRuta);
+            this.tbRuta.Controls.Add(this.lblNombreRuta);
+            this.tbRuta.Controls.Add(this.txtNombreRuta);
+            this.tbRuta.Location = new System.Drawing.Point(4, 22);
+            this.tbRuta.Name = "tbRuta";
+            this.tbRuta.Padding = new System.Windows.Forms.Padding(3);
+            this.tbRuta.Size = new System.Drawing.Size(792, 418);
+            this.tbRuta.TabIndex = 0;
+            this.tbRuta.Text = "Ruta";
+            this.tbRuta.UseVisualStyleBackColor = true;
             // 
-            // dtTrabajo
+            // tbTrabajo
             // 
-            this.dtTrabajo.Controls.Add(this.btnCrearTrabajo);
-            this.dtTrabajo.Controls.Add(this.pictureBox2);
-            this.dtTrabajo.Controls.Add(this.pictureBox1);
-            this.dtTrabajo.Controls.Add(this.txtNumeroRetenidas);
-            this.dtTrabajo.Controls.Add(this.label2);
-            this.dtTrabajo.Controls.Add(this.txtDetalleRetenidas);
-            this.dtTrabajo.Controls.Add(this.label1);
-            this.dtTrabajo.Controls.Add(this.cbTipoPostes2);
-            this.dtTrabajo.Controls.Add(this.txtNumeroPostes);
-            this.dtTrabajo.Controls.Add(this.lblNumeroPostes);
-            this.dtTrabajo.Controls.Add(this.cbTipoPostes);
-            this.dtTrabajo.Controls.Add(this.cbTipodeFibra);
-            this.dtTrabajo.Controls.Add(this.lblTipoPostes);
-            this.dtTrabajo.Controls.Add(this.txtMetrosFibra);
-            this.dtTrabajo.Controls.Add(this.lblMetrosFibra);
-            this.dtTrabajo.Controls.Add(this.cbTipoFibra);
-            this.dtTrabajo.Controls.Add(this.cbTipoTrabajo2);
-            this.dtTrabajo.Controls.Add(this.cbTipoTrabajo);
-            this.dtTrabajo.Controls.Add(this.lblTipoTrabajo);
-            this.dtTrabajo.Location = new System.Drawing.Point(4, 22);
-            this.dtTrabajo.Name = "dtTrabajo";
-            this.dtTrabajo.Padding = new System.Windows.Forms.Padding(3);
-            this.dtTrabajo.Size = new System.Drawing.Size(792, 418);
-            this.dtTrabajo.TabIndex = 1;
-            this.dtTrabajo.Text = "Detalles de Trabajo";
-            this.dtTrabajo.UseVisualStyleBackColor = true;
+            this.tbTrabajo.Controls.Add(this.btnCrearTrabajo);
+            this.tbTrabajo.Controls.Add(this.pictureBox2);
+            this.tbTrabajo.Controls.Add(this.pictureBox1);
+            this.tbTrabajo.Controls.Add(this.txtNumeroRetenidas);
+            this.tbTrabajo.Controls.Add(this.label2);
+            this.tbTrabajo.Controls.Add(this.txtDetalleRetenidas);
+            this.tbTrabajo.Controls.Add(this.label1);
+            this.tbTrabajo.Controls.Add(this.cbTipoPostes2);
+            this.tbTrabajo.Controls.Add(this.txtNumeroPostes);
+            this.tbTrabajo.Controls.Add(this.lblNumeroPostes);
+            this.tbTrabajo.Controls.Add(this.cbTipoPostes);
+            this.tbTrabajo.Controls.Add(this.cbTipodeFibra);
+            this.tbTrabajo.Controls.Add(this.lblTipoPostes);
+            this.tbTrabajo.Controls.Add(this.txtMetrosFibra);
+            this.tbTrabajo.Controls.Add(this.lblMetrosFibra);
+            this.tbTrabajo.Controls.Add(this.cbTipoFibra);
+            this.tbTrabajo.Controls.Add(this.cbTipoTrabajo2);
+            this.tbTrabajo.Controls.Add(this.cbTipoTrabajo);
+            this.tbTrabajo.Controls.Add(this.lblTipoTrabajo);
+            this.tbTrabajo.Location = new System.Drawing.Point(4, 22);
+            this.tbTrabajo.Name = "tbTrabajo";
+            this.tbTrabajo.Padding = new System.Windows.Forms.Padding(3);
+            this.tbTrabajo.Size = new System.Drawing.Size(792, 418);
+            this.tbTrabajo.TabIndex = 1;
+            this.tbTrabajo.Text = "Detalles de Trabajo";
+            this.tbTrabajo.UseVisualStyleBackColor = true;
             // 
             // txtNombreRuta
             // 
@@ -419,6 +433,99 @@
             this.btnCrearTrabajo.Text = "CREAR TRABAJO";
             this.btnCrearTrabajo.UseVisualStyleBackColor = true;
             // 
+            // tbTrabajadores
+            // 
+            this.tbTrabajadores.Controls.Add(this.pbQRTelcom);
+            this.tbTrabajadores.Controls.Add(this.pbNet);
+            this.tbTrabajadores.Controls.Add(this.btnCrearTrabajador);
+            this.tbTrabajadores.Controls.Add(this.comboBox2);
+            this.tbTrabajadores.Controls.Add(this.lblOcupacion);
+            this.tbTrabajadores.Controls.Add(this.comboBox1);
+            this.tbTrabajadores.Controls.Add(this.lblEmpresa);
+            this.tbTrabajadores.Controls.Add(this.txtNombreTrabajador);
+            this.tbTrabajadores.Controls.Add(this.lblNombreTrabajador);
+            this.tbTrabajadores.Location = new System.Drawing.Point(4, 22);
+            this.tbTrabajadores.Name = "tbTrabajadores";
+            this.tbTrabajadores.Size = new System.Drawing.Size(792, 418);
+            this.tbTrabajadores.TabIndex = 2;
+            this.tbTrabajadores.Text = "Trabajadores";
+            this.tbTrabajadores.UseVisualStyleBackColor = true;
+            // 
+            // lblNombreTrabajador
+            // 
+            this.lblNombreTrabajador.AutoSize = true;
+            this.lblNombreTrabajador.Location = new System.Drawing.Point(19, 56);
+            this.lblNombreTrabajador.Name = "lblNombreTrabajador";
+            this.lblNombreTrabajador.Size = new System.Drawing.Size(150, 13);
+            this.lblNombreTrabajador.TabIndex = 0;
+            this.lblNombreTrabajador.Text = "NOMBRE DE TRABAJADOR:";
+            // 
+            // txtNombreTrabajador
+            // 
+            this.txtNombreTrabajador.Location = new System.Drawing.Point(176, 56);
+            this.txtNombreTrabajador.Name = "txtNombreTrabajador";
+            this.txtNombreTrabajador.Size = new System.Drawing.Size(218, 20);
+            this.txtNombreTrabajador.TabIndex = 1;
+            // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.AutoSize = true;
+            this.lblEmpresa.Location = new System.Drawing.Point(107, 120);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(62, 13);
+            this.lblEmpresa.TabIndex = 2;
+            this.lblEmpresa.Text = "EMPRESA:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(176, 111);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 3;
+            // 
+            // lblOcupacion
+            // 
+            this.lblOcupacion.AutoSize = true;
+            this.lblOcupacion.Location = new System.Drawing.Point(96, 179);
+            this.lblOcupacion.Name = "lblOcupacion";
+            this.lblOcupacion.Size = new System.Drawing.Size(73, 13);
+            this.lblOcupacion.TabIndex = 4;
+            this.lblOcupacion.Text = "OCUPACIÓN:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(176, 179);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 5;
+            // 
+            // btnCrearTrabajador
+            // 
+            this.btnCrearTrabajador.Location = new System.Drawing.Point(139, 282);
+            this.btnCrearTrabajador.Name = "btnCrearTrabajador";
+            this.btnCrearTrabajador.Size = new System.Drawing.Size(179, 43);
+            this.btnCrearTrabajador.TabIndex = 6;
+            this.btnCrearTrabajador.Text = "CREAR TRABAJADOR";
+            this.btnCrearTrabajador.UseVisualStyleBackColor = true;
+            // 
+            // pbNet
+            // 
+            this.pbNet.Location = new System.Drawing.Point(450, 56);
+            this.pbNet.Name = "pbNet";
+            this.pbNet.Size = new System.Drawing.Size(295, 144);
+            this.pbNet.TabIndex = 7;
+            this.pbNet.TabStop = false;
+            // 
+            // pbQRTelcom
+            // 
+            this.pbQRTelcom.Location = new System.Drawing.Point(450, 226);
+            this.pbQRTelcom.Name = "pbQRTelcom";
+            this.pbQRTelcom.Size = new System.Drawing.Size(295, 149);
+            this.pbQRTelcom.TabIndex = 8;
+            this.pbQRTelcom.TabStop = false;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,14 +535,18 @@
             this.Name = "Principal";
             this.Text = "Principal";
             this.tcRuta.ResumeLayout(false);
-            this.Ruta.ResumeLayout(false);
-            this.Ruta.PerformLayout();
-            this.dtTrabajo.ResumeLayout(false);
-            this.dtTrabajo.PerformLayout();
+            this.tbRuta.ResumeLayout(false);
+            this.tbRuta.PerformLayout();
+            this.tbTrabajo.ResumeLayout(false);
+            this.tbTrabajo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNETCOMMERCE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tbTrabajadores.ResumeLayout(false);
+            this.tbTrabajadores.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbQRTelcom)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -443,8 +554,8 @@
         #endregion
 
         private System.Windows.Forms.TabControl tcRuta;
-        private System.Windows.Forms.TabPage Ruta;
-        private System.Windows.Forms.TabPage dtTrabajo;
+        private System.Windows.Forms.TabPage tbRuta;
+        private System.Windows.Forms.TabPage tbTrabajo;
         private System.Windows.Forms.Button btnCrearRuta;
         private System.Windows.Forms.PictureBox pbQR;
         private System.Windows.Forms.PictureBox pbNETCOMMERCE;
@@ -479,5 +590,15 @@
         private System.Windows.Forms.ComboBox cbTipoTrabajo2;
         private System.Windows.Forms.ComboBox cbTipoTrabajo;
         private System.Windows.Forms.Label lblTipoTrabajo;
+        private System.Windows.Forms.TabPage tbTrabajadores;
+        private System.Windows.Forms.PictureBox pbQRTelcom;
+        private System.Windows.Forms.PictureBox pbNet;
+        private System.Windows.Forms.Button btnCrearTrabajador;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label lblOcupacion;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblEmpresa;
+        private System.Windows.Forms.TextBox txtNombreTrabajador;
+        private System.Windows.Forms.Label lblNombreTrabajador;
     }
 }
