@@ -56,14 +56,14 @@
             this.cbTipoPostes2 = new System.Windows.Forms.ComboBox();
             this.txtNumeroPostes = new System.Windows.Forms.TextBox();
             this.lblNumeroPostes = new System.Windows.Forms.Label();
-            this.cbTipoPostes = new System.Windows.Forms.ComboBox();
+            this.cbTipoPostes1 = new System.Windows.Forms.ComboBox();
             this.cbTipodeFibra = new System.Windows.Forms.ComboBox();
             this.lblTipoPostes = new System.Windows.Forms.Label();
             this.txtMetrosFibra = new System.Windows.Forms.TextBox();
             this.lblMetrosFibra = new System.Windows.Forms.Label();
             this.cbTipoFibra = new System.Windows.Forms.Label();
             this.cbTipoTrabajo2 = new System.Windows.Forms.ComboBox();
-            this.cbTipoTrabajo = new System.Windows.Forms.ComboBox();
+            this.cbTipoTrabajo1 = new System.Windows.Forms.ComboBox();
             this.lblTipoTrabajo = new System.Windows.Forms.Label();
             this.tbTrabajadores = new System.Windows.Forms.TabPage();
             this.pbQRTelcom = new System.Windows.Forms.PictureBox();
@@ -303,14 +303,14 @@
             this.tbTrabajo.Controls.Add(this.cbTipoPostes2);
             this.tbTrabajo.Controls.Add(this.txtNumeroPostes);
             this.tbTrabajo.Controls.Add(this.lblNumeroPostes);
-            this.tbTrabajo.Controls.Add(this.cbTipoPostes);
+            this.tbTrabajo.Controls.Add(this.cbTipoPostes1);
             this.tbTrabajo.Controls.Add(this.cbTipodeFibra);
             this.tbTrabajo.Controls.Add(this.lblTipoPostes);
             this.tbTrabajo.Controls.Add(this.txtMetrosFibra);
             this.tbTrabajo.Controls.Add(this.lblMetrosFibra);
             this.tbTrabajo.Controls.Add(this.cbTipoFibra);
             this.tbTrabajo.Controls.Add(this.cbTipoTrabajo2);
-            this.tbTrabajo.Controls.Add(this.cbTipoTrabajo);
+            this.tbTrabajo.Controls.Add(this.cbTipoTrabajo1);
             this.tbTrabajo.Controls.Add(this.lblTipoTrabajo);
             this.tbTrabajo.Location = new System.Drawing.Point(4, 22);
             this.tbTrabajo.Name = "tbTrabajo";
@@ -328,6 +328,7 @@
             this.btnCrearTrabajo.TabIndex = 19;
             this.btnCrearTrabajo.Text = "CREAR TRABAJO";
             this.btnCrearTrabajo.UseVisualStyleBackColor = true;
+            this.btnCrearTrabajo.Click += new System.EventHandler(this.btnCrearTrabajo_Click);
             // 
             // pictureBox2
             // 
@@ -402,13 +403,13 @@
             this.lblNumeroPostes.TabIndex = 10;
             this.lblNumeroPostes.Text = "NUMERO DE POSTES:";
             // 
-            // cbTipoPostes
+            // cbTipoPostes1
             // 
-            this.cbTipoPostes.FormattingEnabled = true;
-            this.cbTipoPostes.Location = new System.Drawing.Point(178, 203);
-            this.cbTipoPostes.Name = "cbTipoPostes";
-            this.cbTipoPostes.Size = new System.Drawing.Size(136, 21);
-            this.cbTipoPostes.TabIndex = 9;
+            this.cbTipoPostes1.FormattingEnabled = true;
+            this.cbTipoPostes1.Location = new System.Drawing.Point(178, 203);
+            this.cbTipoPostes1.Name = "cbTipoPostes1";
+            this.cbTipoPostes1.Size = new System.Drawing.Size(136, 21);
+            this.cbTipoPostes1.TabIndex = 9;
             // 
             // cbTipodeFibra
             // 
@@ -460,13 +461,13 @@
             this.cbTipoTrabajo2.Size = new System.Drawing.Size(173, 21);
             this.cbTipoTrabajo2.TabIndex = 2;
             // 
-            // cbTipoTrabajo
+            // cbTipoTrabajo1
             // 
-            this.cbTipoTrabajo.FormattingEnabled = true;
-            this.cbTipoTrabajo.Location = new System.Drawing.Point(179, 34);
-            this.cbTipoTrabajo.Name = "cbTipoTrabajo";
-            this.cbTipoTrabajo.Size = new System.Drawing.Size(173, 21);
-            this.cbTipoTrabajo.TabIndex = 1;
+            this.cbTipoTrabajo1.FormattingEnabled = true;
+            this.cbTipoTrabajo1.Location = new System.Drawing.Point(179, 34);
+            this.cbTipoTrabajo1.Name = "cbTipoTrabajo1";
+            this.cbTipoTrabajo1.Size = new System.Drawing.Size(173, 21);
+            this.cbTipoTrabajo1.TabIndex = 1;
             // 
             // lblTipoTrabajo
             // 
@@ -959,14 +960,14 @@
         private System.Windows.Forms.ComboBox cbTipoPostes2;
         private System.Windows.Forms.TextBox txtNumeroPostes;
         private System.Windows.Forms.Label lblNumeroPostes;
-        private System.Windows.Forms.ComboBox cbTipoPostes;
+        private System.Windows.Forms.ComboBox cbTipoPostes1;
         private System.Windows.Forms.ComboBox cbTipodeFibra;
         private System.Windows.Forms.Label lblTipoPostes;
         private System.Windows.Forms.TextBox txtMetrosFibra;
         private System.Windows.Forms.Label lblMetrosFibra;
         private System.Windows.Forms.Label cbTipoFibra;
         private System.Windows.Forms.ComboBox cbTipoTrabajo2;
-        private System.Windows.Forms.ComboBox cbTipoTrabajo;
+        private System.Windows.Forms.ComboBox cbTipoTrabajo1;
         private System.Windows.Forms.Label lblTipoTrabajo;
         private System.Windows.Forms.TabPage tbTrabajadores;
         private System.Windows.Forms.PictureBox pbQRTelcom;

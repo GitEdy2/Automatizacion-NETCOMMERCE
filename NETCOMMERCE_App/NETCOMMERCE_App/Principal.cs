@@ -22,6 +22,11 @@ namespace NETCOMMERCE_App
         clsRuta ruta = new clsRuta();
         clsDatosRuta dtsRuta = new clsDatosRuta();
 
+        clsDetalleTrabajo trabajo = new clsDetalleTrabajo();
+        clsDatosDetalleTrabajo dtstrabajo = new clsDatosDetalleTrabajo();
+        
+        
+
 
         private void btnCrearRuta_Click(object sender, EventArgs e)
         {
@@ -49,6 +54,29 @@ namespace NETCOMMERCE_App
                 MessageBox.Show("Error, ruta no ingresada");
             }
 
+        }
+
+
+        private void btnCrearTrabajo_Click(object sender, EventArgs e)
+        {
+            trabajo.Descripcion1tipotrabajo = cbTipoTrabajo1.SelectedValue.ToString();
+            trabajo.Descripcion2tipotrabajo = cbTipoTrabajo2.SelectedValue.ToString();
+
+            trabajo.Detallefibra = cbTipodeFibra.SelectedText.ToString();
+            trabajo.Metrosfibra = Convert.ToInt32(txtMetrosFibra.Text);
+
+            trabajo.Detallepostes = cbTipoPostes1.SelectedValue.ToString();
+            trabajo.Detalle2postes = cbTipoPostes2.SelectedValue.ToString();
+            trabajo.Numeropostes = Convert.ToInt32(txtNumeroPostes.Text);
+
+            trabajo.Detalleretenidas = txtDetalleRetenidas.Text;
+            trabajo.Numeroretenidas = Convert.ToInt32(txtNumeroRetenidas.Text);
+
+            bool exito = dtstrabajo.IngresarFibra(trabajo);
+            bool exito2 = dtstrabajo.IngresarPostes(trabajo);
+            bool exito3 = dtstrabajo.IngresarRetenidas(trabajo);
+
+            bool exito4 = dtstrabajo.IngresarDetalleTrabajo(trabajo);
         }
     }
 }
