@@ -97,8 +97,19 @@
             this.btnCrearGrupo = new System.Windows.Forms.Button();
             this.tbPrograma = new System.Windows.Forms.TabPage();
             this.lblFechaTrabajo = new System.Windows.Forms.Label();
-            this.dtpFechaTrabajo = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaPrograma = new System.Windows.Forms.DateTimePicker();
+            this.lblRuta = new System.Windows.Forms.Label();
+            this.cbRutaPrograma = new System.Windows.Forms.ComboBox();
+            this.lblEmpresaPrograma = new System.Windows.Forms.Label();
+            this.cbEmpresaPrograma = new System.Windows.Forms.ComboBox();
+            this.lblGrupoTrabajoPrograma = new System.Windows.Forms.Label();
+            this.cbGrupoTrabajoPrograma = new System.Windows.Forms.ComboBox();
+            this.lblTrabajoPrograma = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.btnPrograma = new System.Windows.Forms.Button();
             this.tcRuta.SuspendLayout();
             this.tbRuta.SuspendLayout();
             this.tbTrabajo.SuspendLayout();
@@ -113,6 +124,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tbPrograma.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // tcRuta
@@ -743,8 +756,19 @@
             // 
             // tbPrograma
             // 
+            this.tbPrograma.Controls.Add(this.btnPrograma);
+            this.tbPrograma.Controls.Add(this.pictureBox6);
+            this.tbPrograma.Controls.Add(this.pictureBox5);
             this.tbPrograma.Controls.Add(this.label3);
-            this.tbPrograma.Controls.Add(this.dtpFechaTrabajo);
+            this.tbPrograma.Controls.Add(this.comboBox4);
+            this.tbPrograma.Controls.Add(this.lblTrabajoPrograma);
+            this.tbPrograma.Controls.Add(this.cbGrupoTrabajoPrograma);
+            this.tbPrograma.Controls.Add(this.lblGrupoTrabajoPrograma);
+            this.tbPrograma.Controls.Add(this.cbEmpresaPrograma);
+            this.tbPrograma.Controls.Add(this.lblEmpresaPrograma);
+            this.tbPrograma.Controls.Add(this.cbRutaPrograma);
+            this.tbPrograma.Controls.Add(this.lblRuta);
+            this.tbPrograma.Controls.Add(this.dtpFechaPrograma);
             this.tbPrograma.Controls.Add(this.lblFechaTrabajo);
             this.tbPrograma.Location = new System.Drawing.Point(4, 22);
             this.tbPrograma.Name = "tbPrograma";
@@ -756,27 +780,120 @@
             // lblFechaTrabajo
             // 
             this.lblFechaTrabajo.AutoSize = true;
-            this.lblFechaTrabajo.Location = new System.Drawing.Point(53, 51);
+            this.lblFechaTrabajo.Location = new System.Drawing.Point(39, 39);
             this.lblFechaTrabajo.Name = "lblFechaTrabajo";
             this.lblFechaTrabajo.Size = new System.Drawing.Size(115, 13);
             this.lblFechaTrabajo.TabIndex = 0;
             this.lblFechaTrabajo.Text = "FECHA DE TRABAJO:";
             // 
-            // dtpFechaTrabajo
+            // dtpFechaPrograma
             // 
-            this.dtpFechaTrabajo.Location = new System.Drawing.Point(174, 45);
-            this.dtpFechaTrabajo.Name = "dtpFechaTrabajo";
-            this.dtpFechaTrabajo.Size = new System.Drawing.Size(224, 20);
-            this.dtpFechaTrabajo.TabIndex = 1;
+            this.dtpFechaPrograma.Location = new System.Drawing.Point(160, 39);
+            this.dtpFechaPrograma.Name = "dtpFechaPrograma";
+            this.dtpFechaPrograma.Size = new System.Drawing.Size(224, 20);
+            this.dtpFechaPrograma.TabIndex = 1;
+            // 
+            // lblRuta
+            // 
+            this.lblRuta.AutoSize = true;
+            this.lblRuta.Location = new System.Drawing.Point(114, 88);
+            this.lblRuta.Name = "lblRuta";
+            this.lblRuta.Size = new System.Drawing.Size(40, 13);
+            this.lblRuta.TabIndex = 2;
+            this.lblRuta.Text = "RUTA:";
+            // 
+            // cbRutaPrograma
+            // 
+            this.cbRutaPrograma.FormattingEnabled = true;
+            this.cbRutaPrograma.Location = new System.Drawing.Point(160, 85);
+            this.cbRutaPrograma.Name = "cbRutaPrograma";
+            this.cbRutaPrograma.Size = new System.Drawing.Size(224, 21);
+            this.cbRutaPrograma.TabIndex = 3;
+            // 
+            // lblEmpresaPrograma
+            // 
+            this.lblEmpresaPrograma.AutoSize = true;
+            this.lblEmpresaPrograma.Location = new System.Drawing.Point(92, 148);
+            this.lblEmpresaPrograma.Name = "lblEmpresaPrograma";
+            this.lblEmpresaPrograma.Size = new System.Drawing.Size(62, 13);
+            this.lblEmpresaPrograma.TabIndex = 4;
+            this.lblEmpresaPrograma.Text = "EMPRESA:";
+            // 
+            // cbEmpresaPrograma
+            // 
+            this.cbEmpresaPrograma.FormattingEnabled = true;
+            this.cbEmpresaPrograma.Location = new System.Drawing.Point(160, 145);
+            this.cbEmpresaPrograma.Name = "cbEmpresaPrograma";
+            this.cbEmpresaPrograma.Size = new System.Drawing.Size(149, 21);
+            this.cbEmpresaPrograma.TabIndex = 5;
+            // 
+            // lblGrupoTrabajoPrograma
+            // 
+            this.lblGrupoTrabajoPrograma.AutoSize = true;
+            this.lblGrupoTrabajoPrograma.Location = new System.Drawing.Point(35, 202);
+            this.lblGrupoTrabajoPrograma.Name = "lblGrupoTrabajoPrograma";
+            this.lblGrupoTrabajoPrograma.Size = new System.Drawing.Size(119, 13);
+            this.lblGrupoTrabajoPrograma.TabIndex = 6;
+            this.lblGrupoTrabajoPrograma.Text = "GRUPO DE TRABAJO:";
+            // 
+            // cbGrupoTrabajoPrograma
+            // 
+            this.cbGrupoTrabajoPrograma.FormattingEnabled = true;
+            this.cbGrupoTrabajoPrograma.Location = new System.Drawing.Point(160, 199);
+            this.cbGrupoTrabajoPrograma.Name = "cbGrupoTrabajoPrograma";
+            this.cbGrupoTrabajoPrograma.Size = new System.Drawing.Size(224, 21);
+            this.cbGrupoTrabajoPrograma.TabIndex = 7;
+            // 
+            // lblTrabajoPrograma
+            // 
+            this.lblTrabajoPrograma.AutoSize = true;
+            this.lblTrabajoPrograma.Location = new System.Drawing.Point(29, 257);
+            this.lblTrabajoPrograma.Name = "lblTrabajoPrograma";
+            this.lblTrabajoPrograma.Size = new System.Drawing.Size(125, 13);
+            this.lblTrabajoPrograma.TabIndex = 8;
+            this.lblTrabajoPrograma.Text = "TRABAJO A REALIZAR:";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(160, 254);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(224, 21);
+            this.comboBox4.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(56, 106);
+            this.label3.Location = new System.Drawing.Point(35, 306);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "ARCHIVO DE PLANO:";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Location = new System.Drawing.Point(441, 39);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(301, 134);
+            this.pictureBox5.TabIndex = 11;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Location = new System.Drawing.Point(441, 199);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(301, 129);
+            this.pictureBox6.TabIndex = 12;
+            this.pictureBox6.TabStop = false;
+            // 
+            // btnPrograma
+            // 
+            this.btnPrograma.Location = new System.Drawing.Point(160, 356);
+            this.btnPrograma.Name = "btnPrograma";
+            this.btnPrograma.Size = new System.Drawing.Size(149, 32);
+            this.btnPrograma.TabIndex = 13;
+            this.btnPrograma.Text = "GENERAR PROGRAMA";
+            this.btnPrograma.UseVisualStyleBackColor = true;
             // 
             // Principal
             // 
@@ -805,6 +922,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tbPrograma.ResumeLayout(false);
             this.tbPrograma.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -879,8 +998,19 @@
         private System.Windows.Forms.ComboBox cbJefeGrupo;
         private System.Windows.Forms.Label lblJefeGrupo;
         private System.Windows.Forms.TabPage tbPrograma;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtpFechaTrabajo;
+        private System.Windows.Forms.Label lblRuta;
+        private System.Windows.Forms.DateTimePicker dtpFechaPrograma;
         private System.Windows.Forms.Label lblFechaTrabajo;
+        private System.Windows.Forms.ComboBox cbEmpresaPrograma;
+        private System.Windows.Forms.Label lblEmpresaPrograma;
+        private System.Windows.Forms.ComboBox cbRutaPrograma;
+        private System.Windows.Forms.Button btnPrograma;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label lblTrabajoPrograma;
+        private System.Windows.Forms.ComboBox cbGrupoTrabajoPrograma;
+        private System.Windows.Forms.Label lblGrupoTrabajoPrograma;
     }
 }
