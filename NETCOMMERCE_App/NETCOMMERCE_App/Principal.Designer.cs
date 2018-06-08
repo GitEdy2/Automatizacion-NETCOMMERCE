@@ -46,10 +46,32 @@
             this.pbNETCOMMERCE = new System.Windows.Forms.PictureBox();
             this.pbQR = new System.Windows.Forms.PictureBox();
             this.btnCrearRuta = new System.Windows.Forms.Button();
+            this.lblTipoTrabajo = new System.Windows.Forms.Label();
+            this.cbTipoTrabajo = new System.Windows.Forms.ComboBox();
+            this.cbTipoTrabajo2 = new System.Windows.Forms.ComboBox();
+            this.cbTipoFibra = new System.Windows.Forms.Label();
+            this.lblMetrosFibra = new System.Windows.Forms.Label();
+            this.txtMetrosFibra = new System.Windows.Forms.TextBox();
+            this.lblTipoPostes = new System.Windows.Forms.Label();
+            this.cbTipodeFibra = new System.Windows.Forms.ComboBox();
+            this.cbTipoPostes = new System.Windows.Forms.ComboBox();
+            this.lblNumeroPostes = new System.Windows.Forms.Label();
+            this.txtNumeroPostes = new System.Windows.Forms.TextBox();
+            this.cbTipoPostes2 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDetalleRetenidas = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNumeroRetenidas = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnCrearTrabajo = new System.Windows.Forms.Button();
             this.tcRuta.SuspendLayout();
             this.Ruta.SuspendLayout();
+            this.dtTrabajo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNETCOMMERCE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tcRuta
@@ -90,6 +112,25 @@
             // 
             // dtTrabajo
             // 
+            this.dtTrabajo.Controls.Add(this.btnCrearTrabajo);
+            this.dtTrabajo.Controls.Add(this.pictureBox2);
+            this.dtTrabajo.Controls.Add(this.pictureBox1);
+            this.dtTrabajo.Controls.Add(this.txtNumeroRetenidas);
+            this.dtTrabajo.Controls.Add(this.label2);
+            this.dtTrabajo.Controls.Add(this.txtDetalleRetenidas);
+            this.dtTrabajo.Controls.Add(this.label1);
+            this.dtTrabajo.Controls.Add(this.cbTipoPostes2);
+            this.dtTrabajo.Controls.Add(this.txtNumeroPostes);
+            this.dtTrabajo.Controls.Add(this.lblNumeroPostes);
+            this.dtTrabajo.Controls.Add(this.cbTipoPostes);
+            this.dtTrabajo.Controls.Add(this.cbTipodeFibra);
+            this.dtTrabajo.Controls.Add(this.lblTipoPostes);
+            this.dtTrabajo.Controls.Add(this.txtMetrosFibra);
+            this.dtTrabajo.Controls.Add(this.lblMetrosFibra);
+            this.dtTrabajo.Controls.Add(this.cbTipoFibra);
+            this.dtTrabajo.Controls.Add(this.cbTipoTrabajo2);
+            this.dtTrabajo.Controls.Add(this.cbTipoTrabajo);
+            this.dtTrabajo.Controls.Add(this.lblTipoTrabajo);
             this.dtTrabajo.Location = new System.Drawing.Point(4, 22);
             this.dtTrabajo.Name = "dtTrabajo";
             this.dtTrabajo.Padding = new System.Windows.Forms.Padding(3);
@@ -108,20 +149,20 @@
             // lblNombreRuta
             // 
             this.lblNombreRuta.AutoSize = true;
-            this.lblNombreRuta.Location = new System.Drawing.Point(62, 34);
+            this.lblNombreRuta.Location = new System.Drawing.Point(37, 34);
             this.lblNombreRuta.Name = "lblNombreRuta";
-            this.lblNombreRuta.Size = new System.Drawing.Size(83, 13);
+            this.lblNombreRuta.Size = new System.Drawing.Size(108, 13);
             this.lblNombreRuta.TabIndex = 1;
-            this.lblNombreRuta.Text = "Nombre de ruta:";
+            this.lblNombreRuta.Text = "NOMBRE DE RUTA:";
             // 
             // lblClienteRuta
             // 
             this.lblClienteRuta.AutoSize = true;
-            this.lblClienteRuta.Location = new System.Drawing.Point(62, 82);
+            this.lblClienteRuta.Location = new System.Drawing.Point(39, 82);
             this.lblClienteRuta.Name = "lblClienteRuta";
-            this.lblClienteRuta.Size = new System.Drawing.Size(78, 13);
+            this.lblClienteRuta.Size = new System.Drawing.Size(106, 13);
             this.lblClienteRuta.TabIndex = 2;
-            this.lblClienteRuta.Text = "Cliente de ruta:";
+            this.lblClienteRuta.Text = "CLIENTE DE RUTA:";
             // 
             // txtClienteRuta
             // 
@@ -133,11 +174,11 @@
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Location = new System.Drawing.Point(84, 127);
+            this.lblProvincia.Location = new System.Drawing.Point(76, 130);
             this.lblProvincia.Name = "lblProvincia";
-            this.lblProvincia.Size = new System.Drawing.Size(54, 13);
+            this.lblProvincia.Size = new System.Drawing.Size(68, 13);
             this.lblProvincia.TabIndex = 4;
-            this.lblProvincia.Text = "Provincia:";
+            this.lblProvincia.Text = "PROVINCIA:";
             // 
             // cbProvincia
             // 
@@ -150,20 +191,20 @@
             // lblCanton
             // 
             this.lblCanton.AutoSize = true;
-            this.lblCanton.Location = new System.Drawing.Point(94, 174);
+            this.lblCanton.Location = new System.Drawing.Point(89, 174);
             this.lblCanton.Name = "lblCanton";
-            this.lblCanton.Size = new System.Drawing.Size(44, 13);
+            this.lblCanton.Size = new System.Drawing.Size(55, 13);
             this.lblCanton.TabIndex = 6;
-            this.lblCanton.Text = "Cantón:";
+            this.lblCanton.Text = "CANTÓN:";
             // 
             // lblParroquia
             // 
             this.lblParroquia.AutoSize = true;
-            this.lblParroquia.Location = new System.Drawing.Point(83, 221);
+            this.lblParroquia.Location = new System.Drawing.Point(70, 221);
             this.lblParroquia.Name = "lblParroquia";
-            this.lblParroquia.Size = new System.Drawing.Size(55, 13);
+            this.lblParroquia.Size = new System.Drawing.Size(74, 13);
             this.lblParroquia.TabIndex = 8;
-            this.lblParroquia.Text = "Parroquia:";
+            this.lblParroquia.Text = "PARROQUIA:";
             // 
             // txtCanton
             // 
@@ -182,44 +223,201 @@
             // lblReferencia
             // 
             this.lblReferencia.AutoSize = true;
-            this.lblReferencia.Location = new System.Drawing.Point(76, 272);
+            this.lblReferencia.Location = new System.Drawing.Point(66, 272);
             this.lblReferencia.Name = "lblReferencia";
-            this.lblReferencia.Size = new System.Drawing.Size(62, 13);
+            this.lblReferencia.Size = new System.Drawing.Size(78, 13);
             this.lblReferencia.TabIndex = 11;
-            this.lblReferencia.Text = "Referencia:";
+            this.lblReferencia.Text = "REFERENCIA:";
             // 
             // txtReferencia
             // 
             this.txtReferencia.Location = new System.Drawing.Point(151, 272);
             this.txtReferencia.Multiline = true;
             this.txtReferencia.Name = "txtReferencia";
-            this.txtReferencia.Size = new System.Drawing.Size(189, 66);
+            this.txtReferencia.Size = new System.Drawing.Size(189, 100);
             this.txtReferencia.TabIndex = 12;
             // 
             // pbNETCOMMERCE
             // 
-            this.pbNETCOMMERCE.Location = new System.Drawing.Point(453, 60);
+            this.pbNETCOMMERCE.Location = new System.Drawing.Point(425, 31);
             this.pbNETCOMMERCE.Name = "pbNETCOMMERCE";
-            this.pbNETCOMMERCE.Size = new System.Drawing.Size(263, 121);
+            this.pbNETCOMMERCE.Size = new System.Drawing.Size(288, 134);
             this.pbNETCOMMERCE.TabIndex = 13;
             this.pbNETCOMMERCE.TabStop = false;
             // 
             // pbQR
             // 
-            this.pbQR.Location = new System.Drawing.Point(453, 203);
+            this.pbQR.Location = new System.Drawing.Point(425, 194);
             this.pbQR.Name = "pbQR";
-            this.pbQR.Size = new System.Drawing.Size(263, 135);
+            this.pbQR.Size = new System.Drawing.Size(288, 144);
             this.pbQR.TabIndex = 14;
             this.pbQR.TabStop = false;
             // 
             // btnCrearRuta
             // 
-            this.btnCrearRuta.Location = new System.Drawing.Point(151, 358);
+            this.btnCrearRuta.Location = new System.Drawing.Point(477, 356);
             this.btnCrearRuta.Name = "btnCrearRuta";
             this.btnCrearRuta.Size = new System.Drawing.Size(189, 35);
             this.btnCrearRuta.TabIndex = 15;
             this.btnCrearRuta.Text = "CREAR RUTA";
             this.btnCrearRuta.UseVisualStyleBackColor = true;
+            // 
+            // lblTipoTrabajo
+            // 
+            this.lblTipoTrabajo.AutoSize = true;
+            this.lblTipoTrabajo.Location = new System.Drawing.Point(67, 34);
+            this.lblTipoTrabajo.Name = "lblTipoTrabajo";
+            this.lblTipoTrabajo.Size = new System.Drawing.Size(105, 13);
+            this.lblTipoTrabajo.TabIndex = 0;
+            this.lblTipoTrabajo.Text = "TIPO DE TRABAJO:";
+            // 
+            // cbTipoTrabajo
+            // 
+            this.cbTipoTrabajo.FormattingEnabled = true;
+            this.cbTipoTrabajo.Location = new System.Drawing.Point(179, 34);
+            this.cbTipoTrabajo.Name = "cbTipoTrabajo";
+            this.cbTipoTrabajo.Size = new System.Drawing.Size(173, 21);
+            this.cbTipoTrabajo.TabIndex = 1;
+            // 
+            // cbTipoTrabajo2
+            // 
+            this.cbTipoTrabajo2.FormattingEnabled = true;
+            this.cbTipoTrabajo2.Location = new System.Drawing.Point(179, 70);
+            this.cbTipoTrabajo2.Name = "cbTipoTrabajo2";
+            this.cbTipoTrabajo2.Size = new System.Drawing.Size(173, 21);
+            this.cbTipoTrabajo2.TabIndex = 2;
+            // 
+            // cbTipoFibra
+            // 
+            this.cbTipoFibra.AutoSize = true;
+            this.cbTipoFibra.Location = new System.Drawing.Point(85, 121);
+            this.cbTipoFibra.Name = "cbTipoFibra";
+            this.cbTipoFibra.Size = new System.Drawing.Size(87, 13);
+            this.cbTipoFibra.TabIndex = 3;
+            this.cbTipoFibra.Text = "TIPO DE FIBRA:";
+            // 
+            // lblMetrosFibra
+            // 
+            this.lblMetrosFibra.AutoSize = true;
+            this.lblMetrosFibra.Location = new System.Drawing.Point(44, 153);
+            this.lblMetrosFibra.Name = "lblMetrosFibra";
+            this.lblMetrosFibra.Size = new System.Drawing.Size(128, 13);
+            this.lblMetrosFibra.TabIndex = 5;
+            this.lblMetrosFibra.Text = "METROS DE FIBRA (m) :";
+            // 
+            // txtMetrosFibra
+            // 
+            this.txtMetrosFibra.Location = new System.Drawing.Point(178, 150);
+            this.txtMetrosFibra.Name = "txtMetrosFibra";
+            this.txtMetrosFibra.Size = new System.Drawing.Size(79, 20);
+            this.txtMetrosFibra.TabIndex = 6;
+            // 
+            // lblTipoPostes
+            // 
+            this.lblTipoPostes.AutoSize = true;
+            this.lblTipoPostes.Location = new System.Drawing.Point(73, 206);
+            this.lblTipoPostes.Name = "lblTipoPostes";
+            this.lblTipoPostes.Size = new System.Drawing.Size(99, 13);
+            this.lblTipoPostes.TabIndex = 7;
+            this.lblTipoPostes.Text = "TIPO DE POSTES:";
+            // 
+            // cbTipodeFibra
+            // 
+            this.cbTipodeFibra.FormattingEnabled = true;
+            this.cbTipodeFibra.Location = new System.Drawing.Point(178, 118);
+            this.cbTipodeFibra.Name = "cbTipodeFibra";
+            this.cbTipodeFibra.Size = new System.Drawing.Size(136, 21);
+            this.cbTipodeFibra.TabIndex = 8;
+            // 
+            // cbTipoPostes
+            // 
+            this.cbTipoPostes.FormattingEnabled = true;
+            this.cbTipoPostes.Location = new System.Drawing.Point(178, 203);
+            this.cbTipoPostes.Name = "cbTipoPostes";
+            this.cbTipoPostes.Size = new System.Drawing.Size(136, 21);
+            this.cbTipoPostes.TabIndex = 9;
+            // 
+            // lblNumeroPostes
+            // 
+            this.lblNumeroPostes.AutoSize = true;
+            this.lblNumeroPostes.Location = new System.Drawing.Point(50, 267);
+            this.lblNumeroPostes.Name = "lblNumeroPostes";
+            this.lblNumeroPostes.Size = new System.Drawing.Size(122, 13);
+            this.lblNumeroPostes.TabIndex = 10;
+            this.lblNumeroPostes.Text = "NUMERO DE POSTES:";
+            // 
+            // txtNumeroPostes
+            // 
+            this.txtNumeroPostes.Location = new System.Drawing.Point(179, 264);
+            this.txtNumeroPostes.Name = "txtNumeroPostes";
+            this.txtNumeroPostes.Size = new System.Drawing.Size(79, 20);
+            this.txtNumeroPostes.TabIndex = 11;
+            // 
+            // cbTipoPostes2
+            // 
+            this.cbTipoPostes2.FormattingEnabled = true;
+            this.cbTipoPostes2.Location = new System.Drawing.Point(178, 231);
+            this.cbTipoPostes2.Name = "cbTipoPostes2";
+            this.cbTipoPostes2.Size = new System.Drawing.Size(136, 21);
+            this.cbTipoPostes2.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 321);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "DETALLE DE RETENIDAS:";
+            // 
+            // txtDetalleRetenidas
+            // 
+            this.txtDetalleRetenidas.Location = new System.Drawing.Point(178, 318);
+            this.txtDetalleRetenidas.Multiline = true;
+            this.txtDetalleRetenidas.Name = "txtDetalleRetenidas";
+            this.txtDetalleRetenidas.Size = new System.Drawing.Size(174, 20);
+            this.txtDetalleRetenidas.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(31, 355);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "NUMERO DE RETENIDAS:";
+            // 
+            // txtNumeroRetenidas
+            // 
+            this.txtNumeroRetenidas.Location = new System.Drawing.Point(177, 352);
+            this.txtNumeroRetenidas.Name = "txtNumeroRetenidas";
+            this.txtNumeroRetenidas.Size = new System.Drawing.Size(80, 20);
+            this.txtNumeroRetenidas.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(425, 34);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(289, 136);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(425, 187);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(289, 137);
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnCrearTrabajo
+            // 
+            this.btnCrearTrabajo.Location = new System.Drawing.Point(470, 352);
+            this.btnCrearTrabajo.Name = "btnCrearTrabajo";
+            this.btnCrearTrabajo.Size = new System.Drawing.Size(187, 41);
+            this.btnCrearTrabajo.TabIndex = 19;
+            this.btnCrearTrabajo.Text = "CREAR TRABAJO";
+            this.btnCrearTrabajo.UseVisualStyleBackColor = true;
             // 
             // Principal
             // 
@@ -232,8 +430,12 @@
             this.tcRuta.ResumeLayout(false);
             this.Ruta.ResumeLayout(false);
             this.Ruta.PerformLayout();
+            this.dtTrabajo.ResumeLayout(false);
+            this.dtTrabajo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNETCOMMERCE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -258,5 +460,24 @@
         private System.Windows.Forms.Label lblClienteRuta;
         private System.Windows.Forms.Label lblNombreRuta;
         private System.Windows.Forms.TextBox txtNombreRuta;
+        private System.Windows.Forms.Button btnCrearTrabajo;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtNumeroRetenidas;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtDetalleRetenidas;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbTipoPostes2;
+        private System.Windows.Forms.TextBox txtNumeroPostes;
+        private System.Windows.Forms.Label lblNumeroPostes;
+        private System.Windows.Forms.ComboBox cbTipoPostes;
+        private System.Windows.Forms.ComboBox cbTipodeFibra;
+        private System.Windows.Forms.Label lblTipoPostes;
+        private System.Windows.Forms.TextBox txtMetrosFibra;
+        private System.Windows.Forms.Label lblMetrosFibra;
+        private System.Windows.Forms.Label cbTipoFibra;
+        private System.Windows.Forms.ComboBox cbTipoTrabajo2;
+        private System.Windows.Forms.ComboBox cbTipoTrabajo;
+        private System.Windows.Forms.Label lblTipoTrabajo;
     }
 }
