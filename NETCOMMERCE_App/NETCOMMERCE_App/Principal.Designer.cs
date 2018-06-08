@@ -75,6 +75,30 @@
             this.btnCrearTrabajador = new System.Windows.Forms.Button();
             this.pbNet = new System.Windows.Forms.PictureBox();
             this.pbQRTelcom = new System.Windows.Forms.PictureBox();
+            this.tbEquipoTrabajo = new System.Windows.Forms.TabPage();
+            this.lblJefeGrupo = new System.Windows.Forms.Label();
+            this.cbJefeGrupo = new System.Windows.Forms.ComboBox();
+            this.lblLinieros = new System.Windows.Forms.Label();
+            this.cbLiniero1 = new System.Windows.Forms.ComboBox();
+            this.cbLiniero2 = new System.Windows.Forms.ComboBox();
+            this.cbLiniero3 = new System.Windows.Forms.ComboBox();
+            this.cbLiniero4 = new System.Windows.Forms.ComboBox();
+            this.cbLiniero5 = new System.Windows.Forms.ComboBox();
+            this.lblAyudante = new System.Windows.Forms.Label();
+            this.cbAyudante1 = new System.Windows.Forms.ComboBox();
+            this.cbAyudante2 = new System.Windows.Forms.ComboBox();
+            this.cbAyudante3 = new System.Windows.Forms.ComboBox();
+            this.cbAyudante4 = new System.Windows.Forms.ComboBox();
+            this.cbAyudante5 = new System.Windows.Forms.ComboBox();
+            this.lblChofer = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnCrearGrupo = new System.Windows.Forms.Button();
+            this.tbPrograma = new System.Windows.Forms.TabPage();
+            this.lblFechaTrabajo = new System.Windows.Forms.Label();
+            this.dtpFechaTrabajo = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.tcRuta.SuspendLayout();
             this.tbRuta.SuspendLayout();
             this.tbTrabajo.SuspendLayout();
@@ -85,6 +109,10 @@
             this.tbTrabajadores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbQRTelcom)).BeginInit();
+            this.tbEquipoTrabajo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.tbPrograma.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcRuta
@@ -92,6 +120,8 @@
             this.tcRuta.Controls.Add(this.tbRuta);
             this.tcRuta.Controls.Add(this.tbTrabajo);
             this.tcRuta.Controls.Add(this.tbTrabajadores);
+            this.tcRuta.Controls.Add(this.tbEquipoTrabajo);
+            this.tcRuta.Controls.Add(this.tbPrograma);
             this.tcRuta.Location = new System.Drawing.Point(-1, 3);
             this.tcRuta.Name = "tcRuta";
             this.tcRuta.SelectedIndex = 0;
@@ -526,6 +556,228 @@
             this.pbQRTelcom.TabIndex = 8;
             this.pbQRTelcom.TabStop = false;
             // 
+            // tbEquipoTrabajo
+            // 
+            this.tbEquipoTrabajo.Controls.Add(this.btnCrearGrupo);
+            this.tbEquipoTrabajo.Controls.Add(this.pictureBox4);
+            this.tbEquipoTrabajo.Controls.Add(this.pictureBox3);
+            this.tbEquipoTrabajo.Controls.Add(this.comboBox3);
+            this.tbEquipoTrabajo.Controls.Add(this.lblChofer);
+            this.tbEquipoTrabajo.Controls.Add(this.cbAyudante5);
+            this.tbEquipoTrabajo.Controls.Add(this.cbAyudante4);
+            this.tbEquipoTrabajo.Controls.Add(this.cbAyudante3);
+            this.tbEquipoTrabajo.Controls.Add(this.cbAyudante2);
+            this.tbEquipoTrabajo.Controls.Add(this.cbAyudante1);
+            this.tbEquipoTrabajo.Controls.Add(this.lblAyudante);
+            this.tbEquipoTrabajo.Controls.Add(this.cbLiniero5);
+            this.tbEquipoTrabajo.Controls.Add(this.cbLiniero4);
+            this.tbEquipoTrabajo.Controls.Add(this.cbLiniero3);
+            this.tbEquipoTrabajo.Controls.Add(this.cbLiniero2);
+            this.tbEquipoTrabajo.Controls.Add(this.cbLiniero1);
+            this.tbEquipoTrabajo.Controls.Add(this.lblLinieros);
+            this.tbEquipoTrabajo.Controls.Add(this.cbJefeGrupo);
+            this.tbEquipoTrabajo.Controls.Add(this.lblJefeGrupo);
+            this.tbEquipoTrabajo.Location = new System.Drawing.Point(4, 22);
+            this.tbEquipoTrabajo.Name = "tbEquipoTrabajo";
+            this.tbEquipoTrabajo.Size = new System.Drawing.Size(792, 418);
+            this.tbEquipoTrabajo.TabIndex = 3;
+            this.tbEquipoTrabajo.Text = "Equipo de Trabajo";
+            this.tbEquipoTrabajo.UseVisualStyleBackColor = true;
+            // 
+            // lblJefeGrupo
+            // 
+            this.lblJefeGrupo.AutoSize = true;
+            this.lblJefeGrupo.Location = new System.Drawing.Point(45, 33);
+            this.lblJefeGrupo.Name = "lblJefeGrupo";
+            this.lblJefeGrupo.Size = new System.Drawing.Size(95, 13);
+            this.lblJefeGrupo.TabIndex = 0;
+            this.lblJefeGrupo.Text = "JEFE DE GRUPO:";
+            // 
+            // cbJefeGrupo
+            // 
+            this.cbJefeGrupo.FormattingEnabled = true;
+            this.cbJefeGrupo.Location = new System.Drawing.Point(146, 30);
+            this.cbJefeGrupo.Name = "cbJefeGrupo";
+            this.cbJefeGrupo.Size = new System.Drawing.Size(183, 21);
+            this.cbJefeGrupo.TabIndex = 1;
+            // 
+            // lblLinieros
+            // 
+            this.lblLinieros.AutoSize = true;
+            this.lblLinieros.Location = new System.Drawing.Point(80, 81);
+            this.lblLinieros.Name = "lblLinieros";
+            this.lblLinieros.Size = new System.Drawing.Size(60, 13);
+            this.lblLinieros.TabIndex = 2;
+            this.lblLinieros.Text = "LINIEROS:";
+            // 
+            // cbLiniero1
+            // 
+            this.cbLiniero1.FormattingEnabled = true;
+            this.cbLiniero1.Location = new System.Drawing.Point(147, 78);
+            this.cbLiniero1.Name = "cbLiniero1";
+            this.cbLiniero1.Size = new System.Drawing.Size(182, 21);
+            this.cbLiniero1.TabIndex = 3;
+            // 
+            // cbLiniero2
+            // 
+            this.cbLiniero2.FormattingEnabled = true;
+            this.cbLiniero2.Location = new System.Drawing.Point(146, 106);
+            this.cbLiniero2.Name = "cbLiniero2";
+            this.cbLiniero2.Size = new System.Drawing.Size(183, 21);
+            this.cbLiniero2.TabIndex = 4;
+            // 
+            // cbLiniero3
+            // 
+            this.cbLiniero3.FormattingEnabled = true;
+            this.cbLiniero3.Location = new System.Drawing.Point(146, 134);
+            this.cbLiniero3.Name = "cbLiniero3";
+            this.cbLiniero3.Size = new System.Drawing.Size(183, 21);
+            this.cbLiniero3.TabIndex = 5;
+            // 
+            // cbLiniero4
+            // 
+            this.cbLiniero4.FormattingEnabled = true;
+            this.cbLiniero4.Location = new System.Drawing.Point(146, 162);
+            this.cbLiniero4.Name = "cbLiniero4";
+            this.cbLiniero4.Size = new System.Drawing.Size(183, 21);
+            this.cbLiniero4.TabIndex = 6;
+            // 
+            // cbLiniero5
+            // 
+            this.cbLiniero5.FormattingEnabled = true;
+            this.cbLiniero5.Location = new System.Drawing.Point(147, 190);
+            this.cbLiniero5.Name = "cbLiniero5";
+            this.cbLiniero5.Size = new System.Drawing.Size(182, 21);
+            this.cbLiniero5.TabIndex = 7;
+            // 
+            // lblAyudante
+            // 
+            this.lblAyudante.AutoSize = true;
+            this.lblAyudante.Location = new System.Drawing.Point(65, 230);
+            this.lblAyudante.Name = "lblAyudante";
+            this.lblAyudante.Size = new System.Drawing.Size(76, 13);
+            this.lblAyudante.TabIndex = 8;
+            this.lblAyudante.Text = "AYUDANTES:";
+            // 
+            // cbAyudante1
+            // 
+            this.cbAyudante1.FormattingEnabled = true;
+            this.cbAyudante1.Location = new System.Drawing.Point(147, 230);
+            this.cbAyudante1.Name = "cbAyudante1";
+            this.cbAyudante1.Size = new System.Drawing.Size(183, 21);
+            this.cbAyudante1.TabIndex = 9;
+            // 
+            // cbAyudante2
+            // 
+            this.cbAyudante2.FormattingEnabled = true;
+            this.cbAyudante2.Location = new System.Drawing.Point(147, 258);
+            this.cbAyudante2.Name = "cbAyudante2";
+            this.cbAyudante2.Size = new System.Drawing.Size(183, 21);
+            this.cbAyudante2.TabIndex = 10;
+            // 
+            // cbAyudante3
+            // 
+            this.cbAyudante3.FormattingEnabled = true;
+            this.cbAyudante3.Location = new System.Drawing.Point(147, 286);
+            this.cbAyudante3.Name = "cbAyudante3";
+            this.cbAyudante3.Size = new System.Drawing.Size(183, 21);
+            this.cbAyudante3.TabIndex = 11;
+            // 
+            // cbAyudante4
+            // 
+            this.cbAyudante4.FormattingEnabled = true;
+            this.cbAyudante4.Location = new System.Drawing.Point(147, 314);
+            this.cbAyudante4.Name = "cbAyudante4";
+            this.cbAyudante4.Size = new System.Drawing.Size(183, 21);
+            this.cbAyudante4.TabIndex = 12;
+            // 
+            // cbAyudante5
+            // 
+            this.cbAyudante5.FormattingEnabled = true;
+            this.cbAyudante5.Location = new System.Drawing.Point(147, 342);
+            this.cbAyudante5.Name = "cbAyudante5";
+            this.cbAyudante5.Size = new System.Drawing.Size(183, 21);
+            this.cbAyudante5.TabIndex = 13;
+            // 
+            // lblChofer
+            // 
+            this.lblChofer.AutoSize = true;
+            this.lblChofer.Location = new System.Drawing.Point(68, 382);
+            this.lblChofer.Name = "lblChofer";
+            this.lblChofer.Size = new System.Drawing.Size(54, 13);
+            this.lblChofer.TabIndex = 14;
+            this.lblChofer.Text = "CHOFER:";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(146, 382);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(183, 21);
+            this.comboBox3.TabIndex = 15;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(429, 30);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(290, 129);
+            this.pictureBox3.TabIndex = 16;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(429, 178);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(290, 117);
+            this.pictureBox4.TabIndex = 17;
+            this.pictureBox4.TabStop = false;
+            // 
+            // btnCrearGrupo
+            // 
+            this.btnCrearGrupo.Location = new System.Drawing.Point(461, 327);
+            this.btnCrearGrupo.Name = "btnCrearGrupo";
+            this.btnCrearGrupo.Size = new System.Drawing.Size(235, 49);
+            this.btnCrearGrupo.TabIndex = 18;
+            this.btnCrearGrupo.Text = "CREAR GRUPO DE TRABAJO";
+            this.btnCrearGrupo.UseVisualStyleBackColor = true;
+            // 
+            // tbPrograma
+            // 
+            this.tbPrograma.Controls.Add(this.label3);
+            this.tbPrograma.Controls.Add(this.dtpFechaTrabajo);
+            this.tbPrograma.Controls.Add(this.lblFechaTrabajo);
+            this.tbPrograma.Location = new System.Drawing.Point(4, 22);
+            this.tbPrograma.Name = "tbPrograma";
+            this.tbPrograma.Size = new System.Drawing.Size(792, 418);
+            this.tbPrograma.TabIndex = 4;
+            this.tbPrograma.Text = "Programa";
+            this.tbPrograma.UseVisualStyleBackColor = true;
+            // 
+            // lblFechaTrabajo
+            // 
+            this.lblFechaTrabajo.AutoSize = true;
+            this.lblFechaTrabajo.Location = new System.Drawing.Point(53, 51);
+            this.lblFechaTrabajo.Name = "lblFechaTrabajo";
+            this.lblFechaTrabajo.Size = new System.Drawing.Size(115, 13);
+            this.lblFechaTrabajo.TabIndex = 0;
+            this.lblFechaTrabajo.Text = "FECHA DE TRABAJO:";
+            // 
+            // dtpFechaTrabajo
+            // 
+            this.dtpFechaTrabajo.Location = new System.Drawing.Point(174, 45);
+            this.dtpFechaTrabajo.Name = "dtpFechaTrabajo";
+            this.dtpFechaTrabajo.Size = new System.Drawing.Size(224, 20);
+            this.dtpFechaTrabajo.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(56, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "label3";
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,7 +785,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tcRuta);
             this.Name = "Principal";
-            this.Text = "Principal";
+            this.Text = "Coordinación";
             this.tcRuta.ResumeLayout(false);
             this.tbRuta.ResumeLayout(false);
             this.tbRuta.PerformLayout();
@@ -547,6 +799,12 @@
             this.tbTrabajadores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbQRTelcom)).EndInit();
+            this.tbEquipoTrabajo.ResumeLayout(false);
+            this.tbEquipoTrabajo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.tbPrograma.ResumeLayout(false);
+            this.tbPrograma.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -600,5 +858,29 @@
         private System.Windows.Forms.Label lblEmpresa;
         private System.Windows.Forms.TextBox txtNombreTrabajador;
         private System.Windows.Forms.Label lblNombreTrabajador;
+        private System.Windows.Forms.TabPage tbEquipoTrabajo;
+        private System.Windows.Forms.Button btnCrearGrupo;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label lblChofer;
+        private System.Windows.Forms.ComboBox cbAyudante5;
+        private System.Windows.Forms.ComboBox cbAyudante4;
+        private System.Windows.Forms.ComboBox cbAyudante3;
+        private System.Windows.Forms.ComboBox cbAyudante2;
+        private System.Windows.Forms.ComboBox cbAyudante1;
+        private System.Windows.Forms.Label lblAyudante;
+        private System.Windows.Forms.ComboBox cbLiniero5;
+        private System.Windows.Forms.ComboBox cbLiniero4;
+        private System.Windows.Forms.ComboBox cbLiniero3;
+        private System.Windows.Forms.ComboBox cbLiniero2;
+        private System.Windows.Forms.ComboBox cbLiniero1;
+        private System.Windows.Forms.Label lblLinieros;
+        private System.Windows.Forms.ComboBox cbJefeGrupo;
+        private System.Windows.Forms.Label lblJefeGrupo;
+        private System.Windows.Forms.TabPage tbPrograma;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtpFechaTrabajo;
+        private System.Windows.Forms.Label lblFechaTrabajo;
     }
 }
