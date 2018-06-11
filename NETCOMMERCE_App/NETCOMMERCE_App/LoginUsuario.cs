@@ -8,10 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
-using System.Text;
 using CapaDatos;
 using CapaNegocios;
-using System.Data;
 
 
 namespace NETCOMMERCE_App
@@ -60,14 +58,24 @@ namespace NETCOMMERCE_App
             {
                 if (usuario.Rolempresa == "Coordinador")
                 {
-                    Se
+                    Principal principal = new Principal();
+                    principal.Show();
+
+                    this.Hide();
                 }
-
-
+                else
+                    MessageBox.Show("Usuario o Contraseñas incorrectos");
 
             }
 
 
+        }
+
+
+        private void btnNuevoUsuario_Click(object sender, EventArgs e)
+        {
+            IngresarUsuario nuevousuario = new IngresarUsuario();
+            nuevousuario.Show();
         }
     }
 }

@@ -38,6 +38,7 @@
             this.lblLoginUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbRolEmpresa = new System.Windows.Forms.ComboBox();
+            this.btnNuevoUsuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PBNetcommerce)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +87,7 @@
             // 
             // pbQR
             // 
-            this.pbQR.Location = new System.Drawing.Point(441, 228);
+            this.pbQR.Location = new System.Drawing.Point(441, 239);
             this.pbQR.Name = "pbQR";
             this.pbQR.Size = new System.Drawing.Size(298, 146);
             this.pbQR.TabIndex = 5;
@@ -94,9 +95,9 @@
             // 
             // btnIngresarLogin
             // 
-            this.btnIngresarLogin.Location = new System.Drawing.Point(165, 307);
+            this.btnIngresarLogin.Location = new System.Drawing.Point(165, 294);
             this.btnIngresarLogin.Name = "btnIngresarLogin";
-            this.btnIngresarLogin.Size = new System.Drawing.Size(129, 34);
+            this.btnIngresarLogin.Size = new System.Drawing.Size(137, 36);
             this.btnIngresarLogin.TabIndex = 6;
             this.btnIngresarLogin.Text = "Ingresar";
             this.btnIngresarLogin.UseVisualStyleBackColor = true;
@@ -130,11 +131,22 @@
             this.cbRolEmpresa.Size = new System.Drawing.Size(165, 21);
             this.cbRolEmpresa.TabIndex = 9;
             // 
+            // btnNuevoUsuario
+            // 
+            this.btnNuevoUsuario.Location = new System.Drawing.Point(165, 353);
+            this.btnNuevoUsuario.Name = "btnNuevoUsuario";
+            this.btnNuevoUsuario.Size = new System.Drawing.Size(137, 41);
+            this.btnNuevoUsuario.TabIndex = 10;
+            this.btnNuevoUsuario.Text = "Ingresar Nuevo Usuario";
+            this.btnNuevoUsuario.UseVisualStyleBackColor = true;
+            this.btnNuevoUsuario.Click += new System.EventHandler(this.btnNuevoUsuario_Click);
+            // 
             // LoginUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnNuevoUsuario);
             this.Controls.Add(this.cbRolEmpresa);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblLoginUsuario);
@@ -166,5 +178,6 @@
         private System.Windows.Forms.Label lblLoginUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbRolEmpresa;
+        private System.Windows.Forms.Button btnNuevoUsuario;
     }
 }
