@@ -47,7 +47,7 @@
             // 
             this.lblIngresarUsuario.AutoSize = true;
             this.lblIngresarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIngresarUsuario.Location = new System.Drawing.Point(33, 45);
+            this.lblIngresarUsuario.Location = new System.Drawing.Point(34, 56);
             this.lblIngresarUsuario.Name = "lblIngresarUsuario";
             this.lblIngresarUsuario.Size = new System.Drawing.Size(329, 46);
             this.lblIngresarUsuario.TabIndex = 0;
@@ -57,7 +57,7 @@
             // 
             this.lblNombreUsuario.AutoSize = true;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreUsuario.Location = new System.Drawing.Point(71, 153);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(72, 164);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(115, 13);
             this.lblNombreUsuario.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             // txtNombreUsuario
             // 
-            this.txtNombreUsuario.Location = new System.Drawing.Point(192, 150);
+            this.txtNombreUsuario.Location = new System.Drawing.Point(193, 161);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(179, 20);
             this.txtNombreUsuario.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(121, 206);
+            this.lblPassword.Location = new System.Drawing.Point(122, 217);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(65, 13);
             this.lblPassword.TabIndex = 3;
@@ -82,7 +82,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(192, 206);
+            this.txtPassword.Location = new System.Drawing.Point(193, 217);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(179, 20);
             this.txtPassword.TabIndex = 4;
@@ -91,7 +91,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(86, 261);
+            this.label1.Location = new System.Drawing.Point(87, 272);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 13);
             this.label1.TabIndex = 5;
@@ -100,14 +100,14 @@
             // cbRolEmpresa
             // 
             this.cbRolEmpresa.FormattingEnabled = true;
-            this.cbRolEmpresa.Location = new System.Drawing.Point(193, 261);
+            this.cbRolEmpresa.Location = new System.Drawing.Point(194, 272);
             this.cbRolEmpresa.Name = "cbRolEmpresa";
             this.cbRolEmpresa.Size = new System.Drawing.Size(142, 21);
             this.cbRolEmpresa.TabIndex = 6;
             // 
             // btnIngresoUsuario
             // 
-            this.btnIngresoUsuario.Location = new System.Drawing.Point(74, 341);
+            this.btnIngresoUsuario.Location = new System.Drawing.Point(75, 352);
             this.btnIngresoUsuario.Name = "btnIngresoUsuario";
             this.btnIngresoUsuario.Size = new System.Drawing.Size(152, 24);
             this.btnIngresoUsuario.TabIndex = 7;
@@ -116,7 +116,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(254, 341);
+            this.btnCancelar.Location = new System.Drawing.Point(255, 352);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(129, 24);
             this.btnCancelar.TabIndex = 8;
@@ -125,7 +125,7 @@
             // 
             // pbNetcommerce
             // 
-            this.pbNetcommerce.Location = new System.Drawing.Point(460, 45);
+            this.pbNetcommerce.Location = new System.Drawing.Point(461, 56);
             this.pbNetcommerce.Name = "pbNetcommerce";
             this.pbNetcommerce.Size = new System.Drawing.Size(287, 142);
             this.pbNetcommerce.TabIndex = 9;
@@ -133,7 +133,7 @@
             // 
             // pbQR
             // 
-            this.pbQR.Location = new System.Drawing.Point(460, 211);
+            this.pbQR.Location = new System.Drawing.Point(461, 222);
             this.pbQR.Name = "pbQR";
             this.pbQR.Size = new System.Drawing.Size(287, 154);
             this.pbQR.TabIndex = 10;

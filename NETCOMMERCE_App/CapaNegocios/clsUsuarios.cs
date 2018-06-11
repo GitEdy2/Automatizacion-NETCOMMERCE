@@ -11,23 +11,14 @@ namespace CapaNegocios
         private int idUsuario;
         private string nombreusuario;
         private string passwordusuario;
-
-        private int idrolempresa;
-        private int idregistroingresos;
-
-        private int registroingresosid;
+        private string rolempresa;       
         private DateTime fechaingresoregistro;
-
 
 
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
         public string Nombreusuario { get => nombreusuario; set => nombreusuario = value; }
         public string Passwordusuario { get => passwordusuario; set => passwordusuario = value; }
-
-        public int Idrolempresa { get => idrolempresa; set => idrolempresa = value; }
-        public int Idregistroingresos { get => idregistroingresos; set => idregistroingresos = value; }
-
-        public int Registroingresosid { get => registroingresosid; set => registroingresosid = value; }
+        public string Rolempresa { get => rolempresa; set => rolempresa = value; }
         public DateTime Fechaingresoregistro { get => fechaingresoregistro; set => fechaingresoregistro = value; }
     }
 }
