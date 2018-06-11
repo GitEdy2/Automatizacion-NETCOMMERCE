@@ -51,6 +51,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IngresarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresarUsuario.Designer.cs">
+      <DependentUpon>IngresarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="IngresarUsuario.resx">
+      <DependentUpon>IngresarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginUsuario.resx">
       <DependentUpon>LoginUsuario.cs</DependentUpon>
     </EmbeddedResource>

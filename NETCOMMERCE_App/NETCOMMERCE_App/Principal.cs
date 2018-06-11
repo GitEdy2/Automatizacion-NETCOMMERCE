@@ -24,9 +24,8 @@ namespace NETCOMMERCE_App
 
         clsDetalleTrabajo trabajo = new clsDetalleTrabajo();
         clsDatosDetalleTrabajo dtstrabajo = new clsDatosDetalleTrabajo();
-        
-        
 
+        
 
         private void btnCrearRuta_Click(object sender, EventArgs e)
         {

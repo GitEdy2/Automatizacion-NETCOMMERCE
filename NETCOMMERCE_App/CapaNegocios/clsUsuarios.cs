@@ -16,7 +16,7 @@ namespace CapaNegocios
         private int idregistroingresos;
 
         private int registroingresosid;
-        private string fechaingresoregistro;
+        private DateTime fechaingresoregistro;
 
 
 
@@ -28,6 +28,6 @@ namespace CapaNegocios
         public int Idregistroingresos { get => idregistroingresos; set => idregistroingresos = value; }
 
         public int Registroingresosid { get => registroingresosid; set => registroingresosid = value; }
-        public string Fechaingresoregistro { get => fechaingresoregistro; set => fechaingresoregistro = value; }
+        public DateTime Fechaingresoregistro { get => fechaingresoregistro; set => fechaingresoregistro = value; }
     }
 }

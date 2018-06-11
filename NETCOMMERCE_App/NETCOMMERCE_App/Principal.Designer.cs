@@ -245,6 +245,30 @@
             // cbProvincia
             // 
             this.cbProvincia.FormattingEnabled = true;
+            this.cbProvincia.Items.AddRange(new object[] {
+            "CARCHI",
+            "IMBABURA",
+            "PICHINCHA",
+            "COTOPAXI ",
+            "TUNGURAHUA",
+            "BOLIVAR",
+            "CHIMBORAZO",
+            "CAÑAR",
+            "AZUAY",
+            "LOJA",
+            "SANTO DOMINGO DE LOS TSACHILAS",
+            "SUCUMBIOS",
+            "NAPO",
+            "PASTAZA",
+            "ORELLANA",
+            "MORONA SANTIAGO",
+            "ZAMORA CHINCHIPE",
+            "ESMERALDAS",
+            "MANABI ",
+            "GUAYAS",
+            "LOS RIOS",
+            "EL ORO",
+            "SANATA ELENA"});
             this.cbProvincia.Location = new System.Drawing.Point(151, 127);
             this.cbProvincia.Name = "cbProvincia";
             this.cbProvincia.Size = new System.Drawing.Size(155, 21);
