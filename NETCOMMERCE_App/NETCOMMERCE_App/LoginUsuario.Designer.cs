@@ -54,8 +54,10 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(165, 239);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(165, 20);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // lblUsuario
             // 
@@ -126,6 +128,8 @@
             // cbRolEmpresa
             // 
             this.cbRolEmpresa.FormattingEnabled = true;
+            this.cbRolEmpresa.Items.AddRange(new object[] {
+            "COORDINADOR"});
             this.cbRolEmpresa.Location = new System.Drawing.Point(165, 145);
             this.cbRolEmpresa.Name = "cbRolEmpresa";
             this.cbRolEmpresa.Size = new System.Drawing.Size(165, 21);

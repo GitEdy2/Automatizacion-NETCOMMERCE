@@ -84,8 +84,10 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(193, 217);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(179, 20);
             this.txtPassword.TabIndex = 4;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -100,6 +102,8 @@
             // cbRolEmpresa
             // 
             this.cbRolEmpresa.FormattingEnabled = true;
+            this.cbRolEmpresa.Items.AddRange(new object[] {
+            "COORDINADOR"});
             this.cbRolEmpresa.Location = new System.Drawing.Point(194, 272);
             this.cbRolEmpresa.Name = "cbRolEmpresa";
             this.cbRolEmpresa.Size = new System.Drawing.Size(142, 21);
@@ -113,6 +117,7 @@
             this.btnIngresoUsuario.TabIndex = 7;
             this.btnIngresoUsuario.Text = "Ingresar Usuario";
             this.btnIngresoUsuario.UseVisualStyleBackColor = true;
+            this.btnIngresoUsuario.Click += new System.EventHandler(this.btnIngresoUsuario_Click);
             // 
             // btnCancelar
             // 
@@ -122,6 +127,7 @@
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // pbNetcommerce
             // 

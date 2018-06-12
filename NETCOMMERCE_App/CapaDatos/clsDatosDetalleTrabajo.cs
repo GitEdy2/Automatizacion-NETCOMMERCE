@@ -19,7 +19,7 @@ namespace CapaDatos
 
         public clsDatosDetalleTrabajo()
         {
-            cadenaConexion = ConfigurationManager.ConnectionStrings["cadenaConexion"].ConnectionString;
+            cadenaConexion = ConfigurationManager.ConnectionStrings["protocol=Socket;server=localhost;port=3306;user id=root;persistsecurityinfo=True;database=dbcoordinacion;sslmode=Prefered;certificatestorelocation=None;compress=False;allowuservariables=True;allowzerodatetime=False;Integrated Security=False;treattinyasboolean=False;defaultcommandtimeout=30;connectiontimeout=60"].ConnectionString;
         }
 
 

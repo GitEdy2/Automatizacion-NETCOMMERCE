@@ -16,11 +16,12 @@ namespace NETCOMMERCE_App
 {
     public partial class LoginUsuario : Form
     {
+        clsConexionBD conDB = new clsConexionBD();
+
         public LoginUsuario()
         {
             InitializeComponent();
         }
-
 
         string strusuario;
         public DataRow fila;
@@ -56,8 +57,9 @@ namespace NETCOMMERCE_App
 
             if (dtsusuario.Autenticar(usuario.Nombreusuario, Helper.EncodePassword(txtPassword.Text), usuario.Rolempresa) > 0)
             {
-                if (usuario.Rolempresa == "Coordinador")
+                if (usuario.Rolempresa == "COORDINADOR")
                 {
+
                     Principal principal = new Principal();
                     principal.Show();
 
