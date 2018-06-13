@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
-using System.Text;
 using CapaNegocios;
 using CapaDatos;
 
@@ -46,7 +45,7 @@ namespace NETCOMMERCE_App
   
             usuario.Nombreusuario = txtNombreUsuario.Text;
             usuario.Passwordusuario = Helper.EncodePassword(txtPassword.Text);
-            usuario.Rolempresa = cbRolEmpresa.SelectedText.ToString();
+            usuario.Rolempresa = cbRolEmpresa.SelectedItem.ToString();
 
             bool exito = dtsUsuario.IngresarUsuario(usuario);
 
@@ -54,28 +53,17 @@ namespace NETCOMMERCE_App
             {
                 MessageBox.Show("Usuario Ingresado Exitosamente");
                 this.Hide();
-
-                Principal principal = new Principal();
-                principal.Show();
-
             }
             else
             {
                 MessageBox.Show("Error,Usuario no Ingresado");
             }
-
-
-
             
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
-
-            Principal principal = new Principal();
-            principal.Show();
-
         }
     }
 }

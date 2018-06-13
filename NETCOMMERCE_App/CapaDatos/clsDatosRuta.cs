@@ -14,22 +14,29 @@ namespace CapaDatos
 {
     public class clsDatosRuta
     {
-        private string cadenaConexion;
-        
+        //private string cadenaConexion;
+
+        /*
         public clsDatosRuta()
         {
             cadenaConexion = ConfigurationManager.ConnectionStrings["protocol=Socket;server=localhost;port=3306;user id=root;persistsecurityinfo=True;database=dbcoordinacion;sslmode=Prefered;certificatestorelocation=None;compress=False;allowuservariables=True;allowzerodatetime=False;Integrated Security=False;treattinyasboolean=False;defaultcommandtimeout=30;connectiontimeout=60"].ConnectionString;
         }
+        */
+
+        clsConexionBD conBD = new clsConexionBD();
 
 
         public List<clsRuta> ListarRutas()
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
-            MySqlCommand cmd = new MySqlCommand("select * from tbl_DetalleRuta", con);
+            //MySqlConnection con = new MySqlConnection(con);
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_DetalleRuta", conBD.ConexionBaseDatos());
       
             List<clsRuta> listaruta = new List<clsRuta>();
 
-            con.Open();
+            conBD.AbrirConexion();
+            conBD.ConexionBaseDatos().Open();
+
+
             MySqlDataReader lector = cmd.ExecuteReader();
 
             while (lector.Read())
@@ -46,7 +53,8 @@ namespace CapaDatos
                 listaruta.Add(ruta);
             }
 
-            con.Close();
+            conBD.CerrarConexion();
+            conBD.ConexionBaseDatos().Close();
 
             return listaruta;          
         }
@@ -54,10 +62,20 @@ namespace CapaDatos
 
         public bool IngresarRuta(clsRuta Ruta)
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
+
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
 
             MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleRuta(idtbl_DetalleRuta,nombre_ruta,cliente_ruta,provincia_ruta,canton_ruta,parroquia_ruta,referencia_ruta)" +
-                                                "values(@idruta,@nombreruta,@clienteruta,@provinciaruta,@cantonruta,@parroquiaruta,@referenciaruta)", con);
+                                                "values(@idruta,@nombreruta,@clienteruta,@provinciaruta,@cantonruta,@parroquiaruta,@referenciaruta)", conBD.ConexionBaseDatos());
 
             cmd.Parameters.Add("@idruta", MySqlDbType.Int32).Value = Ruta.Idruta;
             cmd.Parameters.Add("@nombreruta", MySqlDbType.VarChar).Value = Ruta.Nombreruta;
@@ -67,7 +85,8 @@ namespace CapaDatos
             cmd.Parameters.Add("@parroquiaruta", MySqlDbType.VarChar).Value = Ruta.Parroquiaruta;
             cmd.Parameters.Add("@referenciaruta", MySqlDbType.VarChar).Value = Ruta.Referenciaruta;
 
-            con.Open();
+            conBD.AbrirConexion();
+            conBD.ConexionBaseDatos().Open();
 
             int exito = cmd.ExecuteNonQuery();
 
@@ -84,7 +103,16 @@ namespace CapaDatos
 
         public DataRow BuscarCliente (string nombreruta)
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
 
             MySqlDataAdapter da;
 
@@ -93,7 +121,7 @@ namespace CapaDatos
             try
             {
                 string mysql = "select nombreruta,cliente_ruta,provincia_ruta,canton_ruta,parroquia_ruta from tbl_DetalleRuta where nombre_ruta =" +nombreruta;
-                da = new MySqlDataAdapter(mysql, con);
+                da = new MySqlDataAdapter(mysql, conBD.ConexionBaseDatos());
 
                 da.Fill(ds, "tbl_DetalleRuta");
                 da.FillSchema(ds.Tables[0], SchemaType.Mapped);
@@ -108,7 +136,9 @@ namespace CapaDatos
             }
             finally
             {
-                con.Close();
+                conBD.ConexionBaseDatos().Close();
+                conBD.CerrarConexion();
+                //conBD.Close();
             }
         }
     }

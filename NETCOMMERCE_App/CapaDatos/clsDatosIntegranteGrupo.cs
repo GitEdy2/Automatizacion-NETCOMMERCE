@@ -14,22 +14,31 @@ namespace CapaDatos
 {
     public class clsDatosIntegranteGrupo
     {
-        private string cadenaConexion;
+        //private string cadenaConexion;
 
+        /*
         public clsDatosIntegranteGrupo()
         {
             cadenaConexion = ConfigurationManager.ConnectionStrings["protocol=Socket;server=localhost;port=3306;user id=root;persistsecurityinfo=True;database=dbcoordinacion;sslmode=Prefered;certificatestorelocation=None;compress=False;allowuservariables=True;allowzerodatetime=False;Integrated Security=False;treattinyasboolean=False;defaultcommandtimeout=30;connectiontimeout=60"].ConnectionString;
         }
+        */
 
+        clsConexionBD conBD = new clsConexionBD();
 
         public List<clsIntegranteGrupo> ListarIntegrantesGrupo()
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
-            MySqlCommand cmd = new MySqlCommand("select * from tbl_IntegranteGrupo", con);
+            //MySqlConnection con = new MySqlConnection(cadenaConexion);
+
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_IntegranteGrupo", conBD.ConexionBaseDatos());
 
             List<clsIntegranteGrupo> listaintegrantes = new List<clsIntegranteGrupo>();
 
-            con.Open();
+
+            conBD.AbrirConexion();
+            conBD.ConexionBaseDatos().Close();
+            //con.Open();
+
+
             MySqlDataReader lector = cmd.ExecuteReader();
 
             while (lector.Read())
@@ -44,7 +53,9 @@ namespace CapaDatos
                 listaintegrantes.Add(integrante);              
             }
 
-            con.Close();
+            conBD.CerrarConexion();
+            conBD.ConexionBaseDatos().Close();
+            //con.Close();
 
             return listaintegrantes;
         }
@@ -52,14 +63,17 @@ namespace CapaDatos
 
         public bool IngresarTipoIntegrante (clsIntegranteGrupo tipointegrante)
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
+            //MySqlConnection con = new MySqlConnection(cadenaConexion);
+
             MySqlCommand cmd = new MySqlCommand("insert into tbl_TipoIntegrante(idtbl_TipoIntegrante,descripcion_tipointegrante)" +
-                                                "values(@tipointegranteid,@descripciontipointegrante)", con);
+                                                "values(@tipointegranteid,@descripciontipointegrante)", conBD.ConexionBaseDatos());
 
             cmd.Parameters.Add("@tipointegranteid", MySqlDbType.Int32).Value = tipointegrante.Idtipointegrante;
             cmd.Parameters.Add("@descripciontipointegrante", MySqlDbType.VarChar).Value = tipointegrante.Descripciontipointegrante;
 
-            con.Open();
+            conBD.AbrirConexion();
+            conBD.ConexionBaseDatos().Open();
+            //con.Open();
 
             int exito = cmd.ExecuteNonQuery();
 
@@ -78,16 +92,19 @@ namespace CapaDatos
 
         public bool IngresarIntegranteGrupo (clsIntegranteGrupo integrante)
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
+            //MySqlConnection con = new MySqlConnection(cadenaConexion);
+
             MySqlCommand cmd = new MySqlCommand("insert into tbl_IntegranteGrupo(idtbl_IntegranteGrupo,nombre_integrantegrupo,tbl_TipoIntegranteGrupo_id)" +
-                                                "values(@integranteid,@nombreintegrante,@tipointegrante)", con);
+                                                "values(@integranteid,@nombreintegrante,@tipointegrante)", conBD.ConexionBaseDatos());
 
             cmd.Parameters.Add("@integranteid", MySqlDbType.Int32).Value = integrante.Idintegrantegrupo;
             cmd.Parameters.Add("@nombreintegrante", MySqlDbType.VarChar).Value = integrante.Nombreintegrantegrupo;
 
             cmd.Parameters.Add("@tipointegrante", MySqlDbType.Int32).Value = integrante.Idtipointegrante;
 
-            con.Open();
+            conBD.AbrirConexion();
+            conBD.ConexionBaseDatos().Open();
+            //con.Open();
 
             int exito = cmd.ExecuteNonQuery();
 

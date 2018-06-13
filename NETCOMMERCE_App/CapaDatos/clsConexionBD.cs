@@ -47,6 +47,7 @@ namespace CapaDatos
             try
             {              
                 if (conBD.State == ConnectionState.Closed)
+
                     conBD.Open();
 
                 return true;

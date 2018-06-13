@@ -14,23 +14,30 @@ namespace CapaDatos
 {
     public class clsDatosDetalleTrabajo
     {
-        private string cadenaConexion;
+        //private string cadenaConexion;
 
-
+        /*
         public clsDatosDetalleTrabajo()
         {
             cadenaConexion = ConfigurationManager.ConnectionStrings["protocol=Socket;server=localhost;port=3306;user id=root;persistsecurityinfo=True;database=dbcoordinacion;sslmode=Prefered;certificatestorelocation=None;compress=False;allowuservariables=True;allowzerodatetime=False;Integrated Security=False;treattinyasboolean=False;defaultcommandtimeout=30;connectiontimeout=60"].ConnectionString;
         }
+        */
+
+        clsConexionBD conBD = new clsConexionBD();
 
 
         public List<clsDetalleTrabajo> ListarTrabajos()
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
-            MySqlCommand cmd = new MySqlCommand("select * from tbl_DetalleTrabajo", con);
+            //MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_DetalleTrabajo", conBD.ConexionBaseDatos());
 
             List<clsDetalleTrabajo> listatrabajos = new List<clsDetalleTrabajo>();
 
-            con.Open();
+            conBD.AbrirConexion();
+            conBD.ConexionBaseDatos().Open();
+            //con.Open();
+
+
             MySqlDataReader lector = cmd.ExecuteReader();
 
             while(lector.Read())
@@ -46,19 +53,27 @@ namespace CapaDatos
                 listatrabajos.Add(trabajo);                
             }
 
-            con.Close();
+            conBD.CerrarConexion();
+            conBD.ConexionBaseDatos().Close();
+            //con.Close();
 
             return listatrabajos;
         }
 
+
         public List<clsDetalleTrabajo> ListarTipoTrabajos()
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
-            MySqlCommand cmd = new MySqlCommand("select * from tbl_TipoTrabajo", con);
+            //MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_TipoTrabajo", conBD.ConexionBaseDatos());
 
             List<clsDetalleTrabajo> listatipotrabajos = new List<clsDetalleTrabajo>();
 
-            con.Open();
+
+            conBD.AbrirConexion();
+            conBD.ConexionBaseDatos().Open();
+            //con.Open();
+
+
             MySqlDataReader lector = cmd.ExecuteReader();
 
             while (lector.Read())
@@ -72,7 +87,9 @@ namespace CapaDatos
                 listatipotrabajos.Add(tipotrabajo);
             }
 
-            con.Close();
+            conBD.CerrarConexion();
+            conBD.ConexionBaseDatos().Close();
+            //con.Close();
 
             return listatipotrabajos;
         }
@@ -80,12 +97,16 @@ namespace CapaDatos
 
         public List<clsDetalleTrabajo> ListarFibra()
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
-            MySqlCommand cmd = new MySqlCommand("select * from tbl_Fibra", con);
+            //MySqlConnection con = new MySqlConnection(cadenaConexion);
+
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_Fibra", conBD.ConexionBaseDatos());
 
             List<clsDetalleTrabajo> listafibra = new List<clsDetalleTrabajo>();
 
-            con.Open();
+            conBD.AbrirConexion();
+            conBD.ConexionBaseDatos().Open();
+            //con.Open();
+
             MySqlDataReader lector = cmd.ExecuteReader();
 
             while (lector.Read())
@@ -99,7 +120,9 @@ namespace CapaDatos
                 listafibra.Add(fibra);
             }
 
-            con.Close();
+            conBD.CerrarConexion();
+            conBD.ConexionBaseDatos().Close();
+            //con.Close();
 
             return listafibra;
         }
@@ -107,12 +130,16 @@ namespace CapaDatos
 
         public List<clsDetalleTrabajo> ListarRetenidas()
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
-            MySqlCommand cmd = new MySqlCommand("select * from tbl_KitsRetenidas", con);
+            //MySqlConnection con = new MySqlConnection(cadenaConexion);
+
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_KitsRetenidas", conBD.ConexionBaseDatos());
 
             List<clsDetalleTrabajo> listaretenidas = new List<clsDetalleTrabajo>();
 
-            con.Open();
+            conBD.AbrirConexion();
+            conBD.ConexionBaseDatos().Open();
+            //con.Open();
+
             MySqlDataReader lector = cmd.ExecuteReader();
 
             while (lector.Read())
@@ -126,7 +153,9 @@ namespace CapaDatos
                 listaretenidas.Add(retenidas);
             }
 
-            con.Close();
+            conBD.CerrarConexion();
+            conBD.ConexionBaseDatos().Close();
+            //con.Close();
 
             return listaretenidas;
         }
@@ -134,12 +163,16 @@ namespace CapaDatos
 
         public List<clsDetalleTrabajo> ListarPostes()
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
-            MySqlCommand cmd = new MySqlCommand("select * from tbl_KitsRetenidas", con);
+            //MySqlConnection con = new MySqlConnection(cadenaConexion);
+
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_KitsRetenidas", conBD.ConexionBaseDatos());
 
             List<clsDetalleTrabajo> listarpostes = new List<clsDetalleTrabajo>();
 
-            con.Open();
+            conBD.AbrirConexion();
+            conBD.ConexionBaseDatos().Open();
+            //con.Open();
+
             MySqlDataReader lector = cmd.ExecuteReader();
 
             while (lector.Read())
@@ -153,7 +186,9 @@ namespace CapaDatos
                 listarpostes.Add(postes);
             }
 
-            con.Close();
+            conBD.CerrarConexion();
+            conBD.ConexionBaseDatos().Close();
+            //con.Close();
 
             return listarpostes;
         }
@@ -161,7 +196,17 @@ namespace CapaDatos
 
         public bool IngresarDetalleTrabajo(clsDetalleTrabajo trabajo)
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+
             MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(idtbl_DetalleTrabajo,tbl_Fibra_id,tbl_KitsRetenida_id,tbl_Postes_id,tbl_TipoTrabajo_id)" +
                                                 "values(@trabajoid,@fibraid,@retenidasid,@postesid,@tipotrabajoid)", con);
 
@@ -188,7 +233,17 @@ namespace CapaDatos
 
         public bool IngresarTipoTrabajo(clsDetalleTrabajo tipotrabajo)
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+
             MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(idtbl_TipoTrabajo,descripcion_tipotrabajo,descripcion2_tipotrabajo)" +
                                                 "values(@tipotrabajoid,@descripcion1,@descripcion2)", con);
 
@@ -196,7 +251,6 @@ namespace CapaDatos
             cmd.Parameters.Add("@descripcion1", MySqlDbType.VarChar).Value = tipotrabajo.Descripcion1tipotrabajo;
             cmd.Parameters.Add("@descripcion2", MySqlDbType.VarChar).Value = tipotrabajo.Descripcion2tipotrabajo;
             
-
             con.Open();
 
             int exito = cmd.ExecuteNonQuery();
@@ -214,14 +268,23 @@ namespace CapaDatos
 
         public bool IngresarFibra(clsDetalleTrabajo fibra)
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+
             MySqlCommand cmd = new MySqlCommand("insert into tbl_Fibra(idtbl_Fibra,detalle_fibra,metros_fibra)" +
                                                 "values(@fibraid,@detallefibra,@metrosfibra)", con);
 
             cmd.Parameters.Add("@fibraid", MySqlDbType.Int32).Value = fibra.Fibraid;
             cmd.Parameters.Add("@detallefibra", MySqlDbType.VarChar).Value = fibra.Detallefibra;
             cmd.Parameters.Add("@metrosfibra", MySqlDbType.Int32).Value = fibra.Metrosfibra;
-
 
             con.Open();
 
@@ -239,7 +302,17 @@ namespace CapaDatos
 
         public bool IngresarPostes(clsDetalleTrabajo postes)
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+
             MySqlCommand cmd = new MySqlCommand("insert into tbl_Postes(idtbl_Postes,detalle_postes,numero_postes)" +
                                                 "values(@postesid,@detallepostes,@numeropostes)", con);
 
@@ -265,7 +338,17 @@ namespace CapaDatos
 
         public bool IngresarRetenidas(clsDetalleTrabajo retenidas)
         {
-            MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+
             MySqlCommand cmd = new MySqlCommand("insert into tbl_KitsRetenida(idtbl_KitsRetenida,detalle_retenidas,numero_retenidas)" +
                                                 "values(@retenidasid,@detalleretenidas,@numeroretenidas)", con);
 

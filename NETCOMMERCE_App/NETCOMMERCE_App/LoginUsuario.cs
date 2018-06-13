@@ -50,11 +50,9 @@ namespace NETCOMMERCE_App
 
             usuario.Nombreusuario = txtUsuario.Text;
             usuario.Passwordusuario = Helper.EncodePassword(txtPassword.Text);
-            usuario.Rolempresa = cbRolEmpresa.SelectedValue.ToString();
+            usuario.Rolempresa = cbRolEmpresa.SelectedItem.ToString();
 
-            strusuario = txtUsuario.Text;
-
-
+            
             if (dtsusuario.Autenticar(usuario.Nombreusuario, Helper.EncodePassword(txtPassword.Text), usuario.Rolempresa) > 0)
             {
                 if (usuario.Rolempresa == "COORDINADOR")

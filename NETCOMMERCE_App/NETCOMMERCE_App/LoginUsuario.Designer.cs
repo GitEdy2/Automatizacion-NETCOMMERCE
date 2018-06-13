@@ -127,6 +127,7 @@
             // 
             // cbRolEmpresa
             // 
+            this.cbRolEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRolEmpresa.FormattingEnabled = true;
             this.cbRolEmpresa.Items.AddRange(new object[] {
             "COORDINADOR"});
