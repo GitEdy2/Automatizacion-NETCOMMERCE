@@ -23,10 +23,6 @@ namespace NETCOMMERCE_App
             InitializeComponent();
         }
 
-        string strusuario;
-        public DataRow fila;
-        public int strusuarioID;
-
 
         internal class Helper
         {

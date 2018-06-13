@@ -95,8 +95,7 @@ namespace CapaDatos
             {
                 return false;
             }
-
-            
+           
         }
 
 
@@ -133,7 +132,7 @@ namespace CapaDatos
         */
 
 
-        public int Autenticar(String nombreusuario, String password, String tipousuario)
+        public int Autenticar(String nombreusuario, String password, String rolempresa)
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = "localhost";
@@ -151,9 +150,8 @@ namespace CapaDatos
             //conBD.AbrirConexion();
             //conBD.ConexionBaseDatos().Open();
 
-            MySqlCommand comando = new MySqlCommand(string.Format(
-                "select idtbl_Usuarios,nombre_usuario,password_usuario,rolempresa_usuario from tbl_Usuarios" +
-                "where nombre_usuario = '"+ nombreusuario +"' and password_usuario = '"+ password +"' and rolempresa_usuario = '"+ tipousuario +"'"), con);
+            MySqlCommand comando = new MySqlCommand("select idtbl_Usuarios,nombre_usuario,password_usuario,rolempresa_usuario from tbl_Usuarios" +
+                                                    "where nombre_usuario = '"+ nombreusuario +"' and password_usuario = '"+ password +"' and rolempresa_usuario = '"+ rolempresa +"'", con);
 
             MySqlDataReader reader = comando.ExecuteReader();
 
