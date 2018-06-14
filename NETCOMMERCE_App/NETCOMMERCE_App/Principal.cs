@@ -58,14 +58,14 @@ namespace NETCOMMERCE_App
 
         private void btnCrearTrabajo_Click(object sender, EventArgs e)
         {
-            trabajo.Descripcion1tipotrabajo = cbTipoTrabajo1.SelectedValue.ToString();
-            trabajo.Descripcion2tipotrabajo = cbTipoTrabajo2.SelectedValue.ToString();
+            trabajo.Descripcion1tipotrabajo = cbTipoTrabajo1.SelectedItem.ToString();
+            trabajo.Descripcion2tipotrabajo = cbTipoTrabajo2.SelectedItem.ToString();
 
-            trabajo.Detallefibra = cbTipodeFibra.SelectedText.ToString();
+            trabajo.Detallefibra = cbTipodeFibra.SelectedItem.ToString();
             trabajo.Metrosfibra = Convert.ToInt32(txtMetrosFibra.Text);
 
-            trabajo.Detallepostes = cbTipoPostes1.SelectedValue.ToString();
-            trabajo.Detalle2postes = cbTipoPostes2.SelectedValue.ToString();
+            trabajo.Detallepostes = cbTipoPostes1.SelectedItem.ToString();
+            trabajo.Detalle2postes = cbTipoPostes2.SelectedItem.ToString();
             trabajo.Numeropostes = Convert.ToInt32(txtNumeroPostes.Text);
 
             trabajo.Detalleretenidas = txtDetalleRetenidas.Text;
@@ -76,6 +76,20 @@ namespace NETCOMMERCE_App
             bool exito3 = dtstrabajo.IngresarRetenidas(trabajo);
 
             bool exito4 = dtstrabajo.IngresarDetalleTrabajo(trabajo);
+
+            if ((exito && exito2 && exito3 && exito4) == true)
+            {
+                MessageBox.Show("Trabajo ingresado correctamente");
+
+                txtMetrosFibra.Clear();
+                txtNumeroPostes.Clear();
+                txtDetalleRetenidas.Clear();
+                txtNumeroRetenidas.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Error, trabajo no ingresado");
+            }
         }
     }
 }

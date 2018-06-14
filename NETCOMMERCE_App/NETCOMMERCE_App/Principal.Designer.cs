@@ -110,6 +110,9 @@
             this.lblRuta = new System.Windows.Forms.Label();
             this.dtpFechaPrograma = new System.Windows.Forms.DateTimePicker();
             this.lblFechaTrabajo = new System.Windows.Forms.Label();
+            this.cBoxPostes = new System.Windows.Forms.CheckBox();
+            this.CheckPostes = new System.Windows.Forms.CheckBox();
+            this.cBoxretenidas = new System.Windows.Forms.CheckBox();
             this.tcRuta.SuspendLayout();
             this.tbRuta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
@@ -318,6 +321,9 @@
             // 
             // tbTrabajo
             // 
+            this.tbTrabajo.Controls.Add(this.cBoxretenidas);
+            this.tbTrabajo.Controls.Add(this.CheckPostes);
+            this.tbTrabajo.Controls.Add(this.cBoxPostes);
             this.tbTrabajo.Controls.Add(this.btnCrearTrabajo);
             this.tbTrabajo.Controls.Add(this.pictureBox2);
             this.tbTrabajo.Controls.Add(this.pictureBox1);
@@ -373,7 +379,7 @@
             // 
             // txtNumeroRetenidas
             // 
-            this.txtNumeroRetenidas.Location = new System.Drawing.Point(177, 352);
+            this.txtNumeroRetenidas.Location = new System.Drawing.Point(177, 371);
             this.txtNumeroRetenidas.Name = "txtNumeroRetenidas";
             this.txtNumeroRetenidas.Size = new System.Drawing.Size(80, 20);
             this.txtNumeroRetenidas.TabIndex = 16;
@@ -381,7 +387,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 355);
+            this.label2.Location = new System.Drawing.Point(31, 374);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 13);
             this.label2.TabIndex = 15;
@@ -389,7 +395,7 @@
             // 
             // txtDetalleRetenidas
             // 
-            this.txtDetalleRetenidas.Location = new System.Drawing.Point(178, 318);
+            this.txtDetalleRetenidas.Location = new System.Drawing.Point(178, 337);
             this.txtDetalleRetenidas.Multiline = true;
             this.txtDetalleRetenidas.Name = "txtDetalleRetenidas";
             this.txtDetalleRetenidas.Size = new System.Drawing.Size(174, 20);
@@ -398,7 +404,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 321);
+            this.label1.Location = new System.Drawing.Point(32, 337);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 13);
             this.label1.TabIndex = 13;
@@ -406,15 +412,19 @@
             // 
             // cbTipoPostes2
             // 
+            this.cbTipoPostes2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoPostes2.FormattingEnabled = true;
-            this.cbTipoPostes2.Location = new System.Drawing.Point(178, 231);
+            this.cbTipoPostes2.Items.AddRange(new object[] {
+            "FIBRA 9M",
+            "FIBRA 11M"});
+            this.cbTipoPostes2.Location = new System.Drawing.Point(177, 233);
             this.cbTipoPostes2.Name = "cbTipoPostes2";
             this.cbTipoPostes2.Size = new System.Drawing.Size(136, 21);
             this.cbTipoPostes2.TabIndex = 12;
             // 
             // txtNumeroPostes
             // 
-            this.txtNumeroPostes.Location = new System.Drawing.Point(179, 264);
+            this.txtNumeroPostes.Location = new System.Drawing.Point(177, 267);
             this.txtNumeroPostes.Name = "txtNumeroPostes";
             this.txtNumeroPostes.Size = new System.Drawing.Size(79, 20);
             this.txtNumeroPostes.TabIndex = 11;
@@ -422,7 +432,7 @@
             // lblNumeroPostes
             // 
             this.lblNumeroPostes.AutoSize = true;
-            this.lblNumeroPostes.Location = new System.Drawing.Point(50, 267);
+            this.lblNumeroPostes.Location = new System.Drawing.Point(51, 270);
             this.lblNumeroPostes.Name = "lblNumeroPostes";
             this.lblNumeroPostes.Size = new System.Drawing.Size(122, 13);
             this.lblNumeroPostes.TabIndex = 10;
@@ -430,16 +440,24 @@
             // 
             // cbTipoPostes1
             // 
+            this.cbTipoPostes1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoPostes1.FormattingEnabled = true;
-            this.cbTipoPostes1.Location = new System.Drawing.Point(178, 203);
+            this.cbTipoPostes1.Items.AddRange(new object[] {
+            "HORMIGON 9M",
+            "HORMIGON 11M"});
+            this.cbTipoPostes1.Location = new System.Drawing.Point(177, 206);
             this.cbTipoPostes1.Name = "cbTipoPostes1";
             this.cbTipoPostes1.Size = new System.Drawing.Size(136, 21);
             this.cbTipoPostes1.TabIndex = 9;
             // 
             // cbTipodeFibra
             // 
+            this.cbTipodeFibra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipodeFibra.FormattingEnabled = true;
-            this.cbTipodeFibra.Location = new System.Drawing.Point(178, 118);
+            this.cbTipodeFibra.Items.AddRange(new object[] {
+            "ADSS 144H",
+            "ADSS 48H"});
+            this.cbTipodeFibra.Location = new System.Drawing.Point(178, 110);
             this.cbTipodeFibra.Name = "cbTipodeFibra";
             this.cbTipodeFibra.Size = new System.Drawing.Size(136, 21);
             this.cbTipodeFibra.TabIndex = 8;
@@ -447,7 +465,7 @@
             // lblTipoPostes
             // 
             this.lblTipoPostes.AutoSize = true;
-            this.lblTipoPostes.Location = new System.Drawing.Point(73, 206);
+            this.lblTipoPostes.Location = new System.Drawing.Point(72, 209);
             this.lblTipoPostes.Name = "lblTipoPostes";
             this.lblTipoPostes.Size = new System.Drawing.Size(99, 13);
             this.lblTipoPostes.TabIndex = 7;
@@ -455,7 +473,7 @@
             // 
             // txtMetrosFibra
             // 
-            this.txtMetrosFibra.Location = new System.Drawing.Point(178, 150);
+            this.txtMetrosFibra.Location = new System.Drawing.Point(178, 144);
             this.txtMetrosFibra.Name = "txtMetrosFibra";
             this.txtMetrosFibra.Size = new System.Drawing.Size(79, 20);
             this.txtMetrosFibra.TabIndex = 6;
@@ -463,7 +481,7 @@
             // lblMetrosFibra
             // 
             this.lblMetrosFibra.AutoSize = true;
-            this.lblMetrosFibra.Location = new System.Drawing.Point(44, 153);
+            this.lblMetrosFibra.Location = new System.Drawing.Point(44, 147);
             this.lblMetrosFibra.Name = "lblMetrosFibra";
             this.lblMetrosFibra.Size = new System.Drawing.Size(128, 13);
             this.lblMetrosFibra.TabIndex = 5;
@@ -472,7 +490,7 @@
             // cbTipoFibra
             // 
             this.cbTipoFibra.AutoSize = true;
-            this.cbTipoFibra.Location = new System.Drawing.Point(85, 121);
+            this.cbTipoFibra.Location = new System.Drawing.Point(85, 113);
             this.cbTipoFibra.Name = "cbTipoFibra";
             this.cbTipoFibra.Size = new System.Drawing.Size(87, 13);
             this.cbTipoFibra.TabIndex = 3;
@@ -480,16 +498,28 @@
             // 
             // cbTipoTrabajo2
             // 
+            this.cbTipoTrabajo2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoTrabajo2.FormattingEnabled = true;
-            this.cbTipoTrabajo2.Location = new System.Drawing.Point(179, 70);
+            this.cbTipoTrabajo2.Items.AddRange(new object[] {
+            "TENDIDO AEREO",
+            "TENDIDO SOTERRADO",
+            "ACOMETIDAS",
+            "POSTES"});
+            this.cbTipoTrabajo2.Location = new System.Drawing.Point(177, 48);
             this.cbTipoTrabajo2.Name = "cbTipoTrabajo2";
             this.cbTipoTrabajo2.Size = new System.Drawing.Size(173, 21);
             this.cbTipoTrabajo2.TabIndex = 2;
             // 
             // cbTipoTrabajo1
             // 
+            this.cbTipoTrabajo1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoTrabajo1.FormattingEnabled = true;
-            this.cbTipoTrabajo1.Location = new System.Drawing.Point(179, 34);
+            this.cbTipoTrabajo1.Items.AddRange(new object[] {
+            "TENDIDO AEREO",
+            "TENDIDO SOTERRADO",
+            "ACOMETIDAS",
+            "POSTES"});
+            this.cbTipoTrabajo1.Location = new System.Drawing.Point(177, 21);
             this.cbTipoTrabajo1.Name = "cbTipoTrabajo1";
             this.cbTipoTrabajo1.Size = new System.Drawing.Size(173, 21);
             this.cbTipoTrabajo1.TabIndex = 1;
@@ -497,7 +527,7 @@
             // lblTipoTrabajo
             // 
             this.lblTipoTrabajo.AutoSize = true;
-            this.lblTipoTrabajo.Location = new System.Drawing.Point(67, 34);
+            this.lblTipoTrabajo.Location = new System.Drawing.Point(66, 21);
             this.lblTipoTrabajo.Name = "lblTipoTrabajo";
             this.lblTipoTrabajo.Size = new System.Drawing.Size(105, 13);
             this.lblTipoTrabajo.TabIndex = 0;
@@ -922,6 +952,36 @@
             this.lblFechaTrabajo.TabIndex = 0;
             this.lblFechaTrabajo.Text = "FECHA DE TRABAJO:";
             // 
+            // cBoxPostes
+            // 
+            this.cBoxPostes.AutoSize = true;
+            this.cBoxPostes.Location = new System.Drawing.Point(177, 87);
+            this.cBoxPostes.Name = "cBoxPostes";
+            this.cBoxPostes.Size = new System.Drawing.Size(49, 17);
+            this.cBoxPostes.TabIndex = 20;
+            this.cBoxPostes.Text = "Fibra";
+            this.cBoxPostes.UseVisualStyleBackColor = true;
+            // 
+            // CheckPostes
+            // 
+            this.CheckPostes.AutoSize = true;
+            this.CheckPostes.Location = new System.Drawing.Point(177, 183);
+            this.CheckPostes.Name = "CheckPostes";
+            this.CheckPostes.Size = new System.Drawing.Size(58, 17);
+            this.CheckPostes.TabIndex = 21;
+            this.CheckPostes.Text = "Postes";
+            this.CheckPostes.UseVisualStyleBackColor = true;
+            // 
+            // cBoxretenidas
+            // 
+            this.cBoxretenidas.AutoSize = true;
+            this.cBoxretenidas.Location = new System.Drawing.Point(177, 314);
+            this.cBoxretenidas.Name = "cBoxretenidas";
+            this.cBoxretenidas.Size = new System.Drawing.Size(74, 17);
+            this.cBoxretenidas.TabIndex = 22;
+            this.cBoxretenidas.Text = "Retenidas";
+            this.cBoxretenidas.UseVisualStyleBackColor = true;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1039,5 +1099,8 @@
         private System.Windows.Forms.Label lblTrabajoPrograma;
         private System.Windows.Forms.ComboBox cbGrupoTrabajoPrograma;
         private System.Windows.Forms.Label lblGrupoTrabajoPrograma;
+        private System.Windows.Forms.CheckBox cBoxretenidas;
+        private System.Windows.Forms.CheckBox CheckPostes;
+        private System.Windows.Forms.CheckBox cBoxPostes;
     }
 }
