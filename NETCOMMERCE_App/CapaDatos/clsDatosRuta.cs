@@ -62,7 +62,6 @@ namespace CapaDatos
 
         public bool IngresarRuta(clsRuta Ruta)
         {
-
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = "localhost";
             builder.Port = 3306;
@@ -74,10 +73,10 @@ namespace CapaDatos
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleRuta(idtbl_DetalleRuta,nombre_ruta,cliente_ruta,provincia_ruta,canton_ruta,parroquia_ruta,referencia_ruta)" +
-                                                "values(@idruta,@nombreruta,@clienteruta,@provinciaruta,@cantonruta,@parroquiaruta,@referenciaruta)", conBD.ConexionBaseDatos());
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleRuta(nombre_ruta,cliente_ruta,provincia_ruta,canton_ruta,parroquia_ruta,referencia_ruta)" +
+                                                "values(@nombreruta,@clienteruta,@provinciaruta,@cantonruta,@parroquiaruta,@referenciaruta)", con);
 
-            cmd.Parameters.Add("@idruta", MySqlDbType.Int32).Value = Ruta.Idruta;
+            //cmd.Parameters.Add("@idruta", MySqlDbType.Int32).Value = Ruta.Idruta;
             cmd.Parameters.Add("@nombreruta", MySqlDbType.VarChar).Value = Ruta.Nombreruta;
             cmd.Parameters.Add("@clienteruta", MySqlDbType.VarChar).Value = Ruta.Clienteruta;
             cmd.Parameters.Add("@provinciaruta", MySqlDbType.VarChar).Value = Ruta.Provinciaruta;
@@ -85,8 +84,9 @@ namespace CapaDatos
             cmd.Parameters.Add("@parroquiaruta", MySqlDbType.VarChar).Value = Ruta.Parroquiaruta;
             cmd.Parameters.Add("@referenciaruta", MySqlDbType.VarChar).Value = Ruta.Referenciaruta;
 
-            conBD.AbrirConexion();
-            conBD.ConexionBaseDatos().Open();
+            con.Open();
+            //conBD.AbrirConexion();
+            //conBD.ConexionBaseDatos().Open();
 
             int exito = cmd.ExecuteNonQuery();
 
