@@ -44,15 +44,42 @@ namespace NETCOMMERCE_App
             clsUsuarios usuario = new clsUsuarios();
             clsDatosUsuarios dtsusuario = new clsDatosUsuarios();
 
+            
+
+            string strusuario;
+
+            int usuarioid;
+
             usuario.Nombreusuario = txtUsuario.Text;
             usuario.Passwordusuario = Helper.EncodePassword(txtPassword.Text);
             usuario.Rolempresa = cbRolEmpresa.SelectedItem.ToString();
 
+            if(usuario.Nombreusuario == " " || usuario.Passwordusuario == " " || cbRolEmpresa.SelectedItem.ToString() == null)
+            {
+                MessageBox.Show("Existen campos obligatorios en blanco");
+                return;
+            }
             
             if (dtsusuario.Autenticar(usuario.Nombreusuario, Helper.EncodePassword(txtPassword.Text), usuario.Rolempresa) > 0)
             {
                 if (usuario.Rolempresa == "COORDINADOR")
                 {
+                    strusuario = txtUsuario.Text;
+                    
+                    usuarioid = Convert.ToInt32(dtsusuario.BuscarIdUsuario(strusuario));
+                  
+                    usuario.IdUsuario = usuarioid;
+
+                    bool exito2 = dtsusuario.IngresarFechaLogin(usuario);
+
+                    if (exito2 == true)
+                    {
+                        MessageBox.Show("Bienvenido");                      
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ingreso la fecha");
+                    }
 
                     Principal principal = new Principal();
                     principal.Show();
@@ -63,7 +90,8 @@ namespace NETCOMMERCE_App
                     MessageBox.Show("Usuario o Contraseñas incorrectos");
 
             }
-
+            else
+                MessageBox.Show("Usuario o Contraseñas incorrectos");
 
         }
 

@@ -31,7 +31,7 @@ namespace NETCOMMERCE_App
         {
             ruta.Nombreruta = txtNombreRuta.Text;
             ruta.Clienteruta = txtClienteRuta.Text;
-            ruta.Provinciaruta = cbProvincia.SelectedValue.ToString();
+            ruta.Provinciaruta = cbProvincia.SelectedItem.ToString();
             ruta.Parroquiaruta = txtParroquia.Text;
             ruta.Cantonruta = txtCanton.Text;
             ruta.Referenciaruta = txtReferencia.Text;

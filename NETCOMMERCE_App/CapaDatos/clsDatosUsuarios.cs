@@ -78,7 +78,7 @@ namespace CapaDatos
             cmd.Parameters.Add("@nombreusuario", MySqlDbType.VarChar).Value = Usuario.Nombreusuario;
             cmd.Parameters.Add("@passwordusuario", MySqlDbType.VarChar).Value = Usuario.Passwordusuario;
             cmd.Parameters.Add("@rolempresa", MySqlDbType.VarChar).Value = Usuario.Rolempresa;
-            cmd.Parameters.AddWithValue("@registroentrada", DateTime.UtcNow).Value = Usuario.Fechaingresoregistro;
+            cmd.Parameters.AddWithValue("@registroentrada", DateTime.Now);
 
 
             con.Open();
@@ -96,6 +96,72 @@ namespace CapaDatos
                 return false;
             }
            
+        }
+
+
+        public bool IngresarFechaLogin (clsUsuarios usuario)
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO tbl_RegistroEntradas(fecha_entrada,tbl_Usuarios_id)" +
+                                                "VALUES(@fechaentrada,@usuarioid)", con);
+
+            cmd.Parameters.AddWithValue("@fechaentrada", DateTime.Now);
+            cmd.Parameters.Add("@usuarioid", MySqlDbType.Int32).Value = usuario.IdUsuario;
+
+            con.Open();
+            //conBD.AbrirConexion();
+            //conBD.ConexionBaseDatos().Open();
+
+            int exito = cmd.ExecuteNonQuery();
+
+            if (exito == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        
+        public string BuscarIdUsuario(string nombreusuario)
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            MySqlDataAdapter da;
+            DataSet ds = new DataSet();
+           
+            string mysql = "select idtbl_Usuarios from tbl_Usuarios where nombre_usuario='"+nombreusuario+"'";    
+     
+            con.Open();
+
+            da = new MySqlDataAdapter(mysql, con);
+            da.Fill(ds, "tbl_Usuarios");
+            da.FillSchema(ds.Tables[0], SchemaType.Mapped);
+
+            DataRow fila = ds.Tables[0].Rows[0];
+
+            con.Close();
+            
+            return fila["idtbl_Usuarios"].ToString();           
         }
 
 
@@ -130,6 +196,7 @@ namespace CapaDatos
             }
         }
         */
+        
 
 
         public int Autenticar(String nombreusuario, String password, String rolempresa)
@@ -144,18 +211,24 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
+
             int resultado = -1;
+
+
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_usuarios where nombre_usuario=@username and password_usuario=@password and rolempresa_usuario=@rolempresa", con);
+
+            cmd.Parameters.AddWithValue("@username", nombreusuario);
+            cmd.Parameters.AddWithValue("@password", password);
+            cmd.Parameters.AddWithValue("@rolempresa", rolempresa);
 
             con.Open();
             //conBD.AbrirConexion();
             //conBD.ConexionBaseDatos().Open();
 
-            MySqlCommand comando = new MySqlCommand("select idtbl_Usuarios,nombre_usuario,password_usuario,rolempresa_usuario from tbl_Usuarios" +
-                                                    "where nombre_usuario = '"+ nombreusuario +"' and password_usuario = '"+ password +"' and rolempresa_usuario = '"+ rolempresa +"'", con);
+            MySqlDataReader reader = cmd.ExecuteReader();
 
-            MySqlDataReader reader = comando.ExecuteReader();
 
-            while(reader.Read())
+            while (reader.Read())
             {
                 resultado = 50;
             }
