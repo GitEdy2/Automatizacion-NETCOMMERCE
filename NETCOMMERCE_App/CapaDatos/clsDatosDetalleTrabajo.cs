@@ -165,7 +165,7 @@ namespace CapaDatos
         {
             //MySqlConnection con = new MySqlConnection(cadenaConexion);
 
-            MySqlCommand cmd = new MySqlCommand("select * from tbl_KitsRetenidas", conBD.ConexionBaseDatos());
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_Postes", conBD.ConexionBaseDatos());
 
             List<clsDetalleTrabajo> listarpostes = new List<clsDetalleTrabajo>();
 
@@ -207,14 +207,15 @@ namespace CapaDatos
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(idtbl_DetalleTrabajo,tbl_Fibra_id,tbl_KitsRetenida_id,tbl_Postes_id,tbl_TipoTrabajo_id)" +
-                                                "values(@trabajoid,@fibraid,@retenidasid,@postesid,@tipotrabajoid)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(tbl_tipotrabajo_id,tbl_Fibra_id,tbl_KitsRetenida_id,tbl_Postes_id)" +
+                                                "values(@tipotrabajoid,@fibraid,@retenidasid,@postesid)", con);
 
-            cmd.Parameters.Add("@trabajoid", MySqlDbType.Int32).Value = trabajo.Detalletrabajoid;
+
+            cmd.Parameters.Add("@tipotrabajoid", MySqlDbType.Int32).Value = trabajo.Tipotrabajoid;
             cmd.Parameters.Add("@fibraid", MySqlDbType.Int32).Value = trabajo.Fibraid;
             cmd.Parameters.Add("@retenidasid", MySqlDbType.Int32).Value = trabajo.Retenidasid;
             cmd.Parameters.Add("@postesid", MySqlDbType.Int32).Value = trabajo.Postesid;
-            cmd.Parameters.Add("@tipotrabajoid", MySqlDbType.Int32).Value = trabajo.Tipotrabajoid;
+
 
             con.Open();
 
@@ -244,13 +245,14 @@ namespace CapaDatos
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(idtbl_TipoTrabajo,descripcion_tipotrabajo,descripcion2_tipotrabajo)" +
-                                                "values(@tipotrabajoid,@descripcion1,@descripcion2)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(descripcion_tipotrabajo,descripcion2_tipotrabajo)" +
+                                                "values(@descripcion1,@descripcion2)", con);
 
-            cmd.Parameters.Add("@tipotrabajoid", MySqlDbType.Int32).Value = tipotrabajo.Tipotrabajoid;
+            
             cmd.Parameters.Add("@descripcion1", MySqlDbType.VarChar).Value = tipotrabajo.Descripcion1tipotrabajo;
             cmd.Parameters.Add("@descripcion2", MySqlDbType.VarChar).Value = tipotrabajo.Descripcion2tipotrabajo;
-            
+
+
             con.Open();
 
             int exito = cmd.ExecuteNonQuery();
@@ -313,10 +315,10 @@ namespace CapaDatos
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_Postes(idtbl_Postes,detalle_postes,numero_postes)" +
-                                                "values(@postesid,@detallepostes,@numeropostes)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_Postes(detalle_postes,numero_postes)" +
+                                                "values(@detallepostes,@numeropostes)", con);
 
-            cmd.Parameters.Add("@postesid", MySqlDbType.Int32).Value = postes.Postesid;
+           
             cmd.Parameters.Add("@detallepostes", MySqlDbType.VarChar).Value = postes.Detallepostes;
             cmd.Parameters.Add("@numeropostes", MySqlDbType.Int32).Value = postes.Numeropostes;
 
@@ -349,10 +351,10 @@ namespace CapaDatos
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_KitsRetenida(idtbl_KitsRetenida,detalle_retenidas,numero_retenidas)" +
-                                                "values(@retenidasid,@detalleretenidas,@numeroretenidas)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_KitsRetenida(detalle_retenidas,numero_retenidas)" +
+                                                "values(@detalleretenidas,@numeroretenidas)", con);
 
-            cmd.Parameters.Add("@retenidasid", MySqlDbType.Int32).Value = retenidas.Retenidasid;
+     
             cmd.Parameters.Add("@detalleretenidas", MySqlDbType.VarChar).Value = retenidas.Detalleretenidas;
             cmd.Parameters.Add("@numeroretenidas", MySqlDbType.Int32).Value = retenidas.Numeroretenidas;
 

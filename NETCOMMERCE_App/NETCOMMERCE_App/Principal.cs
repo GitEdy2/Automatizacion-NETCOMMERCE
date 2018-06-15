@@ -61,11 +61,10 @@ namespace NETCOMMERCE_App
             trabajo.Descripcion1tipotrabajo = cbTipoTrabajo1.SelectedItem.ToString();
             trabajo.Descripcion2tipotrabajo = cbTipoTrabajo2.SelectedItem.ToString();
 
-            trabajo.Detallefibra = cbTipodeFibra.SelectedItem.ToString();
+            trabajo.Detallefibra = txtTipoFibra.Text;
             trabajo.Metrosfibra = Convert.ToInt32(txtMetrosFibra.Text);
 
-            trabajo.Detallepostes = cbTipoPostes1.SelectedItem.ToString();
-            trabajo.Detalle2postes = cbTipoPostes2.SelectedItem.ToString();
+            trabajo.Detallepostes = txtTipoPostes.Text;
             trabajo.Numeropostes = Convert.ToInt32(txtNumeroPostes.Text);
 
             trabajo.Detalleretenidas = txtDetalleRetenidas.Text;
@@ -73,22 +72,132 @@ namespace NETCOMMERCE_App
 
             bool exito = dtstrabajo.IngresarFibra(trabajo);
             bool exito2 = dtstrabajo.IngresarPostes(trabajo);
-            bool exito3 = dtstrabajo.IngresarRetenidas(trabajo);
-
+            bool exito3 = dtstrabajo.IngresarRetenidas(trabajo);           
             bool exito4 = dtstrabajo.IngresarDetalleTrabajo(trabajo);
 
-            if ((exito && exito2 && exito3 && exito4) == true)
+
+            if ((exito || exito2 || exito3 || exito4) == true)
             {
                 MessageBox.Show("Trabajo ingresado correctamente");
 
+                txtTipoFibra.Clear();
                 txtMetrosFibra.Clear();
+
+                txtTipoPostes.Clear();
                 txtNumeroPostes.Clear();
+
                 txtDetalleRetenidas.Clear();
                 txtNumeroRetenidas.Clear();
             }
             else
             {
                 MessageBox.Show("Error, trabajo no ingresado");
+            }
+        }
+
+
+        private void txtMetrosFibra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtNumeroPostes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtNumeroRetenidas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+
+        private void cBoxFibra_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cBoxFibra.Checked == true)
+            {
+                lblTipoFibra.Visible = true;
+                lblMetrosFibra.Visible = true;
+
+                txtTipoFibra.Visible = true;
+                txtMetrosFibra.Visible = true;
+            }
+
+            if(cBoxFibra.Checked == false)
+            {
+                lblTipoFibra.Visible = false;
+                lblMetrosFibra.Visible = false;
+
+                txtTipoFibra.Visible = false;
+                txtTipoFibra.Text = null;
+
+                txtMetrosFibra.Visible = false;
+                //txtMetrosFibra.Text = null;
+            }
+        }
+
+
+        private void cBoxPostes_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cBoxPostes.Checked == true)
+            {
+                lblTipoPostes.Visible = true;
+                lblNumeroPostes.Visible = true;
+
+                txtTipoPostes.Visible = true;
+                txtNumeroPostes.Visible = true;
+            }
+
+            if(cBoxPostes.Checked == false)
+            {
+                lblTipoPostes.Visible = false;
+                lblNumeroPostes.Visible = false;
+
+                txtTipoPostes.Visible = false;
+                txtTipoPostes.Text = null;
+
+                txtNumeroPostes.Visible = false;
+                //txtNumeroPostes.Text = null;
+            }
+        }
+
+
+        private void cBoxRetenidas_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cBoxRetenidas.Checked == true)
+            {
+                lblDetalleRetenidas.Visible = true;
+                lblNumeroRetenidas.Visible = true;
+
+                txtDetalleRetenidas.Visible = true;
+                txtNumeroRetenidas.Visible = true;
+            }
+            
+            if(cBoxRetenidas.Checked == false)
+            {
+                lblDetalleRetenidas.Visible = false;
+                lblNumeroRetenidas.Visible = false;
+
+                txtDetalleRetenidas.Visible = false;
+                txtDetalleRetenidas.Text = null;
+
+                txtNumeroRetenidas.Visible = false;
+                //txtNumeroRetenidas.Text = null;
             }
         }
     }
