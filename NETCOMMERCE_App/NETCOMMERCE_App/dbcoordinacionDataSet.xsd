@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dbcoordinacionDataSet" targetNamespace="http://tempuri.org/dbcoordinacionDataSet.xsd" xmlns:mstns="http://tempuri.org/dbcoordinacionDataSet.xsd" xmlns="http://tempuri.org/dbcoordinacionDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="dbcoordinacionConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbcoordinacionConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NETCOMMERCE_App.Properties.Settings.GlobalReference.Default.dbcoordinacionConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_fibraTableAdapter" GeneratorDataComponentClassName="tbl_fibraTableAdapter" Name="tbl_fibra" UserDataComponentName="tbl_fibraTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="dbcoordinacionConnectionString (Settings)" DbObjectName="dbcoordinacion.tbl_fibra" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT idtbl_Fibra, detalle_fibra, metros_fibra FROM tbl_fibra</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dbcoordinacionDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dbcoordinacionDataSet" msprop:Generator_UserDSName="dbcoordinacionDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbl_fibra" msprop:Generator_TableClassName="tbl_fibraDataTable" msprop:Generator_TableVarName="tabletbl_fibra" msprop:Generator_TablePropName="tbl_fibra" msprop:Generator_RowDeletingName="tbl_fibraRowDeleting" msprop:Generator_RowChangingName="tbl_fibraRowChanging" msprop:Generator_RowEvHandlerName="tbl_fibraRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_fibraRowDeleted" msprop:Generator_UserTableName="tbl_fibra" msprop:Generator_RowChangedName="tbl_fibraRowChanged" msprop:Generator_RowEvArgName="tbl_fibraRowChangeEvent" msprop:Generator_RowClassName="tbl_fibraRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

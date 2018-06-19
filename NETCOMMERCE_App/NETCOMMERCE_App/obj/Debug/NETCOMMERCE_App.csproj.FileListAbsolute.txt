@@ -9,7 +9,6 @@ D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMM
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.pdb
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\bin\Debug\CapaDatos.dll
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\bin\Debug\CapaNegocios.dll
-D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\bin\Debug\MySql.Data.dll
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\bin\Debug\Google.Protobuf.dll
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\bin\Debug\CapaDatos.pdb
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\bin\Debug\CapaNegocios.pdb
@@ -18,3 +17,6 @@ D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMM
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.LoginUsuario.resources
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.Principal.resources
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.csproj.CopyComplete
+D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.IngresarDetalleFibra.resources
+D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.IngresarDetallePostes.resources
+D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.IngresarDetalleRetenidas.resources

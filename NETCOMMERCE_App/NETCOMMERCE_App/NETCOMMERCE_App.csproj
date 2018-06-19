@@ -52,6 +52,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IngresarDetalleFibra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresarDetalleFibra.Designer.cs">
+      <DependentUpon>IngresarDetalleFibra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IngresarDetallePostes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresarDetallePostes.Designer.cs">
+      <DependentUpon>IngresarDetallePostes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IngresarDetalleRetenidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresarDetalleRetenidas.Designer.cs">
+      <DependentUpon>IngresarDetalleRetenidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="IngresarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +90,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="IngresarDetalleFibra.resx">
+      <DependentUpon>IngresarDetalleFibra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresarDetallePostes.resx">
+      <DependentUpon>IngresarDetallePostes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresarDetalleRetenidas.resx">
+      <DependentUpon>IngresarDetalleRetenidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IngresarUsuario.resx">
       <DependentUpon>IngresarUsuario.cs</DependentUpon>
     </EmbeddedResource>

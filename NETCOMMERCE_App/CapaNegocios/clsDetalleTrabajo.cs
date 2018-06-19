@@ -16,7 +16,6 @@ namespace CapaNegocios
 
         private int postesid;
         private string detallepostes;
-        private string detalle2postes;
         private int numeropostes;
 
         private int retenidasid;
@@ -37,7 +36,6 @@ namespace CapaNegocios
 
         public int Postesid { get => postesid; set => postesid = value; }
         public string Detallepostes { get => detallepostes; set => detallepostes = value; }
-        public string Detalle2postes { get => detalle2postes; set => detalle2postes = value; }
         public int Numeropostes { get => numeropostes; set => numeropostes = value; }
 
         public int Retenidasid { get => retenidasid; set => retenidasid = value; }

@@ -1,11 +1,6 @@
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\CapaDatos\bin\Debug\CapaDatos.dll
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\CapaDatos\bin\Debug\CapaDatos.pdb
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\CapaDatos\bin\Debug\CapaNegocios.dll
-D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\CapaDatos\bin\Debug\MySql.Data.dll
-D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\CapaDatos\bin\Debug\MySql.Data.EntityFramework.dll
-D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\CapaDatos\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.dll
-D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\CapaDatos\bin\Debug\MySQL.Data.EntityFrameworkCore.dll
-D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\CapaDatos\bin\Debug\MySql.Web.dll
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\CapaDatos\bin\Debug\Google.Protobuf.dll
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\CapaDatos\bin\Debug\CapaNegocios.pdb
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\CapaDatos\bin\Debug\MySql.Data.xml

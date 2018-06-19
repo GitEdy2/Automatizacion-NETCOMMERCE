@@ -46,21 +46,16 @@
             this.lblNombreRuta = new System.Windows.Forms.Label();
             this.txtNombreRuta = new System.Windows.Forms.TextBox();
             this.tbTrabajo = new System.Windows.Forms.TabPage();
+            this.btnIngresarDetallesFibra = new System.Windows.Forms.Button();
+            this.cbDetalleFibra = new System.Windows.Forms.ComboBox();
             this.cBoxRetenidas = new System.Windows.Forms.CheckBox();
             this.cBoxPostes = new System.Windows.Forms.CheckBox();
             this.cBoxFibra = new System.Windows.Forms.CheckBox();
             this.btnCrearTrabajo = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtNumeroRetenidas = new System.Windows.Forms.TextBox();
-            this.lblNumeroRetenidas = new System.Windows.Forms.Label();
-            this.txtDetalleRetenidas = new System.Windows.Forms.TextBox();
             this.lblDetalleRetenidas = new System.Windows.Forms.Label();
-            this.txtNumeroPostes = new System.Windows.Forms.TextBox();
-            this.lblNumeroPostes = new System.Windows.Forms.Label();
             this.lblTipoPostes = new System.Windows.Forms.Label();
-            this.txtMetrosFibra = new System.Windows.Forms.TextBox();
-            this.lblMetrosFibra = new System.Windows.Forms.Label();
             this.lblTipoFibra = new System.Windows.Forms.Label();
             this.cbTipoTrabajo2 = new System.Windows.Forms.ComboBox();
             this.cbTipoTrabajo1 = new System.Windows.Forms.ComboBox();
@@ -110,8 +105,10 @@
             this.lblRuta = new System.Windows.Forms.Label();
             this.dtpFechaPrograma = new System.Windows.Forms.DateTimePicker();
             this.lblFechaTrabajo = new System.Windows.Forms.Label();
-            this.txtTipoFibra = new System.Windows.Forms.TextBox();
-            this.txtTipoPostes = new System.Windows.Forms.TextBox();
+            this.btnIngresarDetallesPostes = new System.Windows.Forms.Button();
+            this.cbDetallePostes = new System.Windows.Forms.ComboBox();
+            this.btnIngresarDetallesRetenidas = new System.Windows.Forms.Button();
+            this.cbDetalleRetenidas = new System.Windows.Forms.ComboBox();
             this.tcRuta.SuspendLayout();
             this.tbRuta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
@@ -320,23 +317,20 @@
             // 
             // tbTrabajo
             // 
-            this.tbTrabajo.Controls.Add(this.txtTipoPostes);
-            this.tbTrabajo.Controls.Add(this.txtTipoFibra);
+            this.tbTrabajo.Controls.Add(this.cbDetalleRetenidas);
+            this.tbTrabajo.Controls.Add(this.btnIngresarDetallesRetenidas);
+            this.tbTrabajo.Controls.Add(this.cbDetallePostes);
+            this.tbTrabajo.Controls.Add(this.btnIngresarDetallesPostes);
+            this.tbTrabajo.Controls.Add(this.btnIngresarDetallesFibra);
+            this.tbTrabajo.Controls.Add(this.cbDetalleFibra);
             this.tbTrabajo.Controls.Add(this.cBoxRetenidas);
             this.tbTrabajo.Controls.Add(this.cBoxPostes);
             this.tbTrabajo.Controls.Add(this.cBoxFibra);
             this.tbTrabajo.Controls.Add(this.btnCrearTrabajo);
             this.tbTrabajo.Controls.Add(this.pictureBox2);
             this.tbTrabajo.Controls.Add(this.pictureBox1);
-            this.tbTrabajo.Controls.Add(this.txtNumeroRetenidas);
-            this.tbTrabajo.Controls.Add(this.lblNumeroRetenidas);
-            this.tbTrabajo.Controls.Add(this.txtDetalleRetenidas);
             this.tbTrabajo.Controls.Add(this.lblDetalleRetenidas);
-            this.tbTrabajo.Controls.Add(this.txtNumeroPostes);
-            this.tbTrabajo.Controls.Add(this.lblNumeroPostes);
             this.tbTrabajo.Controls.Add(this.lblTipoPostes);
-            this.tbTrabajo.Controls.Add(this.txtMetrosFibra);
-            this.tbTrabajo.Controls.Add(this.lblMetrosFibra);
             this.tbTrabajo.Controls.Add(this.lblTipoFibra);
             this.tbTrabajo.Controls.Add(this.cbTipoTrabajo2);
             this.tbTrabajo.Controls.Add(this.cbTipoTrabajo1);
@@ -349,10 +343,30 @@
             this.tbTrabajo.Text = "Detalles de Trabajo";
             this.tbTrabajo.UseVisualStyleBackColor = true;
             // 
+            // btnIngresarDetallesFibra
+            // 
+            this.btnIngresarDetallesFibra.Location = new System.Drawing.Point(231, 111);
+            this.btnIngresarDetallesFibra.Name = "btnIngresarDetallesFibra";
+            this.btnIngresarDetallesFibra.Size = new System.Drawing.Size(154, 23);
+            this.btnIngresarDetallesFibra.TabIndex = 26;
+            this.btnIngresarDetallesFibra.Text = "INGRESAR DETALLES";
+            this.btnIngresarDetallesFibra.UseVisualStyleBackColor = true;
+            this.btnIngresarDetallesFibra.Visible = false;
+            this.btnIngresarDetallesFibra.Click += new System.EventHandler(this.btnIngresarDetallesFibra_Click);
+            // 
+            // cbDetalleFibra
+            // 
+            this.cbDetalleFibra.FormattingEnabled = true;
+            this.cbDetalleFibra.Location = new System.Drawing.Point(176, 140);
+            this.cbDetalleFibra.Name = "cbDetalleFibra";
+            this.cbDetalleFibra.Size = new System.Drawing.Size(209, 21);
+            this.cbDetalleFibra.TabIndex = 25;
+            this.cbDetalleFibra.Visible = false;
+            // 
             // cBoxRetenidas
             // 
             this.cBoxRetenidas.AutoSize = true;
-            this.cBoxRetenidas.Location = new System.Drawing.Point(176, 313);
+            this.cBoxRetenidas.Location = new System.Drawing.Point(176, 311);
             this.cBoxRetenidas.Name = "cBoxRetenidas";
             this.cBoxRetenidas.Size = new System.Drawing.Size(74, 17);
             this.cBoxRetenidas.TabIndex = 22;
@@ -408,103 +422,34 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // txtNumeroRetenidas
-            // 
-            this.txtNumeroRetenidas.Location = new System.Drawing.Point(176, 370);
-            this.txtNumeroRetenidas.Name = "txtNumeroRetenidas";
-            this.txtNumeroRetenidas.Size = new System.Drawing.Size(58, 20);
-            this.txtNumeroRetenidas.TabIndex = 16;
-            this.txtNumeroRetenidas.Text = "0";
-            this.txtNumeroRetenidas.Visible = false;
-            this.txtNumeroRetenidas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroRetenidas_KeyPress);
-            // 
-            // lblNumeroRetenidas
-            // 
-            this.lblNumeroRetenidas.AutoSize = true;
-            this.lblNumeroRetenidas.Location = new System.Drawing.Point(30, 373);
-            this.lblNumeroRetenidas.Name = "lblNumeroRetenidas";
-            this.lblNumeroRetenidas.Size = new System.Drawing.Size(141, 13);
-            this.lblNumeroRetenidas.TabIndex = 15;
-            this.lblNumeroRetenidas.Text = "NUMERO DE RETENIDAS:";
-            this.lblNumeroRetenidas.Visible = false;
-            // 
-            // txtDetalleRetenidas
-            // 
-            this.txtDetalleRetenidas.Location = new System.Drawing.Point(177, 336);
-            this.txtDetalleRetenidas.Multiline = true;
-            this.txtDetalleRetenidas.Name = "txtDetalleRetenidas";
-            this.txtDetalleRetenidas.Size = new System.Drawing.Size(174, 20);
-            this.txtDetalleRetenidas.TabIndex = 14;
-            this.txtDetalleRetenidas.Visible = false;
-            // 
             // lblDetalleRetenidas
             // 
             this.lblDetalleRetenidas.AutoSize = true;
-            this.lblDetalleRetenidas.Location = new System.Drawing.Point(31, 336);
+            this.lblDetalleRetenidas.Location = new System.Drawing.Point(30, 346);
             this.lblDetalleRetenidas.Name = "lblDetalleRetenidas";
             this.lblDetalleRetenidas.Size = new System.Drawing.Size(141, 13);
             this.lblDetalleRetenidas.TabIndex = 13;
             this.lblDetalleRetenidas.Text = "DETALLE DE RETENIDAS:";
             this.lblDetalleRetenidas.Visible = false;
             // 
-            // txtNumeroPostes
-            // 
-            this.txtNumeroPostes.Location = new System.Drawing.Point(176, 269);
-            this.txtNumeroPostes.Name = "txtNumeroPostes";
-            this.txtNumeroPostes.Size = new System.Drawing.Size(58, 20);
-            this.txtNumeroPostes.TabIndex = 11;
-            this.txtNumeroPostes.Text = "0";
-            this.txtNumeroPostes.Visible = false;
-            this.txtNumeroPostes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroPostes_KeyPress);
-            // 
-            // lblNumeroPostes
-            // 
-            this.lblNumeroPostes.AutoSize = true;
-            this.lblNumeroPostes.Location = new System.Drawing.Point(50, 272);
-            this.lblNumeroPostes.Name = "lblNumeroPostes";
-            this.lblNumeroPostes.Size = new System.Drawing.Size(122, 13);
-            this.lblNumeroPostes.TabIndex = 10;
-            this.lblNumeroPostes.Text = "NUMERO DE POSTES:";
-            this.lblNumeroPostes.Visible = false;
-            // 
             // lblTipoPostes
             // 
             this.lblTipoPostes.AutoSize = true;
-            this.lblTipoPostes.Location = new System.Drawing.Point(71, 237);
+            this.lblTipoPostes.Location = new System.Drawing.Point(48, 245);
             this.lblTipoPostes.Name = "lblTipoPostes";
-            this.lblTipoPostes.Size = new System.Drawing.Size(99, 13);
+            this.lblTipoPostes.Size = new System.Drawing.Size(122, 13);
             this.lblTipoPostes.TabIndex = 7;
-            this.lblTipoPostes.Text = "TIPO DE POSTES:";
+            this.lblTipoPostes.Text = "DETALLE DE POSTES:";
             this.lblTipoPostes.Visible = false;
-            // 
-            // txtMetrosFibra
-            // 
-            this.txtMetrosFibra.Location = new System.Drawing.Point(177, 172);
-            this.txtMetrosFibra.Name = "txtMetrosFibra";
-            this.txtMetrosFibra.Size = new System.Drawing.Size(57, 20);
-            this.txtMetrosFibra.TabIndex = 6;
-            this.txtMetrosFibra.Text = "0";
-            this.txtMetrosFibra.Visible = false;
-            this.txtMetrosFibra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMetrosFibra_KeyPress);
-            // 
-            // lblMetrosFibra
-            // 
-            this.lblMetrosFibra.AutoSize = true;
-            this.lblMetrosFibra.Location = new System.Drawing.Point(43, 175);
-            this.lblMetrosFibra.Name = "lblMetrosFibra";
-            this.lblMetrosFibra.Size = new System.Drawing.Size(128, 13);
-            this.lblMetrosFibra.TabIndex = 5;
-            this.lblMetrosFibra.Text = "METROS DE FIBRA (m) :";
-            this.lblMetrosFibra.Visible = false;
             // 
             // lblTipoFibra
             // 
             this.lblTipoFibra.AutoSize = true;
-            this.lblTipoFibra.Location = new System.Drawing.Point(84, 141);
+            this.lblTipoFibra.Location = new System.Drawing.Point(60, 140);
             this.lblTipoFibra.Name = "lblTipoFibra";
-            this.lblTipoFibra.Size = new System.Drawing.Size(87, 13);
+            this.lblTipoFibra.Size = new System.Drawing.Size(110, 13);
             this.lblTipoFibra.TabIndex = 3;
-            this.lblTipoFibra.Text = "TIPO DE FIBRA:";
+            this.lblTipoFibra.Text = "DETALLE DE FIBRA:";
             this.lblTipoFibra.Visible = false;
             // 
             // cbTipoTrabajo2
@@ -976,21 +921,45 @@
             this.lblFechaTrabajo.TabIndex = 0;
             this.lblFechaTrabajo.Text = "FECHA DE TRABAJO:";
             // 
-            // txtTipoFibra
+            // btnIngresarDetallesPostes
             // 
-            this.txtTipoFibra.Location = new System.Drawing.Point(178, 141);
-            this.txtTipoFibra.Name = "txtTipoFibra";
-            this.txtTipoFibra.Size = new System.Drawing.Size(173, 20);
-            this.txtTipoFibra.TabIndex = 23;
-            this.txtTipoFibra.Visible = false;
+            this.btnIngresarDetallesPostes.Location = new System.Drawing.Point(231, 207);
+            this.btnIngresarDetallesPostes.Name = "btnIngresarDetallesPostes";
+            this.btnIngresarDetallesPostes.Size = new System.Drawing.Size(154, 23);
+            this.btnIngresarDetallesPostes.TabIndex = 27;
+            this.btnIngresarDetallesPostes.Text = "INGRESAR DETALLES";
+            this.btnIngresarDetallesPostes.UseVisualStyleBackColor = true;
+            this.btnIngresarDetallesPostes.Visible = false;
+            this.btnIngresarDetallesPostes.Click += new System.EventHandler(this.btnIngresarDetallesPostes_Click);
             // 
-            // txtTipoPostes
+            // cbDetallePostes
             // 
-            this.txtTipoPostes.Location = new System.Drawing.Point(176, 237);
-            this.txtTipoPostes.Name = "txtTipoPostes";
-            this.txtTipoPostes.Size = new System.Drawing.Size(173, 20);
-            this.txtTipoPostes.TabIndex = 24;
-            this.txtTipoPostes.Visible = false;
+            this.cbDetallePostes.FormattingEnabled = true;
+            this.cbDetallePostes.Location = new System.Drawing.Point(176, 242);
+            this.cbDetallePostes.Name = "cbDetallePostes";
+            this.cbDetallePostes.Size = new System.Drawing.Size(209, 21);
+            this.cbDetallePostes.TabIndex = 28;
+            this.cbDetallePostes.Visible = false;
+            // 
+            // btnIngresarDetallesRetenidas
+            // 
+            this.btnIngresarDetallesRetenidas.Location = new System.Drawing.Point(248, 307);
+            this.btnIngresarDetallesRetenidas.Name = "btnIngresarDetallesRetenidas";
+            this.btnIngresarDetallesRetenidas.Size = new System.Drawing.Size(137, 23);
+            this.btnIngresarDetallesRetenidas.TabIndex = 29;
+            this.btnIngresarDetallesRetenidas.Text = "INGRESAR DETALLES";
+            this.btnIngresarDetallesRetenidas.UseVisualStyleBackColor = true;
+            this.btnIngresarDetallesRetenidas.Visible = false;
+            this.btnIngresarDetallesRetenidas.Click += new System.EventHandler(this.btnIngresarDetallesRetenidas_Click);
+            // 
+            // cbDetalleRetenidas
+            // 
+            this.cbDetalleRetenidas.FormattingEnabled = true;
+            this.cbDetalleRetenidas.Location = new System.Drawing.Point(176, 343);
+            this.cbDetalleRetenidas.Name = "cbDetalleRetenidas";
+            this.cbDetalleRetenidas.Size = new System.Drawing.Size(209, 21);
+            this.cbDetalleRetenidas.TabIndex = 30;
+            this.cbDetalleRetenidas.Visible = false;
             // 
             // Principal
             // 
@@ -1048,16 +1017,8 @@
         private System.Windows.Forms.Button btnCrearTrabajo;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtNumeroRetenidas;
-        private System.Windows.Forms.Label lblNumeroRetenidas;
-        private System.Windows.Forms.TextBox txtDetalleRetenidas;
         private System.Windows.Forms.Label lblDetalleRetenidas;
-        private System.Windows.Forms.TextBox txtNumeroPostes;
-        private System.Windows.Forms.Label lblNumeroPostes;
         private System.Windows.Forms.Label lblTipoPostes;
-        private System.Windows.Forms.TextBox txtMetrosFibra;
-        private System.Windows.Forms.Label lblMetrosFibra;
-        private System.Windows.Forms.Label lblTipoFibra;
         private System.Windows.Forms.ComboBox cbTipoTrabajo2;
         private System.Windows.Forms.ComboBox cbTipoTrabajo1;
         private System.Windows.Forms.Label lblTipoTrabajo;
@@ -1109,7 +1070,12 @@
         private System.Windows.Forms.CheckBox cBoxRetenidas;
         private System.Windows.Forms.CheckBox cBoxPostes;
         private System.Windows.Forms.CheckBox cBoxFibra;
-        private System.Windows.Forms.TextBox txtTipoPostes;
-        private System.Windows.Forms.TextBox txtTipoFibra;
+        private System.Windows.Forms.ComboBox cbDetalleFibra;
+        private System.Windows.Forms.Label lblTipoFibra;
+        private System.Windows.Forms.Button btnIngresarDetallesFibra;
+        private System.Windows.Forms.Button btnIngresarDetallesPostes;
+        private System.Windows.Forms.ComboBox cbDetallePostes;
+        private System.Windows.Forms.Button btnIngresarDetallesRetenidas;
+        private System.Windows.Forms.ComboBox cbDetalleRetenidas;
     }
 }

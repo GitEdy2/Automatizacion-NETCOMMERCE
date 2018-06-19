@@ -61,33 +61,26 @@ namespace NETCOMMERCE_App
             trabajo.Descripcion1tipotrabajo = cbTipoTrabajo1.SelectedItem.ToString();
             trabajo.Descripcion2tipotrabajo = cbTipoTrabajo2.SelectedItem.ToString();
 
-            trabajo.Detallefibra = txtTipoFibra.Text;
-            trabajo.Metrosfibra = Convert.ToInt32(txtMetrosFibra.Text);
-
-            trabajo.Detallepostes = txtTipoPostes.Text;
-            trabajo.Numeropostes = Convert.ToInt32(txtNumeroPostes.Text);
-
-            trabajo.Detalleretenidas = txtDetalleRetenidas.Text;
-            trabajo.Numeroretenidas = Convert.ToInt32(txtNumeroRetenidas.Text);
-
-            bool exito = dtstrabajo.IngresarFibra(trabajo);
-            bool exito2 = dtstrabajo.IngresarPostes(trabajo);
-            bool exito3 = dtstrabajo.IngresarRetenidas(trabajo);           
-            bool exito4 = dtstrabajo.IngresarDetalleTrabajo(trabajo);
+            trabajo.Fibraid = Convert.ToInt32(cbDetalleFibra.SelectedValue.ToString());
+            trabajo.Postesid = Convert.ToInt32(cbDetallePostes.SelectedValue.ToString());
+            trabajo.Retenidasid = Convert.ToInt32(cbDetalleRetenidas.SelectedValue.ToString());
 
 
-            if ((exito || exito2 || exito3 || exito4) == true)
+            bool exito = dtstrabajo.IngresarDetalleTrabajo(trabajo);
+
+
+            if (exito == true)
             {
                 MessageBox.Show("Trabajo ingresado correctamente");
 
-                txtTipoFibra.Clear();
-                txtMetrosFibra.Clear();
+                //txtTipoFibra.Clear();
+               // txtMetrosFibra.Clear();
 
-                txtTipoPostes.Clear();
-                txtNumeroPostes.Clear();
+                //txtTipoPostes.Clear();
+                //txtNumeroPostes.Clear();
 
-                txtDetalleRetenidas.Clear();
-                txtNumeroRetenidas.Clear();
+                //txtDetalleRetenidas.Clear();
+                //txtNumeroRetenidas.Clear();
             }
             else
             {
@@ -131,23 +124,23 @@ namespace NETCOMMERCE_App
         {
             if(cBoxFibra.Checked == true)
             {
-                lblTipoFibra.Visible = true;
-                lblMetrosFibra.Visible = true;
 
-                txtTipoFibra.Visible = true;
-                txtMetrosFibra.Visible = true;
+                lblTipoFibra.Visible = true;
+
+                cbDetalleFibra.Visible = true;
+
+                btnIngresarDetallesFibra.Visible = true;
+                
             }
 
             if(cBoxFibra.Checked == false)
             {
                 lblTipoFibra.Visible = false;
-                lblMetrosFibra.Visible = false;
 
-                txtTipoFibra.Visible = false;
-                txtTipoFibra.Text = null;
+                cbDetalleFibra.Visible = false;
 
-                txtMetrosFibra.Visible = false;
-                //txtMetrosFibra.Text = null;
+                btnIngresarDetallesFibra.Visible = false;
+
             }
         }
 
@@ -157,22 +150,17 @@ namespace NETCOMMERCE_App
             if(cBoxPostes.Checked == true)
             {
                 lblTipoPostes.Visible = true;
-                lblNumeroPostes.Visible = true;
 
-                txtTipoPostes.Visible = true;
-                txtNumeroPostes.Visible = true;
+                cbDetallePostes.Visible = true;
+                btnIngresarDetallesPostes.Visible = true;
             }
 
             if(cBoxPostes.Checked == false)
             {
                 lblTipoPostes.Visible = false;
-                lblNumeroPostes.Visible = false;
 
-                txtTipoPostes.Visible = false;
-                txtTipoPostes.Text = null;
-
-                txtNumeroPostes.Visible = false;
-                //txtNumeroPostes.Text = null;
+                cbDetallePostes.Visible = false;
+                btnIngresarDetallesPostes.Visible = false;
             }
         }
 
@@ -182,23 +170,36 @@ namespace NETCOMMERCE_App
             if(cBoxRetenidas.Checked == true)
             {
                 lblDetalleRetenidas.Visible = true;
-                lblNumeroRetenidas.Visible = true;
-
-                txtDetalleRetenidas.Visible = true;
-                txtNumeroRetenidas.Visible = true;
+                
+                btnIngresarDetallesRetenidas.Visible = true;
+                cbDetalleRetenidas.Visible = true;
             }
             
             if(cBoxRetenidas.Checked == false)
             {
                 lblDetalleRetenidas.Visible = false;
-                lblNumeroRetenidas.Visible = false;
 
-                txtDetalleRetenidas.Visible = false;
-                txtDetalleRetenidas.Text = null;
-
-                txtNumeroRetenidas.Visible = false;
-                //txtNumeroRetenidas.Text = null;
+                btnIngresarDetallesRetenidas.Visible = false;
+                cbDetalleRetenidas.Visible = false;
             }
+        }
+
+        private void btnIngresarDetallesFibra_Click(object sender, EventArgs e)
+        {
+            IngresarDetalleFibra fibra = new IngresarDetalleFibra();
+            fibra.Show();
+        }
+
+        private void btnIngresarDetallesPostes_Click(object sender, EventArgs e)
+        {
+            IngresarDetallePostes postes = new IngresarDetallePostes();
+            postes.Show();
+        }
+
+        private void btnIngresarDetallesRetenidas_Click(object sender, EventArgs e)
+        {
+            IngresarDetalleRetenidas retenidas = new IngresarDetalleRetenidas();
+            retenidas.Show();
         }
     }
 }
