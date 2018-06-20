@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 using CapaDatos;
 using CapaNegocios;
 
@@ -17,7 +19,11 @@ namespace NETCOMMERCE_App
         public Principal()
         {
             InitializeComponent();
-        }
+
+            cbDetalleFibra.Items.Add(dtstrabajo.ListarFibra());
+            //cbDetallePostes.Items.Add(dtstrabajo.ListarPostes());
+            //cbDetalleRetenidas.Items.Add(dtstrabajo.ListarRetenidas());
+        }      
 
         clsRuta ruta = new clsRuta();
         clsDatosRuta dtsRuta = new clsDatosRuta();
@@ -56,6 +62,32 @@ namespace NETCOMMERCE_App
         }
 
 
+        private void CargarFibraId()
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            con.Open();
+
+            MySqlCommand cmd = new MySqlCommand("SELECT idtbl_Fibra FROM tbl_Fibra", con);
+
+            MySqlDataReader lector = cmd.ExecuteReader();
+
+            while (lector.Read())
+            {
+                cbDetalleFibra.Items.Add(lector.GetInt32(0));
+            }
+        }
+
+
+
         private void btnCrearTrabajo_Click(object sender, EventArgs e)
         {
             trabajo.Descripcion1tipotrabajo = cbTipoTrabajo1.SelectedItem.ToString();
@@ -74,7 +106,7 @@ namespace NETCOMMERCE_App
                 MessageBox.Show("Trabajo ingresado correctamente");
 
                 //txtTipoFibra.Clear();
-               // txtMetrosFibra.Clear();
+                // txtMetrosFibra.Clear();
 
                 //txtTipoPostes.Clear();
                 //txtNumeroPostes.Clear();

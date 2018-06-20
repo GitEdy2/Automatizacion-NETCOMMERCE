@@ -46,6 +46,10 @@
             this.lblNombreRuta = new System.Windows.Forms.Label();
             this.txtNombreRuta = new System.Windows.Forms.TextBox();
             this.tbTrabajo = new System.Windows.Forms.TabPage();
+            this.cbDetalleRetenidas = new System.Windows.Forms.ComboBox();
+            this.btnIngresarDetallesRetenidas = new System.Windows.Forms.Button();
+            this.cbDetallePostes = new System.Windows.Forms.ComboBox();
+            this.btnIngresarDetallesPostes = new System.Windows.Forms.Button();
             this.btnIngresarDetallesFibra = new System.Windows.Forms.Button();
             this.cbDetalleFibra = new System.Windows.Forms.ComboBox();
             this.cBoxRetenidas = new System.Windows.Forms.CheckBox();
@@ -105,10 +109,6 @@
             this.lblRuta = new System.Windows.Forms.Label();
             this.dtpFechaPrograma = new System.Windows.Forms.DateTimePicker();
             this.lblFechaTrabajo = new System.Windows.Forms.Label();
-            this.btnIngresarDetallesPostes = new System.Windows.Forms.Button();
-            this.cbDetallePostes = new System.Windows.Forms.ComboBox();
-            this.btnIngresarDetallesRetenidas = new System.Windows.Forms.Button();
-            this.cbDetalleRetenidas = new System.Windows.Forms.ComboBox();
             this.tcRuta.SuspendLayout();
             this.tbRuta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
@@ -343,6 +343,48 @@
             this.tbTrabajo.Text = "Detalles de Trabajo";
             this.tbTrabajo.UseVisualStyleBackColor = true;
             // 
+            // cbDetalleRetenidas
+            // 
+            this.cbDetalleRetenidas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDetalleRetenidas.FormattingEnabled = true;
+            this.cbDetalleRetenidas.Location = new System.Drawing.Point(176, 343);
+            this.cbDetalleRetenidas.Name = "cbDetalleRetenidas";
+            this.cbDetalleRetenidas.Size = new System.Drawing.Size(209, 21);
+            this.cbDetalleRetenidas.TabIndex = 30;
+            this.cbDetalleRetenidas.Visible = false;
+            // 
+            // btnIngresarDetallesRetenidas
+            // 
+            this.btnIngresarDetallesRetenidas.Location = new System.Drawing.Point(248, 307);
+            this.btnIngresarDetallesRetenidas.Name = "btnIngresarDetallesRetenidas";
+            this.btnIngresarDetallesRetenidas.Size = new System.Drawing.Size(137, 23);
+            this.btnIngresarDetallesRetenidas.TabIndex = 29;
+            this.btnIngresarDetallesRetenidas.Text = "INGRESAR DETALLES";
+            this.btnIngresarDetallesRetenidas.UseVisualStyleBackColor = true;
+            this.btnIngresarDetallesRetenidas.Visible = false;
+            this.btnIngresarDetallesRetenidas.Click += new System.EventHandler(this.btnIngresarDetallesRetenidas_Click);
+            // 
+            // cbDetallePostes
+            // 
+            this.cbDetallePostes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDetallePostes.FormattingEnabled = true;
+            this.cbDetallePostes.Location = new System.Drawing.Point(176, 242);
+            this.cbDetallePostes.Name = "cbDetallePostes";
+            this.cbDetallePostes.Size = new System.Drawing.Size(209, 21);
+            this.cbDetallePostes.TabIndex = 28;
+            this.cbDetallePostes.Visible = false;
+            // 
+            // btnIngresarDetallesPostes
+            // 
+            this.btnIngresarDetallesPostes.Location = new System.Drawing.Point(231, 207);
+            this.btnIngresarDetallesPostes.Name = "btnIngresarDetallesPostes";
+            this.btnIngresarDetallesPostes.Size = new System.Drawing.Size(154, 23);
+            this.btnIngresarDetallesPostes.TabIndex = 27;
+            this.btnIngresarDetallesPostes.Text = "INGRESAR DETALLES";
+            this.btnIngresarDetallesPostes.UseVisualStyleBackColor = true;
+            this.btnIngresarDetallesPostes.Visible = false;
+            this.btnIngresarDetallesPostes.Click += new System.EventHandler(this.btnIngresarDetallesPostes_Click);
+            // 
             // btnIngresarDetallesFibra
             // 
             this.btnIngresarDetallesFibra.Location = new System.Drawing.Point(231, 111);
@@ -356,6 +398,7 @@
             // 
             // cbDetalleFibra
             // 
+            this.cbDetalleFibra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDetalleFibra.FormattingEnabled = true;
             this.cbDetalleFibra.Location = new System.Drawing.Point(176, 140);
             this.cbDetalleFibra.Name = "cbDetalleFibra";
@@ -398,7 +441,7 @@
             // 
             // btnCrearTrabajo
             // 
-            this.btnCrearTrabajo.Location = new System.Drawing.Point(470, 352);
+            this.btnCrearTrabajo.Location = new System.Drawing.Point(501, 346);
             this.btnCrearTrabajo.Name = "btnCrearTrabajo";
             this.btnCrearTrabajo.Size = new System.Drawing.Size(187, 41);
             this.btnCrearTrabajo.TabIndex = 19;
@@ -408,7 +451,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(425, 187);
+            this.pictureBox2.Location = new System.Drawing.Point(443, 191);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(289, 137);
             this.pictureBox2.TabIndex = 18;
@@ -416,7 +459,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(425, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(443, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(289, 136);
             this.pictureBox1.TabIndex = 17;
@@ -464,7 +507,7 @@
             "POSTES"});
             this.cbTipoTrabajo2.Location = new System.Drawing.Point(177, 61);
             this.cbTipoTrabajo2.Name = "cbTipoTrabajo2";
-            this.cbTipoTrabajo2.Size = new System.Drawing.Size(173, 21);
+            this.cbTipoTrabajo2.Size = new System.Drawing.Size(208, 21);
             this.cbTipoTrabajo2.TabIndex = 2;
             // 
             // cbTipoTrabajo1
@@ -479,7 +522,7 @@
             "POSTES"});
             this.cbTipoTrabajo1.Location = new System.Drawing.Point(177, 34);
             this.cbTipoTrabajo1.Name = "cbTipoTrabajo1";
-            this.cbTipoTrabajo1.Size = new System.Drawing.Size(173, 21);
+            this.cbTipoTrabajo1.Size = new System.Drawing.Size(208, 21);
             this.cbTipoTrabajo1.TabIndex = 1;
             // 
             // lblTipoTrabajo
@@ -539,6 +582,7 @@
             this.cbOcupacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOcupacion.FormattingEnabled = true;
             this.cbOcupacion.Items.AddRange(new object[] {
+            "(NINGUNO)",
             "JEFE DE GRUPO",
             "LINIERO",
             "AYUDANTE",
@@ -650,6 +694,7 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(146, 382);
             this.comboBox3.Name = "comboBox3";
@@ -667,6 +712,7 @@
             // 
             // cbAyudante5
             // 
+            this.cbAyudante5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAyudante5.FormattingEnabled = true;
             this.cbAyudante5.Location = new System.Drawing.Point(147, 342);
             this.cbAyudante5.Name = "cbAyudante5";
@@ -675,6 +721,7 @@
             // 
             // cbAyudante4
             // 
+            this.cbAyudante4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAyudante4.FormattingEnabled = true;
             this.cbAyudante4.Location = new System.Drawing.Point(147, 314);
             this.cbAyudante4.Name = "cbAyudante4";
@@ -683,6 +730,7 @@
             // 
             // cbAyudante3
             // 
+            this.cbAyudante3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAyudante3.FormattingEnabled = true;
             this.cbAyudante3.Location = new System.Drawing.Point(147, 286);
             this.cbAyudante3.Name = "cbAyudante3";
@@ -691,6 +739,7 @@
             // 
             // cbAyudante2
             // 
+            this.cbAyudante2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAyudante2.FormattingEnabled = true;
             this.cbAyudante2.Location = new System.Drawing.Point(147, 258);
             this.cbAyudante2.Name = "cbAyudante2";
@@ -699,6 +748,7 @@
             // 
             // cbAyudante1
             // 
+            this.cbAyudante1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAyudante1.FormattingEnabled = true;
             this.cbAyudante1.Location = new System.Drawing.Point(147, 230);
             this.cbAyudante1.Name = "cbAyudante1";
@@ -716,6 +766,7 @@
             // 
             // cbLiniero5
             // 
+            this.cbLiniero5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLiniero5.FormattingEnabled = true;
             this.cbLiniero5.Location = new System.Drawing.Point(147, 190);
             this.cbLiniero5.Name = "cbLiniero5";
@@ -724,6 +775,7 @@
             // 
             // cbLiniero4
             // 
+            this.cbLiniero4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLiniero4.FormattingEnabled = true;
             this.cbLiniero4.Location = new System.Drawing.Point(146, 162);
             this.cbLiniero4.Name = "cbLiniero4";
@@ -732,6 +784,7 @@
             // 
             // cbLiniero3
             // 
+            this.cbLiniero3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLiniero3.FormattingEnabled = true;
             this.cbLiniero3.Location = new System.Drawing.Point(146, 134);
             this.cbLiniero3.Name = "cbLiniero3";
@@ -740,6 +793,7 @@
             // 
             // cbLiniero2
             // 
+            this.cbLiniero2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLiniero2.FormattingEnabled = true;
             this.cbLiniero2.Location = new System.Drawing.Point(146, 106);
             this.cbLiniero2.Name = "cbLiniero2";
@@ -748,6 +802,7 @@
             // 
             // cbLiniero1
             // 
+            this.cbLiniero1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLiniero1.FormattingEnabled = true;
             this.cbLiniero1.Location = new System.Drawing.Point(147, 78);
             this.cbLiniero1.Name = "cbLiniero1";
@@ -765,6 +820,7 @@
             // 
             // cbJefeGrupo
             // 
+            this.cbJefeGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbJefeGrupo.FormattingEnabled = true;
             this.cbJefeGrupo.Location = new System.Drawing.Point(146, 30);
             this.cbJefeGrupo.Name = "cbJefeGrupo";
@@ -920,46 +976,6 @@
             this.lblFechaTrabajo.Size = new System.Drawing.Size(115, 13);
             this.lblFechaTrabajo.TabIndex = 0;
             this.lblFechaTrabajo.Text = "FECHA DE TRABAJO:";
-            // 
-            // btnIngresarDetallesPostes
-            // 
-            this.btnIngresarDetallesPostes.Location = new System.Drawing.Point(231, 207);
-            this.btnIngresarDetallesPostes.Name = "btnIngresarDetallesPostes";
-            this.btnIngresarDetallesPostes.Size = new System.Drawing.Size(154, 23);
-            this.btnIngresarDetallesPostes.TabIndex = 27;
-            this.btnIngresarDetallesPostes.Text = "INGRESAR DETALLES";
-            this.btnIngresarDetallesPostes.UseVisualStyleBackColor = true;
-            this.btnIngresarDetallesPostes.Visible = false;
-            this.btnIngresarDetallesPostes.Click += new System.EventHandler(this.btnIngresarDetallesPostes_Click);
-            // 
-            // cbDetallePostes
-            // 
-            this.cbDetallePostes.FormattingEnabled = true;
-            this.cbDetallePostes.Location = new System.Drawing.Point(176, 242);
-            this.cbDetallePostes.Name = "cbDetallePostes";
-            this.cbDetallePostes.Size = new System.Drawing.Size(209, 21);
-            this.cbDetallePostes.TabIndex = 28;
-            this.cbDetallePostes.Visible = false;
-            // 
-            // btnIngresarDetallesRetenidas
-            // 
-            this.btnIngresarDetallesRetenidas.Location = new System.Drawing.Point(248, 307);
-            this.btnIngresarDetallesRetenidas.Name = "btnIngresarDetallesRetenidas";
-            this.btnIngresarDetallesRetenidas.Size = new System.Drawing.Size(137, 23);
-            this.btnIngresarDetallesRetenidas.TabIndex = 29;
-            this.btnIngresarDetallesRetenidas.Text = "INGRESAR DETALLES";
-            this.btnIngresarDetallesRetenidas.UseVisualStyleBackColor = true;
-            this.btnIngresarDetallesRetenidas.Visible = false;
-            this.btnIngresarDetallesRetenidas.Click += new System.EventHandler(this.btnIngresarDetallesRetenidas_Click);
-            // 
-            // cbDetalleRetenidas
-            // 
-            this.cbDetalleRetenidas.FormattingEnabled = true;
-            this.cbDetalleRetenidas.Location = new System.Drawing.Point(176, 343);
-            this.cbDetalleRetenidas.Name = "cbDetalleRetenidas";
-            this.cbDetalleRetenidas.Size = new System.Drawing.Size(209, 21);
-            this.cbDetalleRetenidas.TabIndex = 30;
-            this.cbDetalleRetenidas.Visible = false;
             // 
             // Principal
             // 
