@@ -22,11 +22,13 @@ namespace NETCOMMERCE_App
             InitializeComponent();
         }
 
+        Principal principal = new Principal();
+
+        clsDetalleTrabajo trabajo = new clsDetalleTrabajo();
+        clsDatosDetalleTrabajo dtstrabajo = new clsDatosDetalleTrabajo();
+
         private void btnIngresarFibra_Click(object sender, EventArgs e)
-        {
-            clsDetalleTrabajo trabajo = new clsDetalleTrabajo();
-            clsDatosDetalleTrabajo dtstrabajo = new clsDatosDetalleTrabajo();
-          
+        {                              
             trabajo.Detallefibra = txtDetalleFibra.Text;
             trabajo.Metrosfibra = Convert.ToInt32(numMetrosFibra.Value);
 
@@ -36,10 +38,11 @@ namespace NETCOMMERCE_App
             {
                 MessageBox.Show("Datos de fibra ingresados correctamente");
                 this.Hide();
+                principal.Refresh();
             }
             else
             {
-                MessageBox.Show("Error, datos de fibra no ingresados");
+                MessageBox.Show("Error, datos de fibra no ingresados");               
             }
 
         }
@@ -47,6 +50,7 @@ namespace NETCOMMERCE_App
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
+            principal.Refresh();          
         }
     }
 }

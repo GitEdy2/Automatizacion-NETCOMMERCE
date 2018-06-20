@@ -22,6 +22,8 @@ namespace NETCOMMERCE_App
         clsDatosDetalleTrabajo dtstrabajo = new clsDatosDetalleTrabajo();
         clsDetalleTrabajo trabajo = new clsDetalleTrabajo();
 
+        Principal principal = new Principal();
+
         private void btnIngresarPostes_Click(object sender, EventArgs e)
         {
             trabajo.Detallepostes = txtDetallePostes.Text;
@@ -33,6 +35,7 @@ namespace NETCOMMERCE_App
             {
                 MessageBox.Show("Datos de postes ingresados correctamente");
                 this.Hide();
+                principal.Refresh();
             }
             else
             {
@@ -44,6 +47,7 @@ namespace NETCOMMERCE_App
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
+            principal.Refresh();
         }
     }
 }

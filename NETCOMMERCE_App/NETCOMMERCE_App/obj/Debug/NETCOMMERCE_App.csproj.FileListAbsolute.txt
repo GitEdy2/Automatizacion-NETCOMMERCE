@@ -20,3 +20,4 @@ D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMM
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.IngresarDetalleFibra.resources
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.IngresarDetallePostes.resources
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.IngresarDetalleRetenidas.resources
+D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.IngresarTipoTrabajo.resources

@@ -61,8 +61,7 @@
             this.lblDetalleRetenidas = new System.Windows.Forms.Label();
             this.lblTipoPostes = new System.Windows.Forms.Label();
             this.lblTipoFibra = new System.Windows.Forms.Label();
-            this.cbTipoTrabajo2 = new System.Windows.Forms.ComboBox();
-            this.cbTipoTrabajo1 = new System.Windows.Forms.ComboBox();
+            this.cbTipoTrabajo = new System.Windows.Forms.ComboBox();
             this.lblTipoTrabajo = new System.Windows.Forms.Label();
             this.tbTrabajadores = new System.Windows.Forms.TabPage();
             this.pbQRTelcom = new System.Windows.Forms.PictureBox();
@@ -109,6 +108,7 @@
             this.lblRuta = new System.Windows.Forms.Label();
             this.dtpFechaPrograma = new System.Windows.Forms.DateTimePicker();
             this.lblFechaTrabajo = new System.Windows.Forms.Label();
+            this.btnDetallesTipoTrabajo = new System.Windows.Forms.Button();
             this.tcRuta.SuspendLayout();
             this.tbRuta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
@@ -317,6 +317,7 @@
             // 
             // tbTrabajo
             // 
+            this.tbTrabajo.Controls.Add(this.btnDetallesTipoTrabajo);
             this.tbTrabajo.Controls.Add(this.cbDetalleRetenidas);
             this.tbTrabajo.Controls.Add(this.btnIngresarDetallesRetenidas);
             this.tbTrabajo.Controls.Add(this.cbDetallePostes);
@@ -332,8 +333,7 @@
             this.tbTrabajo.Controls.Add(this.lblDetalleRetenidas);
             this.tbTrabajo.Controls.Add(this.lblTipoPostes);
             this.tbTrabajo.Controls.Add(this.lblTipoFibra);
-            this.tbTrabajo.Controls.Add(this.cbTipoTrabajo2);
-            this.tbTrabajo.Controls.Add(this.cbTipoTrabajo1);
+            this.tbTrabajo.Controls.Add(this.cbTipoTrabajo);
             this.tbTrabajo.Controls.Add(this.lblTipoTrabajo);
             this.tbTrabajo.Location = new System.Drawing.Point(4, 22);
             this.tbTrabajo.Name = "tbTrabajo";
@@ -495,35 +495,20 @@
             this.lblTipoFibra.Text = "DETALLE DE FIBRA:";
             this.lblTipoFibra.Visible = false;
             // 
-            // cbTipoTrabajo2
+            // cbTipoTrabajo
             // 
-            this.cbTipoTrabajo2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoTrabajo2.FormattingEnabled = true;
-            this.cbTipoTrabajo2.Items.AddRange(new object[] {
+            this.cbTipoTrabajo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoTrabajo.FormattingEnabled = true;
+            this.cbTipoTrabajo.Items.AddRange(new object[] {
             "(NINGUNO)",
             "TENDIDO AEREO",
             "TENDIDO SOTERRADO",
             "ACOMETIDAS",
             "POSTES"});
-            this.cbTipoTrabajo2.Location = new System.Drawing.Point(177, 61);
-            this.cbTipoTrabajo2.Name = "cbTipoTrabajo2";
-            this.cbTipoTrabajo2.Size = new System.Drawing.Size(208, 21);
-            this.cbTipoTrabajo2.TabIndex = 2;
-            // 
-            // cbTipoTrabajo1
-            // 
-            this.cbTipoTrabajo1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoTrabajo1.FormattingEnabled = true;
-            this.cbTipoTrabajo1.Items.AddRange(new object[] {
-            "(NINGUNO)",
-            "TENDIDO AEREO",
-            "TENDIDO SOTERRADO",
-            "ACOMETIDAS",
-            "POSTES"});
-            this.cbTipoTrabajo1.Location = new System.Drawing.Point(177, 34);
-            this.cbTipoTrabajo1.Name = "cbTipoTrabajo1";
-            this.cbTipoTrabajo1.Size = new System.Drawing.Size(208, 21);
-            this.cbTipoTrabajo1.TabIndex = 1;
+            this.cbTipoTrabajo.Location = new System.Drawing.Point(177, 61);
+            this.cbTipoTrabajo.Name = "cbTipoTrabajo";
+            this.cbTipoTrabajo.Size = new System.Drawing.Size(208, 21);
+            this.cbTipoTrabajo.TabIndex = 2;
             // 
             // lblTipoTrabajo
             // 
@@ -977,6 +962,16 @@
             this.lblFechaTrabajo.TabIndex = 0;
             this.lblFechaTrabajo.Text = "FECHA DE TRABAJO:";
             // 
+            // btnDetallesTipoTrabajo
+            // 
+            this.btnDetallesTipoTrabajo.Location = new System.Drawing.Point(240, 29);
+            this.btnDetallesTipoTrabajo.Name = "btnDetallesTipoTrabajo";
+            this.btnDetallesTipoTrabajo.Size = new System.Drawing.Size(145, 23);
+            this.btnDetallesTipoTrabajo.TabIndex = 31;
+            this.btnDetallesTipoTrabajo.Text = "INGRESAR DETALLES";
+            this.btnDetallesTipoTrabajo.UseVisualStyleBackColor = true;
+            this.btnDetallesTipoTrabajo.Click += new System.EventHandler(this.btnDetallesTipoTrabajo_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1035,8 +1030,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblDetalleRetenidas;
         private System.Windows.Forms.Label lblTipoPostes;
-        private System.Windows.Forms.ComboBox cbTipoTrabajo2;
-        private System.Windows.Forms.ComboBox cbTipoTrabajo1;
+        private System.Windows.Forms.ComboBox cbTipoTrabajo;
         private System.Windows.Forms.Label lblTipoTrabajo;
         private System.Windows.Forms.TabPage tbTrabajadores;
         private System.Windows.Forms.PictureBox pbQRTelcom;
@@ -1093,5 +1087,6 @@
         private System.Windows.Forms.ComboBox cbDetallePostes;
         private System.Windows.Forms.Button btnIngresarDetallesRetenidas;
         private System.Windows.Forms.ComboBox cbDetalleRetenidas;
+        private System.Windows.Forms.Button btnDetallesTipoTrabajo;
     }
 }

@@ -86,8 +86,8 @@ namespace CapaDatos
                 clsDetalleTrabajo tipotrabajo = new clsDetalleTrabajo();
 
                 tipotrabajo.Tipotrabajoid = lector.GetInt32(0);
-                tipotrabajo.Descripcion1tipotrabajo = lector.GetString(1);
-                tipotrabajo.Descripcion2tipotrabajo = lector.GetString(2);
+                tipotrabajo.Identificadortipotrabajo = lector.GetString(1);
+                tipotrabajo.Descripciontipotrabajo = lector.GetString(2);
 
                 listatipotrabajos.Add(tipotrabajo);
             }
@@ -100,6 +100,8 @@ namespace CapaDatos
 
 
         public List<clsDetalleTrabajo> ListarFibra()
+
+
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = "localhost";
@@ -112,22 +114,22 @@ namespace CapaDatos
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
 
-            MySqlCommand cmd = new MySqlCommand("select detalle_fibra from tbl_Fibra", con);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM tbl_Fibra", con);
 
             List<clsDetalleTrabajo> listafibra = new List<clsDetalleTrabajo>();
-
-           
+ 
             con.Open();
 
             MySqlDataReader lector = cmd.ExecuteReader();
+            
 
             while (lector.Read())
             {
                 clsDetalleTrabajo fibra = new clsDetalleTrabajo();
 
-                //fibra.Fibraid = lector.GetInt32(0);
-                fibra.Detallefibra = lector.GetString("detalle_fibra");
-                //fibra.Metrosfibra = lector.GetInt32(2);
+                fibra.Fibraid = lector.GetInt32(0);
+                fibra.Detallefibra = lector.GetString(1);
+                fibra.Metrosfibra = lector.GetInt32(2);
 
                 listafibra.Add(fibra);
             }
@@ -136,6 +138,32 @@ namespace CapaDatos
             con.Close();
 
             return listafibra;
+        }
+
+
+        public DataTable ListaFibra()
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            string cmd = "SELECT idtbl_Fibra,detalle_fibra FROM tbl_Fibra";
+
+            con.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd, con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
         }
 
 
@@ -179,6 +207,32 @@ namespace CapaDatos
         }
 
 
+        public DataTable ListaRetenidas()
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            string cmd = "SELECT idtbl_KitsRetenida,detalle_retenidas FROM tbl_KitsRetenida";
+
+            con.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd, con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
+        }
+
+
         public List<clsDetalleTrabajo> ListarPostes()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
@@ -217,6 +271,59 @@ namespace CapaDatos
 
             return listarpostes;
         }
+
+
+        public DataTable ListaPostes()
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            string cmd = "SELECT idtbl_Postes,detalle_postes FROM tbl_Postes";
+
+            con.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd, con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
+        }
+
+
+        public DataTable ListaTipoTrabajos()
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            string cmd = "SELECT idtbl_TipoTrabajo,identificador_tipotrabajo FROM tbl_TipoTrabajo";
+
+            con.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd, con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
+        }
+
 
 
         public bool IngresarDetalleTrabajo(clsDetalleTrabajo trabajo)
@@ -270,13 +377,12 @@ namespace CapaDatos
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(descripcion_tipotrabajo,descripcion2_tipotrabajo)" +
-                                                "values(@descripcion1,@descripcion2)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_TipoTrabajo(identificador_tipotrabajo,descripcion_tipotrabajo)" +
+                                                "values(@identificador,@descripcion)", con);
 
-            
-            cmd.Parameters.Add("@descripcion1", MySqlDbType.VarChar).Value = tipotrabajo.Descripcion1tipotrabajo;
-            cmd.Parameters.Add("@descripcion2", MySqlDbType.VarChar).Value = tipotrabajo.Descripcion2tipotrabajo;
 
+            cmd.Parameters.Add("@identificador", MySqlDbType.VarChar).Value = tipotrabajo.Identificadortipotrabajo;
+            cmd.Parameters.Add("@descripcion", MySqlDbType.VarChar).Value = tipotrabajo.Descripciontipotrabajo;
 
             con.Open();
 
@@ -327,10 +433,7 @@ namespace CapaDatos
             }
         }
 
-
-        
-
-
+      
         public bool IngresarPostes(clsDetalleTrabajo postes)
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();

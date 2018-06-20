@@ -70,6 +70,12 @@
     <Compile Include="IngresarDetalleRetenidas.Designer.cs">
       <DependentUpon>IngresarDetalleRetenidas.cs</DependentUpon>
     </Compile>
+    <Compile Include="IngresarTipoTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresarTipoTrabajo.Designer.cs">
+      <DependentUpon>IngresarTipoTrabajo.cs</DependentUpon>
+    </Compile>
     <Compile Include="IngresarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IngresarDetalleRetenidas.resx">
       <DependentUpon>IngresarDetalleRetenidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresarTipoTrabajo.resx">
+      <DependentUpon>IngresarTipoTrabajo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IngresarUsuario.resx">
       <DependentUpon>IngresarUsuario.cs</DependentUpon>

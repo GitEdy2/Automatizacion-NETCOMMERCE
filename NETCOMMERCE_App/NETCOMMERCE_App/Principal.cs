@@ -20,9 +20,22 @@ namespace NETCOMMERCE_App
         {
             InitializeComponent();
 
-            cbDetalleFibra.Items.Add(dtstrabajo.ListarFibra());
-            //cbDetallePostes.Items.Add(dtstrabajo.ListarPostes());
-            //cbDetalleRetenidas.Items.Add(dtstrabajo.ListarRetenidas());
+            cbTipoTrabajo.DataSource = dtstrabajo.ListaTipoTrabajos();
+            cbTipoTrabajo.DisplayMember = "identificador_tipotrabajo";
+            cbTipoTrabajo.ValueMember = "idtbl_TipoTrabajo";
+
+            cbDetalleFibra.DataSource = dtstrabajo.ListaFibra();
+            cbDetalleFibra.DisplayMember = "detalle_fibra";
+            cbDetalleFibra.ValueMember = "idtbl_Fibra";
+
+            cbDetallePostes.DataSource = dtstrabajo.ListaPostes();
+            cbDetallePostes.DisplayMember = "detalle_postes";
+            cbDetallePostes.ValueMember = "idtbl_Postes";
+
+            cbDetalleRetenidas.DataSource = dtstrabajo.ListaRetenidas();
+            cbDetalleRetenidas.DisplayMember = "detalle_retenidas";
+            cbDetalleRetenidas.ValueMember = "idtbl_KitsRetenida";           
+            
         }      
 
         clsRuta ruta = new clsRuta();
@@ -61,58 +74,46 @@ namespace NETCOMMERCE_App
 
         }
 
-
-        private void CargarFibraId()
-        {
-            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = "localhost";
-            builder.Port = 3306;
-            builder.UserID = "root";
-            builder.Password = "Mysqlwarmachine2";
-            builder.SslMode = MySqlSslMode.None;
-            builder.Database = "dbcoordinacion";
-
-            MySqlConnection con = new MySqlConnection(builder.ToString());
-
-            con.Open();
-
-            MySqlCommand cmd = new MySqlCommand("SELECT idtbl_Fibra FROM tbl_Fibra", con);
-
-            MySqlDataReader lector = cmd.ExecuteReader();
-
-            while (lector.Read())
-            {
-                cbDetalleFibra.Items.Add(lector.GetInt32(0));
-            }
-        }
-
-
-
+      
         private void btnCrearTrabajo_Click(object sender, EventArgs e)
         {
-            trabajo.Descripcion1tipotrabajo = cbTipoTrabajo1.SelectedItem.ToString();
-            trabajo.Descripcion2tipotrabajo = cbTipoTrabajo2.SelectedItem.ToString();
+            trabajo.Tipotrabajoid = Convert.ToInt32(cbTipoTrabajo.SelectedValue.ToString());
 
-            trabajo.Fibraid = Convert.ToInt32(cbDetalleFibra.SelectedValue.ToString());
-            trabajo.Postesid = Convert.ToInt32(cbDetallePostes.SelectedValue.ToString());
-            trabajo.Retenidasid = Convert.ToInt32(cbDetalleRetenidas.SelectedValue.ToString());
+            if(cBoxFibra.Checked == true)
+            {
+                trabajo.Fibraid = Convert.ToInt32(cbDetalleFibra.SelectedValue.ToString());
+            }
+            else
+            {
+                cbDetalleFibra.ValueMember = null;
+            }
+
+            if(cBoxPostes.Checked == true)
+            {
+                trabajo.Postesid = Convert.ToInt32(cbDetallePostes.SelectedValue.ToString());
+            }
+            else
+            {
+                cbDetallePostes.ValueMember = null;
+            }
 
 
+            if(cBoxRetenidas.Checked == true)
+            {
+                trabajo.Retenidasid = Convert.ToInt32(cbDetalleRetenidas.SelectedValue.ToString());
+            }
+            else
+            {
+                cbDetalleRetenidas.ValueMember = null;
+            }
+
+                      
             bool exito = dtstrabajo.IngresarDetalleTrabajo(trabajo);
 
 
             if (exito == true)
             {
                 MessageBox.Show("Trabajo ingresado correctamente");
-
-                //txtTipoFibra.Clear();
-                // txtMetrosFibra.Clear();
-
-                //txtTipoPostes.Clear();
-                //txtNumeroPostes.Clear();
-
-                //txtDetalleRetenidas.Clear();
-                //txtNumeroRetenidas.Clear();
             }
             else
             {
@@ -131,6 +132,7 @@ namespace NETCOMMERCE_App
             }
         }
 
+
         private void txtNumeroPostes_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
@@ -140,6 +142,7 @@ namespace NETCOMMERCE_App
                 return;
             }
         }
+
 
         private void txtNumeroRetenidas_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -232,6 +235,12 @@ namespace NETCOMMERCE_App
         {
             IngresarDetalleRetenidas retenidas = new IngresarDetalleRetenidas();
             retenidas.Show();
+        }
+
+        private void btnDetallesTipoTrabajo_Click(object sender, EventArgs e)
+        {
+            IngresarTipoTrabajo tipotrabajo = new IngresarTipoTrabajo();
+            tipotrabajo.Show();
         }
     }
 }
