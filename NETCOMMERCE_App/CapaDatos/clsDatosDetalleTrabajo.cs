@@ -364,6 +364,106 @@ namespace CapaDatos
         }
 
 
+        public bool IngresarDetalleTrabajoFibra(clsDetalleTrabajo trabajo)
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo" +
+                                                "values(@tipotrabajoid,@fibraid,NULL,NULL)", con);
+
+            cmd.Parameters.Add("@tipotrabajoid", MySqlDbType.Int32).Value = trabajo.Tipotrabajoid;
+            cmd.Parameters.Add("@fibraid", MySqlDbType.Int32).Value = trabajo.Fibraid;
+
+
+            con.Open();
+
+            int exito = cmd.ExecuteNonQuery();
+
+            if (exito == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public bool IngresarDetalleTrabajoPostes(clsDetalleTrabajo trabajo)
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo" +
+                                                "values(@tipotrabajoid,NULL,NULL,@postesid)", con);
+
+            cmd.Parameters.Add("@tipotrabajoid", MySqlDbType.Int32).Value = trabajo.Tipotrabajoid;
+            cmd.Parameters.Add("@postesid", MySqlDbType.Int32).Value = trabajo.Postesid;
+
+            con.Open();
+
+            int exito = cmd.ExecuteNonQuery();
+
+            if (exito == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public bool IngresarDetalleTrabajoKitsRetenidas(clsDetalleTrabajo trabajo)
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo" +
+                                                "values(@tipotrabajoid,NULL,@kitsretenidasid,NULL)", con);
+
+            cmd.Parameters.Add("@tipotrabajoid", MySqlDbType.Int32).Value = trabajo.Tipotrabajoid;
+            cmd.Parameters.Add("@kitsretenidasid", MySqlDbType.Int32).Value = trabajo.Retenidasid;
+
+            con.Open();
+
+            int exito = cmd.ExecuteNonQuery();
+
+            if (exito == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
         public bool IngresarTipoTrabajo(clsDetalleTrabajo tipotrabajo)
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();

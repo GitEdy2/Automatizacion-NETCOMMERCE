@@ -81,7 +81,19 @@ namespace NETCOMMERCE_App
 
             if(cBoxFibra.Checked == true)
             {
+                trabajo.Tipotrabajoid = Convert.ToInt32(cbTipoTrabajo.SelectedValue.ToString());
                 trabajo.Fibraid = Convert.ToInt32(cbDetalleFibra.SelectedValue.ToString());
+
+                bool exito = dtstrabajo.IngresarDetalleTrabajoFibra(trabajo);
+
+                if (exito == true)
+                {
+                    MessageBox.Show("Trabajo ingresado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error, trabajo no ingresado");
+                }
             }
             else
             {
@@ -90,7 +102,19 @@ namespace NETCOMMERCE_App
 
             if(cBoxPostes.Checked == true)
             {
+                trabajo.Tipotrabajoid = Convert.ToInt32(cbTipoTrabajo.SelectedValue.ToString());
                 trabajo.Postesid = Convert.ToInt32(cbDetallePostes.SelectedValue.ToString());
+
+                bool exito = dtstrabajo.IngresarDetalleTrabajoPostes(trabajo);
+
+                if (exito == true)
+                {
+                    MessageBox.Show("Trabajo ingresado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error, trabajo no ingresado");
+                }
             }
             else
             {
@@ -100,25 +124,26 @@ namespace NETCOMMERCE_App
 
             if(cBoxRetenidas.Checked == true)
             {
+                trabajo.Tipotrabajoid = Convert.ToInt32(cbTipoTrabajo.SelectedValue.ToString());
                 trabajo.Retenidasid = Convert.ToInt32(cbDetalleRetenidas.SelectedValue.ToString());
+
+                bool exito = dtstrabajo.IngresarDetalleTrabajoKitsRetenidas(trabajo);
+
+                if (exito == true)
+                {
+                    MessageBox.Show("Trabajo ingresado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error, trabajo no ingresado");
+                }
+
             }
             else
             {
                 cbDetalleRetenidas.ValueMember = null;
             }
-
-                      
-            bool exito = dtstrabajo.IngresarDetalleTrabajo(trabajo);
-
-
-            if (exito == true)
-            {
-                MessageBox.Show("Trabajo ingresado correctamente");
-            }
-            else
-            {
-                MessageBox.Show("Error, trabajo no ingresado");
-            }
+           
         }
 
 
