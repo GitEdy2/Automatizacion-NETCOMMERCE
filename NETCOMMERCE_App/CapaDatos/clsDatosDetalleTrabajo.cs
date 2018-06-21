@@ -376,7 +376,7 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo" +
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(tbl_TipoTrabajo_id,tbl_Fibra_id,tbl_Postes_id,tbl_KitsRetenida_id)" +
                                                 "values(@tipotrabajoid,@fibraid,NULL,NULL)", con);
 
             cmd.Parameters.Add("@tipotrabajoid", MySqlDbType.Int32).Value = trabajo.Tipotrabajoid;
@@ -410,8 +410,8 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo" +
-                                                "values(@tipotrabajoid,NULL,NULL,@postesid)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(tbl_TipoTrabajo_id,tbl_Fibra_id,tbl_Postes_id,tbl_KitsRetenida_id)" +
+                                                "values(@tipotrabajoid,NULL,@postesid,NULL)", con);
 
             cmd.Parameters.Add("@tipotrabajoid", MySqlDbType.Int32).Value = trabajo.Tipotrabajoid;
             cmd.Parameters.Add("@postesid", MySqlDbType.Int32).Value = trabajo.Postesid;
@@ -443,8 +443,8 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo" +
-                                                "values(@tipotrabajoid,NULL,@kitsretenidasid,NULL)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(tbl_TipoTrabajo_id,tbl_Fibra_id,tbl_Postes_id,tbl_KitsRetenida_id)" +
+                                                "values(@tipotrabajoid,NULL,NULL,@kitsretenidasid)", con);
 
             cmd.Parameters.Add("@tipotrabajoid", MySqlDbType.Int32).Value = trabajo.Tipotrabajoid;
             cmd.Parameters.Add("@kitsretenidasid", MySqlDbType.Int32).Value = trabajo.Retenidasid;
