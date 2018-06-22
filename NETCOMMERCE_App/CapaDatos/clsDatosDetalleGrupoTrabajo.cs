@@ -14,30 +14,25 @@ namespace CapaDatos
 {
     public class clsDatosDetalleGrupoTrabajo
     {
-        //private string cadenaConexion;
-
-        /*
-        public clsDatosDetalleGrupoTrabajo()
-        {
-            cadenaConexion = ConfigurationManager.ConnectionStrings["protocol=Socket;server=localhost;port=3306;user id=root;persistsecurityinfo=True;database=dbcoordinacion;sslmode=Prefered;certificatestorelocation=None;compress=False;allowuservariables=True;allowzerodatetime=False;Integrated Security=False;treattinyasboolean=False;defaultcommandtimeout=30;connectiontimeout=60"].ConnectionString;
-        }
-        */
-
-        clsConexionBD conBD = new clsConexionBD();
-
 
         public List<clsDetalleGrupoTrabajo> ListarGruposTrabajo()
         {
-            //MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
 
-            MySqlCommand cmd = new MySqlCommand("select * from tbl_DetalleGrupoTrabajo", conBD.ConexionBaseDatos());
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_DetalleGrupoTrabajo", con);
 
             List<clsDetalleGrupoTrabajo> listagrupotrabajo = new List<clsDetalleGrupoTrabajo>();
 
-
-            conBD.AbrirConexion();
-            conBD.ConexionBaseDatos().Open();
-            //con.Open();
+          
+            con.Open();
 
 
             MySqlDataReader lector = cmd.ExecuteReader();
@@ -52,9 +47,8 @@ namespace CapaDatos
                 listagrupotrabajo.Add(grupotrabajo);
             }
 
-            conBD.CerrarConexion();
-            conBD.ConexionBaseDatos().Close();
-            //con.Close();
+
+            con.Close();
 
             return listagrupotrabajo;
         }
@@ -62,19 +56,25 @@ namespace CapaDatos
 
         public bool IngresarGrupoTrabajo (clsDetalleGrupoTrabajo grupotrabajo)
         {
-            //MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(idtbl_DetalleGrupoTrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
-                                                "values(@grupotrabajoid,@integrantegrupoid,@tipointegranteid)", conBD.ConexionBaseDatos());
+            MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            cmd.Parameters.Add("@grupotrabajoid", MySqlDbType.Int32).Value = grupotrabajo.Idgrupotrabajo;
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
+                                                "values(@integrantegrupoid,@tipointegranteid)", con);
 
+            
             cmd.Parameters.Add("@integrantegrupoid", MySqlDbType.Int32).Value = grupotrabajo.Idintegrantegrupo;
             cmd.Parameters.Add("@tipointegranteid", MySqlDbType.Int32).Value = grupotrabajo.Idtipointegrante;
 
-            conBD.AbrirConexion();
-            conBD.ConexionBaseDatos().Open();
-            //con.Open();
+          
+            con.Open();
 
             int exito = cmd.ExecuteNonQuery();
 

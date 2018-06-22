@@ -44,8 +44,10 @@ namespace NETCOMMERCE_App
         clsDetalleTrabajo trabajo = new clsDetalleTrabajo();
         clsDatosDetalleTrabajo dtstrabajo = new clsDatosDetalleTrabajo();
 
-        
+        clsIntegranteGrupo integrante = new clsIntegranteGrupo();
+        clsDatosIntegranteGrupo dtsintegrante = new clsDatosIntegranteGrupo();
 
+        
         private void btnCrearRuta_Click(object sender, EventArgs e)
         {
             ruta.Nombreruta = txtNombreRuta.Text;
@@ -266,6 +268,32 @@ namespace NETCOMMERCE_App
         {
             IngresarTipoTrabajo tipotrabajo = new IngresarTipoTrabajo();
             tipotrabajo.Show();
+        }
+
+
+
+        private void btnCrearTrabajador_Click(object sender, EventArgs e)
+        {
+            integrante.Idtipointegrante = Convert.ToInt32(cbCargo.SelectedValue.ToString());
+            integrante.Nombreintegrantegrupo = txtNombreTrabajador.Text;
+            integrante.Empresaintegrantegrupo = cbEmpresa.SelectedItem.ToString();
+
+            bool exito = dtsintegrante.IngresarIntegranteGrupo(integrante);
+
+            if (exito == true)
+            {
+                MessageBox.Show("Trabajor ingresado correctamente");
+            }
+            else
+            {
+                MessageBox.Show("Error, trabajor no ingresado");
+            }
+
+        }
+
+        private void btnIngresarCargo_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

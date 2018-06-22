@@ -46,6 +46,7 @@
             this.lblNombreRuta = new System.Windows.Forms.Label();
             this.txtNombreRuta = new System.Windows.Forms.TextBox();
             this.tbTrabajo = new System.Windows.Forms.TabPage();
+            this.btnDetallesTipoTrabajo = new System.Windows.Forms.Button();
             this.cbDetalleRetenidas = new System.Windows.Forms.ComboBox();
             this.btnIngresarDetallesRetenidas = new System.Windows.Forms.Button();
             this.cbDetallePostes = new System.Windows.Forms.ComboBox();
@@ -67,10 +68,10 @@
             this.pbQRTelcom = new System.Windows.Forms.PictureBox();
             this.pbNet = new System.Windows.Forms.PictureBox();
             this.btnCrearTrabajador = new System.Windows.Forms.Button();
-            this.cbOcupacion = new System.Windows.Forms.ComboBox();
-            this.lblOcupacion = new System.Windows.Forms.Label();
+            this.cbCargo = new System.Windows.Forms.ComboBox();
+            this.lblCargoTrabajador = new System.Windows.Forms.Label();
             this.cbEmpresa = new System.Windows.Forms.ComboBox();
-            this.lblEmpresa = new System.Windows.Forms.Label();
+            this.lblEmpresaTrabajador = new System.Windows.Forms.Label();
             this.txtNombreTrabajador = new System.Windows.Forms.TextBox();
             this.lblNombreTrabajador = new System.Windows.Forms.Label();
             this.tbEquipoTrabajo = new System.Windows.Forms.TabPage();
@@ -108,7 +109,7 @@
             this.lblRuta = new System.Windows.Forms.Label();
             this.dtpFechaPrograma = new System.Windows.Forms.DateTimePicker();
             this.lblFechaTrabajo = new System.Windows.Forms.Label();
-            this.btnDetallesTipoTrabajo = new System.Windows.Forms.Button();
+            this.btnIngresarCargo = new System.Windows.Forms.Button();
             this.tcRuta.SuspendLayout();
             this.tbRuta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
@@ -343,6 +344,16 @@
             this.tbTrabajo.Text = "Detalles de Trabajo";
             this.tbTrabajo.UseVisualStyleBackColor = true;
             // 
+            // btnDetallesTipoTrabajo
+            // 
+            this.btnDetallesTipoTrabajo.Location = new System.Drawing.Point(240, 29);
+            this.btnDetallesTipoTrabajo.Name = "btnDetallesTipoTrabajo";
+            this.btnDetallesTipoTrabajo.Size = new System.Drawing.Size(145, 23);
+            this.btnDetallesTipoTrabajo.TabIndex = 31;
+            this.btnDetallesTipoTrabajo.Text = "INGRESAR DETALLES";
+            this.btnDetallesTipoTrabajo.UseVisualStyleBackColor = true;
+            this.btnDetallesTipoTrabajo.Click += new System.EventHandler(this.btnDetallesTipoTrabajo_Click);
+            // 
             // cbDetalleRetenidas
             // 
             this.cbDetalleRetenidas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -521,13 +532,14 @@
             // 
             // tbTrabajadores
             // 
+            this.tbTrabajadores.Controls.Add(this.btnIngresarCargo);
             this.tbTrabajadores.Controls.Add(this.pbQRTelcom);
             this.tbTrabajadores.Controls.Add(this.pbNet);
             this.tbTrabajadores.Controls.Add(this.btnCrearTrabajador);
-            this.tbTrabajadores.Controls.Add(this.cbOcupacion);
-            this.tbTrabajadores.Controls.Add(this.lblOcupacion);
+            this.tbTrabajadores.Controls.Add(this.cbCargo);
+            this.tbTrabajadores.Controls.Add(this.lblCargoTrabajador);
             this.tbTrabajadores.Controls.Add(this.cbEmpresa);
-            this.tbTrabajadores.Controls.Add(this.lblEmpresa);
+            this.tbTrabajadores.Controls.Add(this.lblEmpresaTrabajador);
             this.tbTrabajadores.Controls.Add(this.txtNombreTrabajador);
             this.tbTrabajadores.Controls.Add(this.lblNombreTrabajador);
             this.tbTrabajadores.Location = new System.Drawing.Point(4, 22);
@@ -561,30 +573,31 @@
             this.btnCrearTrabajador.TabIndex = 6;
             this.btnCrearTrabajador.Text = "CREAR TRABAJADOR";
             this.btnCrearTrabajador.UseVisualStyleBackColor = true;
+            this.btnCrearTrabajador.Click += new System.EventHandler(this.btnCrearTrabajador_Click);
             // 
-            // cbOcupacion
+            // cbCargo
             // 
-            this.cbOcupacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbOcupacion.FormattingEnabled = true;
-            this.cbOcupacion.Items.AddRange(new object[] {
+            this.cbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCargo.FormattingEnabled = true;
+            this.cbCargo.Items.AddRange(new object[] {
             "(NINGUNO)",
             "JEFE DE GRUPO",
             "LINIERO",
             "AYUDANTE",
             "CHOFER"});
-            this.cbOcupacion.Location = new System.Drawing.Point(176, 179);
-            this.cbOcupacion.Name = "cbOcupacion";
-            this.cbOcupacion.Size = new System.Drawing.Size(121, 21);
-            this.cbOcupacion.TabIndex = 5;
+            this.cbCargo.Location = new System.Drawing.Point(165, 176);
+            this.cbCargo.Name = "cbCargo";
+            this.cbCargo.Size = new System.Drawing.Size(121, 21);
+            this.cbCargo.TabIndex = 5;
             // 
-            // lblOcupacion
+            // lblCargoTrabajador
             // 
-            this.lblOcupacion.AutoSize = true;
-            this.lblOcupacion.Location = new System.Drawing.Point(96, 179);
-            this.lblOcupacion.Name = "lblOcupacion";
-            this.lblOcupacion.Size = new System.Drawing.Size(73, 13);
-            this.lblOcupacion.TabIndex = 4;
-            this.lblOcupacion.Text = "OCUPACIÓN:";
+            this.lblCargoTrabajador.AutoSize = true;
+            this.lblCargoTrabajador.Location = new System.Drawing.Point(111, 180);
+            this.lblCargoTrabajador.Name = "lblCargoTrabajador";
+            this.lblCargoTrabajador.Size = new System.Drawing.Size(48, 13);
+            this.lblCargoTrabajador.TabIndex = 4;
+            this.lblCargoTrabajador.Text = "CARGO:";
             // 
             // cbEmpresa
             // 
@@ -594,31 +607,31 @@
             "(NINGUNO)",
             "NETCOMMERCE",
             "QRTELCOM"});
-            this.cbEmpresa.Location = new System.Drawing.Point(176, 111);
+            this.cbEmpresa.Location = new System.Drawing.Point(165, 116);
             this.cbEmpresa.Name = "cbEmpresa";
             this.cbEmpresa.Size = new System.Drawing.Size(121, 21);
             this.cbEmpresa.TabIndex = 3;
             // 
-            // lblEmpresa
+            // lblEmpresaTrabajador
             // 
-            this.lblEmpresa.AutoSize = true;
-            this.lblEmpresa.Location = new System.Drawing.Point(107, 120);
-            this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(62, 13);
-            this.lblEmpresa.TabIndex = 2;
-            this.lblEmpresa.Text = "EMPRESA:";
+            this.lblEmpresaTrabajador.AutoSize = true;
+            this.lblEmpresaTrabajador.Location = new System.Drawing.Point(97, 119);
+            this.lblEmpresaTrabajador.Name = "lblEmpresaTrabajador";
+            this.lblEmpresaTrabajador.Size = new System.Drawing.Size(62, 13);
+            this.lblEmpresaTrabajador.TabIndex = 2;
+            this.lblEmpresaTrabajador.Text = "EMPRESA:";
             // 
             // txtNombreTrabajador
             // 
-            this.txtNombreTrabajador.Location = new System.Drawing.Point(176, 56);
+            this.txtNombreTrabajador.Location = new System.Drawing.Point(165, 53);
             this.txtNombreTrabajador.Name = "txtNombreTrabajador";
-            this.txtNombreTrabajador.Size = new System.Drawing.Size(218, 20);
+            this.txtNombreTrabajador.Size = new System.Drawing.Size(243, 20);
             this.txtNombreTrabajador.TabIndex = 1;
             // 
             // lblNombreTrabajador
             // 
             this.lblNombreTrabajador.AutoSize = true;
-            this.lblNombreTrabajador.Location = new System.Drawing.Point(19, 56);
+            this.lblNombreTrabajador.Location = new System.Drawing.Point(9, 56);
             this.lblNombreTrabajador.Name = "lblNombreTrabajador";
             this.lblNombreTrabajador.Size = new System.Drawing.Size(150, 13);
             this.lblNombreTrabajador.TabIndex = 0;
@@ -962,15 +975,15 @@
             this.lblFechaTrabajo.TabIndex = 0;
             this.lblFechaTrabajo.Text = "FECHA DE TRABAJO:";
             // 
-            // btnDetallesTipoTrabajo
+            // btnIngresarCargo
             // 
-            this.btnDetallesTipoTrabajo.Location = new System.Drawing.Point(240, 29);
-            this.btnDetallesTipoTrabajo.Name = "btnDetallesTipoTrabajo";
-            this.btnDetallesTipoTrabajo.Size = new System.Drawing.Size(145, 23);
-            this.btnDetallesTipoTrabajo.TabIndex = 31;
-            this.btnDetallesTipoTrabajo.Text = "INGRESAR DETALLES";
-            this.btnDetallesTipoTrabajo.UseVisualStyleBackColor = true;
-            this.btnDetallesTipoTrabajo.Click += new System.EventHandler(this.btnDetallesTipoTrabajo_Click);
+            this.btnIngresarCargo.Location = new System.Drawing.Point(292, 176);
+            this.btnIngresarCargo.Name = "btnIngresarCargo";
+            this.btnIngresarCargo.Size = new System.Drawing.Size(116, 21);
+            this.btnIngresarCargo.TabIndex = 9;
+            this.btnIngresarCargo.Text = "NUEVO CARGO";
+            this.btnIngresarCargo.UseVisualStyleBackColor = true;
+            this.btnIngresarCargo.Click += new System.EventHandler(this.btnIngresarCargo_Click);
             // 
             // Principal
             // 
@@ -1036,10 +1049,10 @@
         private System.Windows.Forms.PictureBox pbQRTelcom;
         private System.Windows.Forms.PictureBox pbNet;
         private System.Windows.Forms.Button btnCrearTrabajador;
-        private System.Windows.Forms.ComboBox cbOcupacion;
-        private System.Windows.Forms.Label lblOcupacion;
+        private System.Windows.Forms.ComboBox cbCargo;
+        private System.Windows.Forms.Label lblCargoTrabajador;
         private System.Windows.Forms.ComboBox cbEmpresa;
-        private System.Windows.Forms.Label lblEmpresa;
+        private System.Windows.Forms.Label lblEmpresaTrabajador;
         private System.Windows.Forms.TextBox txtNombreTrabajador;
         private System.Windows.Forms.Label lblNombreTrabajador;
         private System.Windows.Forms.TabPage tbEquipoTrabajo;
@@ -1088,5 +1101,6 @@
         private System.Windows.Forms.Button btnIngresarDetallesRetenidas;
         private System.Windows.Forms.ComboBox cbDetalleRetenidas;
         private System.Windows.Forms.Button btnDetallesTipoTrabajo;
+        private System.Windows.Forms.Button btnIngresarCargo;
     }
 }

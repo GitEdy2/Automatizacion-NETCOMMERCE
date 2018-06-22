@@ -14,29 +14,25 @@ namespace CapaDatos
 {
     public class clsDatosIntegranteGrupo
     {
-        //private string cadenaConexion;
-
-        /*
-        public clsDatosIntegranteGrupo()
-        {
-            cadenaConexion = ConfigurationManager.ConnectionStrings["protocol=Socket;server=localhost;port=3306;user id=root;persistsecurityinfo=True;database=dbcoordinacion;sslmode=Prefered;certificatestorelocation=None;compress=False;allowuservariables=True;allowzerodatetime=False;Integrated Security=False;treattinyasboolean=False;defaultcommandtimeout=30;connectiontimeout=60"].ConnectionString;
-        }
-        */
-
-        clsConexionBD conBD = new clsConexionBD();
-
+        
         public List<clsIntegranteGrupo> ListarIntegrantesGrupo()
         {
-            //MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
 
-            MySqlCommand cmd = new MySqlCommand("select * from tbl_IntegranteGrupo", conBD.ConexionBaseDatos());
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_IntegranteGrupo", con);
 
             List<clsIntegranteGrupo> listaintegrantes = new List<clsIntegranteGrupo>();
 
-
-            conBD.AbrirConexion();
-            conBD.ConexionBaseDatos().Close();
-            //con.Open();
+          
+            con.Open();
 
 
             MySqlDataReader lector = cmd.ExecuteReader();
@@ -46,16 +42,16 @@ namespace CapaDatos
                 clsIntegranteGrupo integrante = new clsIntegranteGrupo();
 
                 integrante.Idintegrantegrupo = lector.GetInt32(0);
-                integrante.Nombreintegrantegrupo = lector.GetString(1);
+                integrante.Idtipointegrante = lector.GetInt32(1);
+                integrante.Nombreintegrantegrupo = lector.GetString(2);
+                integrante.Empresaintegrantegrupo = lector.GetString(3);
 
-                integrante.Idtipointegrante = lector.GetInt32(2);
-
+               
                 listaintegrantes.Add(integrante);              
             }
 
-            conBD.CerrarConexion();
-            conBD.ConexionBaseDatos().Close();
-            //con.Close();
+
+            con.Close();
 
             return listaintegrantes;
         }
@@ -63,17 +59,23 @@ namespace CapaDatos
 
         public bool IngresarTipoIntegrante (clsIntegranteGrupo tipointegrante)
         {
-            //MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_TipoIntegrante(idtbl_TipoIntegrante,descripcion_tipointegrante)" +
-                                                "values(@tipointegranteid,@descripciontipointegrante)", conBD.ConexionBaseDatos());
+            MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            cmd.Parameters.Add("@tipointegranteid", MySqlDbType.Int32).Value = tipointegrante.Idtipointegrante;
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_TipoIntegrante(descripcion_tipointegrante)" +
+                                                "values(@descripciontipointegrante)", con);
+
             cmd.Parameters.Add("@descripciontipointegrante", MySqlDbType.VarChar).Value = tipointegrante.Descripciontipointegrante;
 
-            conBD.AbrirConexion();
-            conBD.ConexionBaseDatos().Open();
-            //con.Open();
+           
+            con.Open();
 
             int exito = cmd.ExecuteNonQuery();
 
@@ -92,19 +94,26 @@ namespace CapaDatos
 
         public bool IngresarIntegranteGrupo (clsIntegranteGrupo integrante)
         {
-            //MySqlConnection con = new MySqlConnection(cadenaConexion);
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_IntegranteGrupo(idtbl_IntegranteGrupo,nombre_integrantegrupo,tbl_TipoIntegranteGrupo_id)" +
-                                                "values(@integranteid,@nombreintegrante,@tipointegrante)", conBD.ConexionBaseDatos());
+            MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            cmd.Parameters.Add("@integranteid", MySqlDbType.Int32).Value = integrante.Idintegrantegrupo;
-            cmd.Parameters.Add("@nombreintegrante", MySqlDbType.VarChar).Value = integrante.Nombreintegrantegrupo;
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_IntegranteGrupo(tbl_TipoIntegranteGrupo_id,nombre_integrantegrupo,empresa_integrantegrupo)" +
+                                                "values(@tipointegrante,@nombreintegrante,@empresaintegrante)", con);
+
 
             cmd.Parameters.Add("@tipointegrante", MySqlDbType.Int32).Value = integrante.Idtipointegrante;
+            cmd.Parameters.Add("@nombreintegrante", MySqlDbType.VarChar).Value = integrante.Nombreintegrantegrupo;
+            cmd.Parameters.Add("@empresaintegrante", MySqlDbType.VarChar).Value = integrante.Empresaintegrantegrupo;
 
-            conBD.AbrirConexion();
-            conBD.ConexionBaseDatos().Open();
-            //con.Open();
+
+            con.Open();
 
             int exito = cmd.ExecuteNonQuery();
 
