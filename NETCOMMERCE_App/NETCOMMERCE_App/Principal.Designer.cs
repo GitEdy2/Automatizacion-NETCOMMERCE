@@ -65,6 +65,7 @@
             this.cbTipoTrabajo = new System.Windows.Forms.ComboBox();
             this.lblTipoTrabajo = new System.Windows.Forms.Label();
             this.tbTrabajadores = new System.Windows.Forms.TabPage();
+            this.btnIngresarCargo = new System.Windows.Forms.Button();
             this.pbQRTelcom = new System.Windows.Forms.PictureBox();
             this.pbNet = new System.Windows.Forms.PictureBox();
             this.btnCrearTrabajador = new System.Windows.Forms.Button();
@@ -109,7 +110,6 @@
             this.lblRuta = new System.Windows.Forms.Label();
             this.dtpFechaPrograma = new System.Windows.Forms.DateTimePicker();
             this.lblFechaTrabajo = new System.Windows.Forms.Label();
-            this.btnIngresarCargo = new System.Windows.Forms.Button();
             this.tcRuta.SuspendLayout();
             this.tbRuta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
@@ -549,6 +549,16 @@
             this.tbTrabajadores.Text = "Trabajadores";
             this.tbTrabajadores.UseVisualStyleBackColor = true;
             // 
+            // btnIngresarCargo
+            // 
+            this.btnIngresarCargo.Location = new System.Drawing.Point(292, 176);
+            this.btnIngresarCargo.Name = "btnIngresarCargo";
+            this.btnIngresarCargo.Size = new System.Drawing.Size(116, 21);
+            this.btnIngresarCargo.TabIndex = 9;
+            this.btnIngresarCargo.Text = "NUEVO CARGO";
+            this.btnIngresarCargo.UseVisualStyleBackColor = true;
+            this.btnIngresarCargo.Click += new System.EventHandler(this.btnIngresarCargo_Click);
+            // 
             // pbQRTelcom
             // 
             this.pbQRTelcom.Location = new System.Drawing.Point(450, 226);
@@ -579,12 +589,6 @@
             // 
             this.cbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCargo.FormattingEnabled = true;
-            this.cbCargo.Items.AddRange(new object[] {
-            "(NINGUNO)",
-            "JEFE DE GRUPO",
-            "LINIERO",
-            "AYUDANTE",
-            "CHOFER"});
             this.cbCargo.Location = new System.Drawing.Point(165, 176);
             this.cbCargo.Name = "cbCargo";
             this.cbCargo.Size = new System.Drawing.Size(121, 21);
@@ -974,16 +978,6 @@
             this.lblFechaTrabajo.Size = new System.Drawing.Size(115, 13);
             this.lblFechaTrabajo.TabIndex = 0;
             this.lblFechaTrabajo.Text = "FECHA DE TRABAJO:";
-            // 
-            // btnIngresarCargo
-            // 
-            this.btnIngresarCargo.Location = new System.Drawing.Point(292, 176);
-            this.btnIngresarCargo.Name = "btnIngresarCargo";
-            this.btnIngresarCargo.Size = new System.Drawing.Size(116, 21);
-            this.btnIngresarCargo.TabIndex = 9;
-            this.btnIngresarCargo.Text = "NUEVO CARGO";
-            this.btnIngresarCargo.UseVisualStyleBackColor = true;
-            this.btnIngresarCargo.Click += new System.EventHandler(this.btnIngresarCargo_Click);
             // 
             // Principal
             // 

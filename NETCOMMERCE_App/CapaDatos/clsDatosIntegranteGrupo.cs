@@ -57,6 +57,33 @@ namespace CapaDatos
         }
 
 
+        public DataTable ListaCargosIntegrante()
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            string cmd = "SELECT idtbl_TipoIntegranteGrupo,cargo_tipointegrante FROM tbl_TipoIntegranteGrupo";
+
+            con.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd, con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
+        }
+
+
+
         public bool IngresarTipoIntegrante (clsIntegranteGrupo tipointegrante)
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
@@ -69,9 +96,10 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_TipoIntegrante(descripcion_tipointegrante)" +
-                                                "values(@descripciontipointegrante)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_TipoIntegranteGrupo(cargo_tipointegrante,descripcion_tipointegrante)" +
+                                                "values(@cargotipointegrante,@descripciontipointegrante)", con);
 
+            cmd.Parameters.Add("@cargotipointegrante", MySqlDbType.VarChar).Value = tipointegrante.Cargotipointegrante;
             cmd.Parameters.Add("@descripciontipointegrante", MySqlDbType.VarChar).Value = tipointegrante.Descripciontipointegrante;
 
            
@@ -87,7 +115,6 @@ namespace CapaDatos
             {
                 return false;
             }
-
 
         }
 

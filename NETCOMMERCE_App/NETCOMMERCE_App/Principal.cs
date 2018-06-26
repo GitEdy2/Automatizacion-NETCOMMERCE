@@ -20,6 +20,10 @@ namespace NETCOMMERCE_App
         {
             InitializeComponent();
 
+            cbCargo.DataSource = dtsintegrante.ListaCargosIntegrante();
+            cbCargo.DisplayMember = "cargo_tipointegrante";
+            cbCargo.ValueMember = "idtbl_TipoIntegranteGrupo";
+
             cbTipoTrabajo.DataSource = dtstrabajo.ListaTipoTrabajos();
             cbTipoTrabajo.DisplayMember = "identificador_tipotrabajo";
             cbTipoTrabajo.ValueMember = "idtbl_TipoTrabajo";
@@ -282,18 +286,20 @@ namespace NETCOMMERCE_App
 
             if (exito == true)
             {
-                MessageBox.Show("Trabajor ingresado correctamente");
+                MessageBox.Show("Trabajador ingresado correctamente");
+                txtNombreTrabajador.Clear();
             }
             else
             {
-                MessageBox.Show("Error, trabajor no ingresado");
+                MessageBox.Show("Error, trabajador no ingresado");
             }
 
         }
 
         private void btnIngresarCargo_Click(object sender, EventArgs e)
         {
-            
+            IngresarCargoTrabajador cargo = new IngresarCargoTrabajador();
+            cargo.Show();
         }
     }
 }

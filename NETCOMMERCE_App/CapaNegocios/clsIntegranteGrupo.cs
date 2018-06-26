@@ -13,6 +13,7 @@ namespace CapaNegocios
         private string empresaintegrantegrupo;
 
         private int idtipointegrante;
+        private string cargotipointegrante;
         private string descripciontipointegrante;
 
 
@@ -22,6 +23,7 @@ namespace CapaNegocios
         public string Empresaintegrantegrupo { get => empresaintegrantegrupo; set => empresaintegrantegrupo = value; }
 
         public int Idtipointegrante { get => idtipointegrante; set => idtipointegrante = value; }
+        public string Cargotipointegrante { get => cargotipointegrante; set => cargotipointegrante = value; }
         public string Descripciontipointegrante { get => descripciontipointegrante; set => descripciontipointegrante = value; }
         
     }
