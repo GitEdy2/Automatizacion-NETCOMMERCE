@@ -21,6 +21,8 @@ namespace NETCOMMERCE_App
         public LoginUsuario()
         {
             InitializeComponent();
+
+            cbRolEmpresa.SelectedIndex = 0;
         }
 
 

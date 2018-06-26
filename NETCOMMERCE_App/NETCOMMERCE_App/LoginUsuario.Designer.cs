@@ -130,6 +130,7 @@
             this.cbRolEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRolEmpresa.FormattingEnabled = true;
             this.cbRolEmpresa.Items.AddRange(new object[] {
+            "(NINGUNO)",
             "COORDINADOR"});
             this.cbRolEmpresa.Location = new System.Drawing.Point(165, 145);
             this.cbRolEmpresa.Name = "cbRolEmpresa";

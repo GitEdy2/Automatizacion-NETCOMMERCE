@@ -247,6 +247,7 @@
             this.cbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProvincia.FormattingEnabled = true;
             this.cbProvincia.Items.AddRange(new object[] {
+            "(ELEGIR PROVINCIA)",
             "CARCHI",
             "IMBABURA",
             "PICHINCHA",
@@ -358,6 +359,8 @@
             // 
             this.cbDetalleRetenidas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDetalleRetenidas.FormattingEnabled = true;
+            this.cbDetalleRetenidas.Items.AddRange(new object[] {
+            "(NINGUNO)"});
             this.cbDetalleRetenidas.Location = new System.Drawing.Point(176, 343);
             this.cbDetalleRetenidas.Name = "cbDetalleRetenidas";
             this.cbDetalleRetenidas.Size = new System.Drawing.Size(209, 21);
@@ -379,6 +382,8 @@
             // 
             this.cbDetallePostes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDetallePostes.FormattingEnabled = true;
+            this.cbDetallePostes.Items.AddRange(new object[] {
+            "(NINGUNO)"});
             this.cbDetallePostes.Location = new System.Drawing.Point(176, 242);
             this.cbDetallePostes.Name = "cbDetallePostes";
             this.cbDetallePostes.Size = new System.Drawing.Size(209, 21);
@@ -411,6 +416,8 @@
             // 
             this.cbDetalleFibra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDetalleFibra.FormattingEnabled = true;
+            this.cbDetalleFibra.Items.AddRange(new object[] {
+            "(NINGUNO)"});
             this.cbDetalleFibra.Location = new System.Drawing.Point(176, 140);
             this.cbDetalleFibra.Name = "cbDetalleFibra";
             this.cbDetalleFibra.Size = new System.Drawing.Size(209, 21);
@@ -589,6 +596,8 @@
             // 
             this.cbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCargo.FormattingEnabled = true;
+            this.cbCargo.Items.AddRange(new object[] {
+            "(NINGUNO)"});
             this.cbCargo.Location = new System.Drawing.Point(165, 176);
             this.cbCargo.Name = "cbCargo";
             this.cbCargo.Size = new System.Drawing.Size(121, 21);

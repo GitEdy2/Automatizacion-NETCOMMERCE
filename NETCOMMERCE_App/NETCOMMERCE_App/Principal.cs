@@ -20,6 +20,14 @@ namespace NETCOMMERCE_App
         {
             InitializeComponent();
 
+            cbProvincia.SelectedIndex = 0;
+            cbTipoTrabajo.SelectedIndex = 0;
+            cbDetalleFibra.SelectedIndex = 0;
+            cbDetallePostes.SelectedIndex = 0;
+            cbDetalleRetenidas.SelectedIndex = 0;
+            cbEmpresa.SelectedIndex = 0;
+            cbCargo.SelectedIndex = 0;
+
             cbCargo.DataSource = dtsintegrante.ListaCargosIntegrante();
             cbCargo.DisplayMember = "cargo_tipointegrante";
             cbCargo.ValueMember = "idtbl_TipoIntegranteGrupo";
