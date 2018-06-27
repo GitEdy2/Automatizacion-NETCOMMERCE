@@ -66,14 +66,16 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
-                                                "values(@integrantegrupoid,@tipointegranteid)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(nombre_grupotrabajo,numero_grupotrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id," +                           
+                                                "values(@nombregrupotrabajo,@numerogrupotrabajo,@integrantegrupoid,@tipointegranteid)", con);
 
-            
+
+            cmd.Parameters.Add("@nombregrupotrabajo", MySqlDbType.VarChar).Value = grupotrabajo.Nombregrupotrabajo;
+            cmd.Parameters.Add("@numerogrupotrabajo", MySqlDbType.Int32).Value = grupotrabajo.Numerogrupotrabajo;
             cmd.Parameters.Add("@integrantegrupoid", MySqlDbType.Int32).Value = grupotrabajo.Idintegrantegrupo;
             cmd.Parameters.Add("@tipointegranteid", MySqlDbType.Int32).Value = grupotrabajo.Idtipointegrante;
-
-          
+            
+           
             con.Open();
 
             int exito = cmd.ExecuteNonQuery();

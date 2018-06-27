@@ -76,25 +76,9 @@
             this.txtNombreTrabajador = new System.Windows.Forms.TextBox();
             this.lblNombreTrabajador = new System.Windows.Forms.Label();
             this.tbEquipoTrabajo = new System.Windows.Forms.TabPage();
-            this.btnCrearGrupo = new System.Windows.Forms.Button();
+            this.btnCrearGrupoTrabajo = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.lblChofer = new System.Windows.Forms.Label();
-            this.cbAyudante5 = new System.Windows.Forms.ComboBox();
-            this.cbAyudante4 = new System.Windows.Forms.ComboBox();
-            this.cbAyudante3 = new System.Windows.Forms.ComboBox();
-            this.cbAyudante2 = new System.Windows.Forms.ComboBox();
-            this.cbAyudante1 = new System.Windows.Forms.ComboBox();
-            this.lblAyudante = new System.Windows.Forms.Label();
-            this.cbLiniero5 = new System.Windows.Forms.ComboBox();
-            this.cbLiniero4 = new System.Windows.Forms.ComboBox();
-            this.cbLiniero3 = new System.Windows.Forms.ComboBox();
-            this.cbLiniero2 = new System.Windows.Forms.ComboBox();
-            this.cbLiniero1 = new System.Windows.Forms.ComboBox();
-            this.lblLinieros = new System.Windows.Forms.Label();
-            this.cbJefeGrupo = new System.Windows.Forms.ComboBox();
-            this.lblJefeGrupo = new System.Windows.Forms.Label();
             this.tbPrograma = new System.Windows.Forms.TabPage();
             this.btnPrograma = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -110,6 +94,15 @@
             this.lblRuta = new System.Windows.Forms.Label();
             this.dtpFechaPrograma = new System.Windows.Forms.DateTimePicker();
             this.lblFechaTrabajo = new System.Windows.Forms.Label();
+            this.lblNombreGrupo = new System.Windows.Forms.Label();
+            this.txtNombreGrupo = new System.Windows.Forms.TextBox();
+            this.lblNumeroGrupo = new System.Windows.Forms.Label();
+            this.numGrupoTrabajo = new System.Windows.Forms.NumericUpDown();
+            this.lblJefeGrupo = new System.Windows.Forms.Label();
+            this.cbTrabajador = new System.Windows.Forms.ComboBox();
+            this.btnAsignarLinieros = new System.Windows.Forms.Button();
+            this.btnAsignarAyudantes = new System.Windows.Forms.Button();
+            this.btnAsignarChofer = new System.Windows.Forms.Button();
             this.tcRuta.SuspendLayout();
             this.tbRuta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
@@ -126,6 +119,7 @@
             this.tbPrograma.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numGrupoTrabajo)).BeginInit();
             this.SuspendLayout();
             // 
             // tcRuta
@@ -652,25 +646,18 @@
             // 
             // tbEquipoTrabajo
             // 
-            this.tbEquipoTrabajo.Controls.Add(this.btnCrearGrupo);
+            this.tbEquipoTrabajo.Controls.Add(this.btnAsignarChofer);
+            this.tbEquipoTrabajo.Controls.Add(this.btnAsignarAyudantes);
+            this.tbEquipoTrabajo.Controls.Add(this.btnAsignarLinieros);
+            this.tbEquipoTrabajo.Controls.Add(this.cbTrabajador);
+            this.tbEquipoTrabajo.Controls.Add(this.lblJefeGrupo);
+            this.tbEquipoTrabajo.Controls.Add(this.numGrupoTrabajo);
+            this.tbEquipoTrabajo.Controls.Add(this.lblNumeroGrupo);
+            this.tbEquipoTrabajo.Controls.Add(this.txtNombreGrupo);
+            this.tbEquipoTrabajo.Controls.Add(this.lblNombreGrupo);
+            this.tbEquipoTrabajo.Controls.Add(this.btnCrearGrupoTrabajo);
             this.tbEquipoTrabajo.Controls.Add(this.pictureBox4);
             this.tbEquipoTrabajo.Controls.Add(this.pictureBox3);
-            this.tbEquipoTrabajo.Controls.Add(this.comboBox3);
-            this.tbEquipoTrabajo.Controls.Add(this.lblChofer);
-            this.tbEquipoTrabajo.Controls.Add(this.cbAyudante5);
-            this.tbEquipoTrabajo.Controls.Add(this.cbAyudante4);
-            this.tbEquipoTrabajo.Controls.Add(this.cbAyudante3);
-            this.tbEquipoTrabajo.Controls.Add(this.cbAyudante2);
-            this.tbEquipoTrabajo.Controls.Add(this.cbAyudante1);
-            this.tbEquipoTrabajo.Controls.Add(this.lblAyudante);
-            this.tbEquipoTrabajo.Controls.Add(this.cbLiniero5);
-            this.tbEquipoTrabajo.Controls.Add(this.cbLiniero4);
-            this.tbEquipoTrabajo.Controls.Add(this.cbLiniero3);
-            this.tbEquipoTrabajo.Controls.Add(this.cbLiniero2);
-            this.tbEquipoTrabajo.Controls.Add(this.cbLiniero1);
-            this.tbEquipoTrabajo.Controls.Add(this.lblLinieros);
-            this.tbEquipoTrabajo.Controls.Add(this.cbJefeGrupo);
-            this.tbEquipoTrabajo.Controls.Add(this.lblJefeGrupo);
             this.tbEquipoTrabajo.Location = new System.Drawing.Point(4, 22);
             this.tbEquipoTrabajo.Name = "tbEquipoTrabajo";
             this.tbEquipoTrabajo.Size = new System.Drawing.Size(792, 418);
@@ -678,18 +665,18 @@
             this.tbEquipoTrabajo.Text = "Equipo de Trabajo";
             this.tbEquipoTrabajo.UseVisualStyleBackColor = true;
             // 
-            // btnCrearGrupo
+            // btnCrearGrupoTrabajo
             // 
-            this.btnCrearGrupo.Location = new System.Drawing.Point(461, 327);
-            this.btnCrearGrupo.Name = "btnCrearGrupo";
-            this.btnCrearGrupo.Size = new System.Drawing.Size(235, 49);
-            this.btnCrearGrupo.TabIndex = 18;
-            this.btnCrearGrupo.Text = "CREAR GRUPO DE TRABAJO";
-            this.btnCrearGrupo.UseVisualStyleBackColor = true;
+            this.btnCrearGrupoTrabajo.Location = new System.Drawing.Point(203, 193);
+            this.btnCrearGrupoTrabajo.Name = "btnCrearGrupoTrabajo";
+            this.btnCrearGrupoTrabajo.Size = new System.Drawing.Size(130, 47);
+            this.btnCrearGrupoTrabajo.TabIndex = 18;
+            this.btnCrearGrupoTrabajo.Text = "CREAR GRUPO DE TRABAJO";
+            this.btnCrearGrupoTrabajo.UseVisualStyleBackColor = true;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(429, 178);
+            this.pictureBox4.Location = new System.Drawing.Point(485, 176);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(290, 117);
             this.pictureBox4.TabIndex = 17;
@@ -697,155 +684,11 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(429, 30);
+            this.pictureBox3.Location = new System.Drawing.Point(485, 31);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(290, 129);
             this.pictureBox3.TabIndex = 16;
             this.pictureBox3.TabStop = false;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(146, 382);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(183, 21);
-            this.comboBox3.TabIndex = 15;
-            // 
-            // lblChofer
-            // 
-            this.lblChofer.AutoSize = true;
-            this.lblChofer.Location = new System.Drawing.Point(68, 382);
-            this.lblChofer.Name = "lblChofer";
-            this.lblChofer.Size = new System.Drawing.Size(54, 13);
-            this.lblChofer.TabIndex = 14;
-            this.lblChofer.Text = "CHOFER:";
-            // 
-            // cbAyudante5
-            // 
-            this.cbAyudante5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAyudante5.FormattingEnabled = true;
-            this.cbAyudante5.Location = new System.Drawing.Point(147, 342);
-            this.cbAyudante5.Name = "cbAyudante5";
-            this.cbAyudante5.Size = new System.Drawing.Size(183, 21);
-            this.cbAyudante5.TabIndex = 13;
-            // 
-            // cbAyudante4
-            // 
-            this.cbAyudante4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAyudante4.FormattingEnabled = true;
-            this.cbAyudante4.Location = new System.Drawing.Point(147, 314);
-            this.cbAyudante4.Name = "cbAyudante4";
-            this.cbAyudante4.Size = new System.Drawing.Size(183, 21);
-            this.cbAyudante4.TabIndex = 12;
-            // 
-            // cbAyudante3
-            // 
-            this.cbAyudante3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAyudante3.FormattingEnabled = true;
-            this.cbAyudante3.Location = new System.Drawing.Point(147, 286);
-            this.cbAyudante3.Name = "cbAyudante3";
-            this.cbAyudante3.Size = new System.Drawing.Size(183, 21);
-            this.cbAyudante3.TabIndex = 11;
-            // 
-            // cbAyudante2
-            // 
-            this.cbAyudante2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAyudante2.FormattingEnabled = true;
-            this.cbAyudante2.Location = new System.Drawing.Point(147, 258);
-            this.cbAyudante2.Name = "cbAyudante2";
-            this.cbAyudante2.Size = new System.Drawing.Size(183, 21);
-            this.cbAyudante2.TabIndex = 10;
-            // 
-            // cbAyudante1
-            // 
-            this.cbAyudante1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAyudante1.FormattingEnabled = true;
-            this.cbAyudante1.Location = new System.Drawing.Point(147, 230);
-            this.cbAyudante1.Name = "cbAyudante1";
-            this.cbAyudante1.Size = new System.Drawing.Size(183, 21);
-            this.cbAyudante1.TabIndex = 9;
-            // 
-            // lblAyudante
-            // 
-            this.lblAyudante.AutoSize = true;
-            this.lblAyudante.Location = new System.Drawing.Point(65, 230);
-            this.lblAyudante.Name = "lblAyudante";
-            this.lblAyudante.Size = new System.Drawing.Size(76, 13);
-            this.lblAyudante.TabIndex = 8;
-            this.lblAyudante.Text = "AYUDANTES:";
-            // 
-            // cbLiniero5
-            // 
-            this.cbLiniero5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLiniero5.FormattingEnabled = true;
-            this.cbLiniero5.Location = new System.Drawing.Point(147, 190);
-            this.cbLiniero5.Name = "cbLiniero5";
-            this.cbLiniero5.Size = new System.Drawing.Size(182, 21);
-            this.cbLiniero5.TabIndex = 7;
-            // 
-            // cbLiniero4
-            // 
-            this.cbLiniero4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLiniero4.FormattingEnabled = true;
-            this.cbLiniero4.Location = new System.Drawing.Point(146, 162);
-            this.cbLiniero4.Name = "cbLiniero4";
-            this.cbLiniero4.Size = new System.Drawing.Size(183, 21);
-            this.cbLiniero4.TabIndex = 6;
-            // 
-            // cbLiniero3
-            // 
-            this.cbLiniero3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLiniero3.FormattingEnabled = true;
-            this.cbLiniero3.Location = new System.Drawing.Point(146, 134);
-            this.cbLiniero3.Name = "cbLiniero3";
-            this.cbLiniero3.Size = new System.Drawing.Size(183, 21);
-            this.cbLiniero3.TabIndex = 5;
-            // 
-            // cbLiniero2
-            // 
-            this.cbLiniero2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLiniero2.FormattingEnabled = true;
-            this.cbLiniero2.Location = new System.Drawing.Point(146, 106);
-            this.cbLiniero2.Name = "cbLiniero2";
-            this.cbLiniero2.Size = new System.Drawing.Size(183, 21);
-            this.cbLiniero2.TabIndex = 4;
-            // 
-            // cbLiniero1
-            // 
-            this.cbLiniero1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLiniero1.FormattingEnabled = true;
-            this.cbLiniero1.Location = new System.Drawing.Point(147, 78);
-            this.cbLiniero1.Name = "cbLiniero1";
-            this.cbLiniero1.Size = new System.Drawing.Size(182, 21);
-            this.cbLiniero1.TabIndex = 3;
-            // 
-            // lblLinieros
-            // 
-            this.lblLinieros.AutoSize = true;
-            this.lblLinieros.Location = new System.Drawing.Point(80, 81);
-            this.lblLinieros.Name = "lblLinieros";
-            this.lblLinieros.Size = new System.Drawing.Size(60, 13);
-            this.lblLinieros.TabIndex = 2;
-            this.lblLinieros.Text = "LINIEROS:";
-            // 
-            // cbJefeGrupo
-            // 
-            this.cbJefeGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbJefeGrupo.FormattingEnabled = true;
-            this.cbJefeGrupo.Location = new System.Drawing.Point(146, 30);
-            this.cbJefeGrupo.Name = "cbJefeGrupo";
-            this.cbJefeGrupo.Size = new System.Drawing.Size(183, 21);
-            this.cbJefeGrupo.TabIndex = 1;
-            // 
-            // lblJefeGrupo
-            // 
-            this.lblJefeGrupo.AutoSize = true;
-            this.lblJefeGrupo.Location = new System.Drawing.Point(45, 33);
-            this.lblJefeGrupo.Name = "lblJefeGrupo";
-            this.lblJefeGrupo.Size = new System.Drawing.Size(95, 13);
-            this.lblJefeGrupo.TabIndex = 0;
-            this.lblJefeGrupo.Text = "JEFE DE GRUPO:";
             // 
             // tbPrograma
             // 
@@ -988,6 +831,85 @@
             this.lblFechaTrabajo.TabIndex = 0;
             this.lblFechaTrabajo.Text = "FECHA DE TRABAJO:";
             // 
+            // lblNombreGrupo
+            // 
+            this.lblNombreGrupo.AutoSize = true;
+            this.lblNombreGrupo.Location = new System.Drawing.Point(28, 31);
+            this.lblNombreGrupo.Name = "lblNombreGrupo";
+            this.lblNombreGrupo.Size = new System.Drawing.Size(169, 13);
+            this.lblNombreGrupo.TabIndex = 19;
+            this.lblNombreGrupo.Text = "NOMBRE GRUPO DE TRABAJO:";
+            // 
+            // txtNombreGrupo
+            // 
+            this.txtNombreGrupo.Location = new System.Drawing.Point(203, 28);
+            this.txtNombreGrupo.Name = "txtNombreGrupo";
+            this.txtNombreGrupo.Size = new System.Drawing.Size(239, 20);
+            this.txtNombreGrupo.TabIndex = 20;
+            // 
+            // lblNumeroGrupo
+            // 
+            this.lblNumeroGrupo.AutoSize = true;
+            this.lblNumeroGrupo.Location = new System.Drawing.Point(28, 86);
+            this.lblNumeroGrupo.Name = "lblNumeroGrupo";
+            this.lblNumeroGrupo.Size = new System.Drawing.Size(170, 13);
+            this.lblNumeroGrupo.TabIndex = 21;
+            this.lblNumeroGrupo.Text = "NUMERO GRUPO DE TRABAJO:";
+            // 
+            // numGrupoTrabajo
+            // 
+            this.numGrupoTrabajo.Location = new System.Drawing.Point(204, 84);
+            this.numGrupoTrabajo.Name = "numGrupoTrabajo";
+            this.numGrupoTrabajo.Size = new System.Drawing.Size(53, 20);
+            this.numGrupoTrabajo.TabIndex = 22;
+            // 
+            // lblJefeGrupo
+            // 
+            this.lblJefeGrupo.AutoSize = true;
+            this.lblJefeGrupo.Location = new System.Drawing.Point(102, 147);
+            this.lblJefeGrupo.Name = "lblJefeGrupo";
+            this.lblJefeGrupo.Size = new System.Drawing.Size(95, 13);
+            this.lblJefeGrupo.TabIndex = 23;
+            this.lblJefeGrupo.Text = "JEFE DE GRUPO:";
+            // 
+            // cbTrabajador
+            // 
+            this.cbTrabajador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTrabajador.FormattingEnabled = true;
+            this.cbTrabajador.Items.AddRange(new object[] {
+            "(NINGUNO)"});
+            this.cbTrabajador.Location = new System.Drawing.Point(203, 144);
+            this.cbTrabajador.Name = "cbTrabajador";
+            this.cbTrabajador.Size = new System.Drawing.Size(205, 21);
+            this.cbTrabajador.TabIndex = 24;
+            // 
+            // btnAsignarLinieros
+            // 
+            this.btnAsignarLinieros.Location = new System.Drawing.Point(31, 282);
+            this.btnAsignarLinieros.Name = "btnAsignarLinieros";
+            this.btnAsignarLinieros.Size = new System.Drawing.Size(149, 26);
+            this.btnAsignarLinieros.TabIndex = 25;
+            this.btnAsignarLinieros.Text = "ASIGNAR LINIEROS";
+            this.btnAsignarLinieros.UseVisualStyleBackColor = true;
+            // 
+            // btnAsignarAyudantes
+            // 
+            this.btnAsignarAyudantes.Location = new System.Drawing.Point(31, 314);
+            this.btnAsignarAyudantes.Name = "btnAsignarAyudantes";
+            this.btnAsignarAyudantes.Size = new System.Drawing.Size(149, 23);
+            this.btnAsignarAyudantes.TabIndex = 26;
+            this.btnAsignarAyudantes.Text = "ASIGNAR AYUDANTES";
+            this.btnAsignarAyudantes.UseVisualStyleBackColor = true;
+            // 
+            // btnAsignarChofer
+            // 
+            this.btnAsignarChofer.Location = new System.Drawing.Point(31, 344);
+            this.btnAsignarChofer.Name = "btnAsignarChofer";
+            this.btnAsignarChofer.Size = new System.Drawing.Size(149, 23);
+            this.btnAsignarChofer.TabIndex = 27;
+            this.btnAsignarChofer.Text = "ASIGNAR CHOFER";
+            this.btnAsignarChofer.UseVisualStyleBackColor = true;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1017,6 +939,7 @@
             this.tbPrograma.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numGrupoTrabajo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1059,25 +982,9 @@
         private System.Windows.Forms.TextBox txtNombreTrabajador;
         private System.Windows.Forms.Label lblNombreTrabajador;
         private System.Windows.Forms.TabPage tbEquipoTrabajo;
-        private System.Windows.Forms.Button btnCrearGrupo;
+        private System.Windows.Forms.Button btnCrearGrupoTrabajo;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label lblChofer;
-        private System.Windows.Forms.ComboBox cbAyudante5;
-        private System.Windows.Forms.ComboBox cbAyudante4;
-        private System.Windows.Forms.ComboBox cbAyudante3;
-        private System.Windows.Forms.ComboBox cbAyudante2;
-        private System.Windows.Forms.ComboBox cbAyudante1;
-        private System.Windows.Forms.Label lblAyudante;
-        private System.Windows.Forms.ComboBox cbLiniero5;
-        private System.Windows.Forms.ComboBox cbLiniero4;
-        private System.Windows.Forms.ComboBox cbLiniero3;
-        private System.Windows.Forms.ComboBox cbLiniero2;
-        private System.Windows.Forms.ComboBox cbLiniero1;
-        private System.Windows.Forms.Label lblLinieros;
-        private System.Windows.Forms.ComboBox cbJefeGrupo;
-        private System.Windows.Forms.Label lblJefeGrupo;
         private System.Windows.Forms.TabPage tbPrograma;
         private System.Windows.Forms.Label lblRuta;
         private System.Windows.Forms.DateTimePicker dtpFechaPrograma;
@@ -1105,5 +1012,14 @@
         private System.Windows.Forms.ComboBox cbDetalleRetenidas;
         private System.Windows.Forms.Button btnDetallesTipoTrabajo;
         private System.Windows.Forms.Button btnIngresarCargo;
+        private System.Windows.Forms.Button btnAsignarChofer;
+        private System.Windows.Forms.Button btnAsignarAyudantes;
+        private System.Windows.Forms.Button btnAsignarLinieros;
+        private System.Windows.Forms.ComboBox cbTrabajador;
+        private System.Windows.Forms.Label lblJefeGrupo;
+        private System.Windows.Forms.NumericUpDown numGrupoTrabajo;
+        private System.Windows.Forms.Label lblNumeroGrupo;
+        private System.Windows.Forms.TextBox txtNombreGrupo;
+        private System.Windows.Forms.Label lblNombreGrupo;
     }
 }
