@@ -23,7 +23,10 @@ namespace NETCOMMERCE_App
 
             cbNumeroGrupoTrabajo.DataSource = dtsGrupoTrabajo.ListaElementosGrupoTrabajo();
             cbNumeroGrupoTrabajo.DisplayMember = "numero_grupotrabajo";
- 
+
+            cbLiniero.DataSource = dtsGrupoTrabajo.ListaLinieros();
+            cbLiniero.DisplayMember = "nombre_integrantegrupo";
+            cbLiniero.ValueMember = "idtbl_IntegranteGrupo";
         }
 
         clsDatosDetalleGrupoTrabajo dtsGrupoTrabajo = new clsDatosDetalleGrupoTrabajo();

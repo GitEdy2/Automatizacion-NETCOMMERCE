@@ -27,6 +27,7 @@ namespace NETCOMMERCE_App
             cbDetalleRetenidas.SelectedIndex = 0;
             cbEmpresa.SelectedIndex = 0;
             cbCargo.SelectedIndex = 0;
+            cbJefeGrupo.SelectedIndex = 0;
 
             cbCargo.DataSource = dtsintegrante.ListaCargosIntegrante();
             cbCargo.DisplayMember = "cargo_tipointegrante";
@@ -46,7 +47,13 @@ namespace NETCOMMERCE_App
 
             cbDetalleRetenidas.DataSource = dtstrabajo.ListaRetenidas();
             cbDetalleRetenidas.DisplayMember = "detalle_retenidas";
-            cbDetalleRetenidas.ValueMember = "idtbl_KitsRetenida";           
+            cbDetalleRetenidas.ValueMember = "idtbl_KitsRetenida";
+
+            cbJefeGrupo.DataSource = dtsgrupotrabajo.ListaJefeGrupo();
+            cbJefeGrupo.DisplayMember = "nombre_integrantegrupo";
+            cbJefeGrupo.ValueMember = "idtbl_IntegranteGrupo";
+            
+
             
         }      
 
@@ -58,6 +65,9 @@ namespace NETCOMMERCE_App
 
         clsIntegranteGrupo integrante = new clsIntegranteGrupo();
         clsDatosIntegranteGrupo dtsintegrante = new clsDatosIntegranteGrupo();
+
+        clsDetalleGrupoTrabajo grupotrabajo = new clsDetalleGrupoTrabajo();
+        clsDatosDetalleGrupoTrabajo dtsgrupotrabajo = new clsDatosDetalleGrupoTrabajo();
 
         
         private void btnCrearRuta_Click(object sender, EventArgs e)
@@ -308,6 +318,17 @@ namespace NETCOMMERCE_App
         {
             IngresarCargoTrabajador cargo = new IngresarCargoTrabajador();
             cargo.Show();
+        }
+
+        private void btnAsignarLinieros_Click(object sender, EventArgs e)
+        {
+            IngresarLinierosGrupo linierosgrupo = new IngresarLinierosGrupo();
+            linierosgrupo.Show();
+        }
+
+        private void btnCrearGrupoTrabajo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

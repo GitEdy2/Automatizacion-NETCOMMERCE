@@ -76,6 +76,15 @@
             this.txtNombreTrabajador = new System.Windows.Forms.TextBox();
             this.lblNombreTrabajador = new System.Windows.Forms.Label();
             this.tbEquipoTrabajo = new System.Windows.Forms.TabPage();
+            this.btnAsignarChofer = new System.Windows.Forms.Button();
+            this.btnAsignarAyudantes = new System.Windows.Forms.Button();
+            this.btnAsignarLinieros = new System.Windows.Forms.Button();
+            this.cbJefeGrupo = new System.Windows.Forms.ComboBox();
+            this.lblJefeGrupo = new System.Windows.Forms.Label();
+            this.numGrupoTrabajo = new System.Windows.Forms.NumericUpDown();
+            this.lblNumeroGrupo = new System.Windows.Forms.Label();
+            this.txtNombreGrupo = new System.Windows.Forms.TextBox();
+            this.lblNombreGrupo = new System.Windows.Forms.Label();
             this.btnCrearGrupoTrabajo = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -94,15 +103,7 @@
             this.lblRuta = new System.Windows.Forms.Label();
             this.dtpFechaPrograma = new System.Windows.Forms.DateTimePicker();
             this.lblFechaTrabajo = new System.Windows.Forms.Label();
-            this.lblNombreGrupo = new System.Windows.Forms.Label();
-            this.txtNombreGrupo = new System.Windows.Forms.TextBox();
-            this.lblNumeroGrupo = new System.Windows.Forms.Label();
-            this.numGrupoTrabajo = new System.Windows.Forms.NumericUpDown();
-            this.lblJefeGrupo = new System.Windows.Forms.Label();
-            this.cbTrabajador = new System.Windows.Forms.ComboBox();
-            this.btnAsignarLinieros = new System.Windows.Forms.Button();
-            this.btnAsignarAyudantes = new System.Windows.Forms.Button();
-            this.btnAsignarChofer = new System.Windows.Forms.Button();
+            this.btnNuevoJefeGrupo = new System.Windows.Forms.Button();
             this.tcRuta.SuspendLayout();
             this.tbRuta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
@@ -114,12 +115,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbQRTelcom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNet)).BeginInit();
             this.tbEquipoTrabajo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numGrupoTrabajo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tbPrograma.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numGrupoTrabajo)).BeginInit();
             this.SuspendLayout();
             // 
             // tcRuta
@@ -646,10 +647,11 @@
             // 
             // tbEquipoTrabajo
             // 
+            this.tbEquipoTrabajo.Controls.Add(this.btnNuevoJefeGrupo);
             this.tbEquipoTrabajo.Controls.Add(this.btnAsignarChofer);
             this.tbEquipoTrabajo.Controls.Add(this.btnAsignarAyudantes);
             this.tbEquipoTrabajo.Controls.Add(this.btnAsignarLinieros);
-            this.tbEquipoTrabajo.Controls.Add(this.cbTrabajador);
+            this.tbEquipoTrabajo.Controls.Add(this.cbJefeGrupo);
             this.tbEquipoTrabajo.Controls.Add(this.lblJefeGrupo);
             this.tbEquipoTrabajo.Controls.Add(this.numGrupoTrabajo);
             this.tbEquipoTrabajo.Controls.Add(this.lblNumeroGrupo);
@@ -665,6 +667,86 @@
             this.tbEquipoTrabajo.Text = "Equipo de Trabajo";
             this.tbEquipoTrabajo.UseVisualStyleBackColor = true;
             // 
+            // btnAsignarChofer
+            // 
+            this.btnAsignarChofer.Location = new System.Drawing.Point(31, 369);
+            this.btnAsignarChofer.Name = "btnAsignarChofer";
+            this.btnAsignarChofer.Size = new System.Drawing.Size(149, 23);
+            this.btnAsignarChofer.TabIndex = 27;
+            this.btnAsignarChofer.Text = "ASIGNAR CHOFER";
+            this.btnAsignarChofer.UseVisualStyleBackColor = true;
+            // 
+            // btnAsignarAyudantes
+            // 
+            this.btnAsignarAyudantes.Location = new System.Drawing.Point(31, 340);
+            this.btnAsignarAyudantes.Name = "btnAsignarAyudantes";
+            this.btnAsignarAyudantes.Size = new System.Drawing.Size(149, 23);
+            this.btnAsignarAyudantes.TabIndex = 26;
+            this.btnAsignarAyudantes.Text = "ASIGNAR AYUDANTES";
+            this.btnAsignarAyudantes.UseVisualStyleBackColor = true;
+            // 
+            // btnAsignarLinieros
+            // 
+            this.btnAsignarLinieros.Location = new System.Drawing.Point(31, 308);
+            this.btnAsignarLinieros.Name = "btnAsignarLinieros";
+            this.btnAsignarLinieros.Size = new System.Drawing.Size(149, 26);
+            this.btnAsignarLinieros.TabIndex = 25;
+            this.btnAsignarLinieros.Text = "ASIGNAR LINIEROS";
+            this.btnAsignarLinieros.UseVisualStyleBackColor = true;
+            this.btnAsignarLinieros.Click += new System.EventHandler(this.btnAsignarLinieros_Click);
+            // 
+            // cbJefeGrupo
+            // 
+            this.cbJefeGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbJefeGrupo.FormattingEnabled = true;
+            this.cbJefeGrupo.Items.AddRange(new object[] {
+            "(NINGUNO)"});
+            this.cbJefeGrupo.Location = new System.Drawing.Point(129, 142);
+            this.cbJefeGrupo.Name = "cbJefeGrupo";
+            this.cbJefeGrupo.Size = new System.Drawing.Size(214, 21);
+            this.cbJefeGrupo.TabIndex = 24;
+            // 
+            // lblJefeGrupo
+            // 
+            this.lblJefeGrupo.AutoSize = true;
+            this.lblJefeGrupo.Location = new System.Drawing.Point(28, 147);
+            this.lblJefeGrupo.Name = "lblJefeGrupo";
+            this.lblJefeGrupo.Size = new System.Drawing.Size(95, 13);
+            this.lblJefeGrupo.TabIndex = 23;
+            this.lblJefeGrupo.Text = "JEFE DE GRUPO:";
+            // 
+            // numGrupoTrabajo
+            // 
+            this.numGrupoTrabajo.Location = new System.Drawing.Point(204, 84);
+            this.numGrupoTrabajo.Name = "numGrupoTrabajo";
+            this.numGrupoTrabajo.Size = new System.Drawing.Size(53, 20);
+            this.numGrupoTrabajo.TabIndex = 22;
+            // 
+            // lblNumeroGrupo
+            // 
+            this.lblNumeroGrupo.AutoSize = true;
+            this.lblNumeroGrupo.Location = new System.Drawing.Point(28, 86);
+            this.lblNumeroGrupo.Name = "lblNumeroGrupo";
+            this.lblNumeroGrupo.Size = new System.Drawing.Size(170, 13);
+            this.lblNumeroGrupo.TabIndex = 21;
+            this.lblNumeroGrupo.Text = "NUMERO GRUPO DE TRABAJO:";
+            // 
+            // txtNombreGrupo
+            // 
+            this.txtNombreGrupo.Location = new System.Drawing.Point(203, 28);
+            this.txtNombreGrupo.Name = "txtNombreGrupo";
+            this.txtNombreGrupo.Size = new System.Drawing.Size(239, 20);
+            this.txtNombreGrupo.TabIndex = 20;
+            // 
+            // lblNombreGrupo
+            // 
+            this.lblNombreGrupo.AutoSize = true;
+            this.lblNombreGrupo.Location = new System.Drawing.Point(28, 31);
+            this.lblNombreGrupo.Name = "lblNombreGrupo";
+            this.lblNombreGrupo.Size = new System.Drawing.Size(169, 13);
+            this.lblNombreGrupo.TabIndex = 19;
+            this.lblNombreGrupo.Text = "NOMBRE GRUPO DE TRABAJO:";
+            // 
             // btnCrearGrupoTrabajo
             // 
             this.btnCrearGrupoTrabajo.Location = new System.Drawing.Point(203, 193);
@@ -673,6 +755,7 @@
             this.btnCrearGrupoTrabajo.TabIndex = 18;
             this.btnCrearGrupoTrabajo.Text = "CREAR GRUPO DE TRABAJO";
             this.btnCrearGrupoTrabajo.UseVisualStyleBackColor = true;
+            this.btnCrearGrupoTrabajo.Click += new System.EventHandler(this.btnCrearGrupoTrabajo_Click);
             // 
             // pictureBox4
             // 
@@ -684,7 +767,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(485, 31);
+            this.pictureBox3.Location = new System.Drawing.Point(485, 28);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(290, 129);
             this.pictureBox3.TabIndex = 16;
@@ -831,84 +914,14 @@
             this.lblFechaTrabajo.TabIndex = 0;
             this.lblFechaTrabajo.Text = "FECHA DE TRABAJO:";
             // 
-            // lblNombreGrupo
+            // btnNuevoJefeGrupo
             // 
-            this.lblNombreGrupo.AutoSize = true;
-            this.lblNombreGrupo.Location = new System.Drawing.Point(28, 31);
-            this.lblNombreGrupo.Name = "lblNombreGrupo";
-            this.lblNombreGrupo.Size = new System.Drawing.Size(169, 13);
-            this.lblNombreGrupo.TabIndex = 19;
-            this.lblNombreGrupo.Text = "NOMBRE GRUPO DE TRABAJO:";
-            // 
-            // txtNombreGrupo
-            // 
-            this.txtNombreGrupo.Location = new System.Drawing.Point(203, 28);
-            this.txtNombreGrupo.Name = "txtNombreGrupo";
-            this.txtNombreGrupo.Size = new System.Drawing.Size(239, 20);
-            this.txtNombreGrupo.TabIndex = 20;
-            // 
-            // lblNumeroGrupo
-            // 
-            this.lblNumeroGrupo.AutoSize = true;
-            this.lblNumeroGrupo.Location = new System.Drawing.Point(28, 86);
-            this.lblNumeroGrupo.Name = "lblNumeroGrupo";
-            this.lblNumeroGrupo.Size = new System.Drawing.Size(170, 13);
-            this.lblNumeroGrupo.TabIndex = 21;
-            this.lblNumeroGrupo.Text = "NUMERO GRUPO DE TRABAJO:";
-            // 
-            // numGrupoTrabajo
-            // 
-            this.numGrupoTrabajo.Location = new System.Drawing.Point(204, 84);
-            this.numGrupoTrabajo.Name = "numGrupoTrabajo";
-            this.numGrupoTrabajo.Size = new System.Drawing.Size(53, 20);
-            this.numGrupoTrabajo.TabIndex = 22;
-            // 
-            // lblJefeGrupo
-            // 
-            this.lblJefeGrupo.AutoSize = true;
-            this.lblJefeGrupo.Location = new System.Drawing.Point(102, 147);
-            this.lblJefeGrupo.Name = "lblJefeGrupo";
-            this.lblJefeGrupo.Size = new System.Drawing.Size(95, 13);
-            this.lblJefeGrupo.TabIndex = 23;
-            this.lblJefeGrupo.Text = "JEFE DE GRUPO:";
-            // 
-            // cbTrabajador
-            // 
-            this.cbTrabajador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTrabajador.FormattingEnabled = true;
-            this.cbTrabajador.Items.AddRange(new object[] {
-            "(NINGUNO)"});
-            this.cbTrabajador.Location = new System.Drawing.Point(203, 144);
-            this.cbTrabajador.Name = "cbTrabajador";
-            this.cbTrabajador.Size = new System.Drawing.Size(205, 21);
-            this.cbTrabajador.TabIndex = 24;
-            // 
-            // btnAsignarLinieros
-            // 
-            this.btnAsignarLinieros.Location = new System.Drawing.Point(31, 282);
-            this.btnAsignarLinieros.Name = "btnAsignarLinieros";
-            this.btnAsignarLinieros.Size = new System.Drawing.Size(149, 26);
-            this.btnAsignarLinieros.TabIndex = 25;
-            this.btnAsignarLinieros.Text = "ASIGNAR LINIEROS";
-            this.btnAsignarLinieros.UseVisualStyleBackColor = true;
-            // 
-            // btnAsignarAyudantes
-            // 
-            this.btnAsignarAyudantes.Location = new System.Drawing.Point(31, 314);
-            this.btnAsignarAyudantes.Name = "btnAsignarAyudantes";
-            this.btnAsignarAyudantes.Size = new System.Drawing.Size(149, 23);
-            this.btnAsignarAyudantes.TabIndex = 26;
-            this.btnAsignarAyudantes.Text = "ASIGNAR AYUDANTES";
-            this.btnAsignarAyudantes.UseVisualStyleBackColor = true;
-            // 
-            // btnAsignarChofer
-            // 
-            this.btnAsignarChofer.Location = new System.Drawing.Point(31, 344);
-            this.btnAsignarChofer.Name = "btnAsignarChofer";
-            this.btnAsignarChofer.Size = new System.Drawing.Size(149, 23);
-            this.btnAsignarChofer.TabIndex = 27;
-            this.btnAsignarChofer.Text = "ASIGNAR CHOFER";
-            this.btnAsignarChofer.UseVisualStyleBackColor = true;
+            this.btnNuevoJefeGrupo.Location = new System.Drawing.Point(349, 137);
+            this.btnNuevoJefeGrupo.Name = "btnNuevoJefeGrupo";
+            this.btnNuevoJefeGrupo.Size = new System.Drawing.Size(130, 32);
+            this.btnNuevoJefeGrupo.TabIndex = 28;
+            this.btnNuevoJefeGrupo.Text = "NUEVO JEFE GRUPO";
+            this.btnNuevoJefeGrupo.UseVisualStyleBackColor = true;
             // 
             // Principal
             // 
@@ -933,13 +946,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbNet)).EndInit();
             this.tbEquipoTrabajo.ResumeLayout(false);
             this.tbEquipoTrabajo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numGrupoTrabajo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tbPrograma.ResumeLayout(false);
             this.tbPrograma.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numGrupoTrabajo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1015,11 +1028,12 @@
         private System.Windows.Forms.Button btnAsignarChofer;
         private System.Windows.Forms.Button btnAsignarAyudantes;
         private System.Windows.Forms.Button btnAsignarLinieros;
-        private System.Windows.Forms.ComboBox cbTrabajador;
+        private System.Windows.Forms.ComboBox cbJefeGrupo;
         private System.Windows.Forms.Label lblJefeGrupo;
         private System.Windows.Forms.NumericUpDown numGrupoTrabajo;
         private System.Windows.Forms.Label lblNumeroGrupo;
         private System.Windows.Forms.TextBox txtNombreGrupo;
         private System.Windows.Forms.Label lblNombreGrupo;
+        private System.Windows.Forms.Button btnNuevoJefeGrupo;
     }
 }

@@ -80,6 +80,116 @@ namespace CapaDatos
         }
 
         
+        public DataTable ListaLinieros()
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            string cmd = "SELECT idtbl_IntegranteGrupo,nombre_integrantegrupo,cargo_tipointegrante" +
+                         "FROM tbl_IntegranteGrupo INNER JOIN tbl_TipoIntegranteGrupo" +
+                         "ON tbl_TipoIntegranteGrupo_id = idtbl_TipoIntegranteGrupo AND cargo_tipointegrante = 'LINIERO'";
+
+            con.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd, con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
+        }
+
+
+        public DataTable ListaJefeGrupo()
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            string cmd = "SELECT idtbl_IntegranteGrupo,nombre_integrantegrupo,cargo_tipointegrante" +
+                         "FROM tbl_IntegranteGrupo INNER JOIN tbl_TipoIntegranteGrupo" +
+                         "ON tbl_TipoIntegranteGrupo_id = idtbl_TipoIntegranteGrupo AND cargo_tipointegrante = 'JEFE DE GRUPO'";
+
+            con.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd, con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
+        }
+
+
+        public DataTable ListaAyudantes()
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            string cmd = "SELECT idtbl_IntegranteGrupo,nombre_integrantegrupo,cargo_tipointegrante" +
+                         "FROM tbl_IntegranteGrupo INNER JOIN tbl_TipoIntegranteGrupo" +
+                         "ON tbl_TipoIntegranteGrupo_id = idtbl_TipoIntegranteGrupo AND cargo_tipointegrante = 'AYUDANTE'";
+
+            con.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd, con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
+        }
+
+
+        public DataTable ListaChofer()
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            string cmd = "SELECT idtbl_IntegranteGrupo,nombre_integrantegrupo,cargo_tipointegrante" +
+                         "FROM tbl_IntegranteGrupo INNER JOIN tbl_TipoIntegranteGrupo" +
+                         "ON tbl_TipoIntegranteGrupo_id = idtbl_TipoIntegranteGrupo AND cargo_tipointegrante = 'CHOFER'";
+
+            con.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd, con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
+        }
 
 
         public bool IngresarGrupoTrabajo (clsDetalleGrupoTrabajo grupotrabajo)
