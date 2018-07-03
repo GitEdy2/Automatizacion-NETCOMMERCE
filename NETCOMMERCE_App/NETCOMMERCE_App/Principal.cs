@@ -271,25 +271,34 @@ namespace NETCOMMERCE_App
         private void btnIngresarDetallesFibra_Click(object sender, EventArgs e)
         {
             IngresarDetalleFibra fibra = new IngresarDetalleFibra();
+            Principal principal = new Principal();
+            principal.Hide();
             fibra.Show();
         }
 
         private void btnIngresarDetallesPostes_Click(object sender, EventArgs e)
         {
             IngresarDetallePostes postes = new IngresarDetallePostes();
+            Principal principal = new Principal();
+            principal.Hide();
             postes.Show();
         }
 
         private void btnIngresarDetallesRetenidas_Click(object sender, EventArgs e)
         {
             IngresarDetalleRetenidas retenidas = new IngresarDetalleRetenidas();
+            Principal principal = new Principal();
+            principal.Hide();
             retenidas.Show();
         }
 
         private void btnDetallesTipoTrabajo_Click(object sender, EventArgs e)
         {
             IngresarTipoTrabajo tipotrabajo = new IngresarTipoTrabajo();
+            Principal principal = new Principal();
+            principal.Hide();
             tipotrabajo.Show();
+            
         }
 
 
@@ -317,18 +326,36 @@ namespace NETCOMMERCE_App
         private void btnIngresarCargo_Click(object sender, EventArgs e)
         {
             IngresarCargoTrabajador cargo = new IngresarCargoTrabajador();
+            Principal principal = new Principal();
+            principal.Hide();
             cargo.Show();
         }
 
         private void btnAsignarLinieros_Click(object sender, EventArgs e)
         {
             IngresarLinierosGrupo linierosgrupo = new IngresarLinierosGrupo();
+            Principal principal = new Principal();
+            principal.Hide();
             linierosgrupo.Show();
         }
 
         private void btnCrearGrupoTrabajo_Click(object sender, EventArgs e)
         {
+            grupotrabajo.Nombregrupotrabajo = txtNombreGrupo.Text;
+            grupotrabajo.Numerogrupotrabajo = Convert.ToInt32(numGrupoTrabajo.Value);
 
+            grupotrabajo.Idintegrantegrupo = Convert.ToInt32(cbJefeGrupo.SelectedValue.ToString());
+
+            bool exito = dtsgrupotrabajo.IngresarJefeGrupoTrabajo(grupotrabajo);
+
+            if (exito == true)
+            {
+                MessageBox.Show("Grupo de trabajo creado correctamente");
+            }
+            else
+            {
+                MessageBox.Show("Error, grupo de trabajo no creado");
+            }
         }
     }
 }

@@ -38,6 +38,9 @@ namespace NETCOMMERCE_App
             if (exito == true)
             {
                 MessageBox.Show("Cargo de trabajador ingresado correctamente");
+                this.Hide();
+                Principal principal = new Principal();
+                principal.Show();
             }
             else
             {

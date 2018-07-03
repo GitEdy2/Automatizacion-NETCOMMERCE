@@ -32,11 +32,13 @@ namespace NETCOMMERCE_App
             if (exito == true)
             {
                 MessageBox.Show("Tipo de trabajo ingresado correctamente");
+                this.Hide();
+                Principal principal = new Principal();
+                principal.Show();
             }
             else
             {
-                MessageBox.Show("Error, Tipo de trabajo no ingresado");
-                this.Hide();
+                MessageBox.Show("Error, Tipo de trabajo no ingresado");               
             }
 
         }

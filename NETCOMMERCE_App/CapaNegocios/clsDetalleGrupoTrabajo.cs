@@ -8,15 +8,13 @@ namespace CapaNegocios
 {
     public class clsDetalleGrupoTrabajo
     {
-        private int idgrupotrabajo;
 
         private int idintegrantegrupo;
 
         private string nombregrupotrabajo;
         private int numerogrupotrabajo;
         
-
-        public int Idgrupotrabajo { get => idgrupotrabajo; set => idgrupotrabajo = value; }
+      
 
         public int Idintegrantegrupo { get => idintegrantegrupo; set => idintegrantegrupo = value; }
 

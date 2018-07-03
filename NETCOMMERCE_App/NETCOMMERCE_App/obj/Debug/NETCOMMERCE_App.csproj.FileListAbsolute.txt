@@ -9,10 +9,8 @@ D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMM
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.pdb
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\bin\Debug\CapaDatos.dll
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\bin\Debug\CapaNegocios.dll
-D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\bin\Debug\Google.Protobuf.dll
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\bin\Debug\CapaDatos.pdb
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\bin\Debug\CapaNegocios.pdb
-D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\bin\Debug\MySql.Data.xml
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.IngresarUsuario.resources
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.LoginUsuario.resources
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.Principal.resources

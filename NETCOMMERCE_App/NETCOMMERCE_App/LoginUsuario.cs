@@ -101,6 +101,7 @@ namespace NETCOMMERCE_App
         private void btnNuevoUsuario_Click(object sender, EventArgs e)
         {
             IngresarUsuario nuevousuario = new IngresarUsuario();
+            this.Hide();
             nuevousuario.Show();
         }
     }

@@ -222,8 +222,7 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@rolempresa", rolempresa);
 
             con.Open();
-            //conBD.AbrirConexion();
-            //conBD.ConexionBaseDatos().Open();
+            
 
             MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -234,8 +233,7 @@ namespace CapaDatos
             }
 
             con.Close();
-            //conBD.CerrarConexion();
-            //conBD.ConexionBaseDatos().Close();
+            
 
             return resultado;
         }

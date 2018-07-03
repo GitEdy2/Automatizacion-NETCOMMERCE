@@ -35,7 +35,8 @@ namespace NETCOMMERCE_App
             {
                 MessageBox.Show("Datos de postes ingresados correctamente");
                 this.Hide();
-                principal.Refresh();
+                Principal principal = new Principal();
+                principal.Show();
             }
             else
             {

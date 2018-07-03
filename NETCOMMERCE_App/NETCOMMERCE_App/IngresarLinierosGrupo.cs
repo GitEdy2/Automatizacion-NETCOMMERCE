@@ -39,11 +39,12 @@ namespace NETCOMMERCE_App
 
             grupotrabajo.Idintegrantegrupo = Convert.ToInt32(cbLiniero.SelectedValue.ToString());
 
-            bool exito = dtsGrupoTrabajo.IngresarGrupoTrabajo(grupotrabajo);
+            bool exito = dtsGrupoTrabajo.IngresarLinieroGrupoTrabajo(grupotrabajo);
 
             if (exito == true)
             {
                 MessageBox.Show("Liniero ingresado correctamente");
+                this.Hide();
             }
             else
             {

@@ -31,18 +31,19 @@ namespace CapaDatos
 
             List<clsDetalleGrupoTrabajo> listagrupotrabajo = new List<clsDetalleGrupoTrabajo>();
 
-          
+
             con.Open();
 
 
             MySqlDataReader lector = cmd.ExecuteReader();
 
-            while(lector.Read())
+            while (lector.Read())
             {
                 clsDetalleGrupoTrabajo grupotrabajo = new clsDetalleGrupoTrabajo();
 
-                grupotrabajo.Idgrupotrabajo = lector.GetInt32(0);
-                grupotrabajo.Idintegrantegrupo = lector.GetInt32(1);
+                grupotrabajo.Nombregrupotrabajo = lector.GetString(0);
+                grupotrabajo.Numerogrupotrabajo = lector.GetInt32(1);
+                grupotrabajo.Idintegrantegrupo = lector.GetInt32(2);
 
                 listagrupotrabajo.Add(grupotrabajo);
             }
@@ -79,7 +80,7 @@ namespace CapaDatos
             return dt;
         }
 
-        
+
         public DataTable ListaLinieros()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
@@ -120,8 +121,8 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            string cmd = "SELECT idtbl_IntegranteGrupo,nombre_integrantegrupo,cargo_tipointegrante" +
-                         "FROM tbl_IntegranteGrupo INNER JOIN tbl_TipoIntegranteGrupo" +
+            string cmd = "SELECT idtbl_IntegranteGrupo,nombre_integrantegrupo,cargo_tipointegrante " +
+                         "FROM tbl_IntegranteGrupo INNER JOIN tbl_TipoIntegranteGrupo " +
                          "ON tbl_TipoIntegranteGrupo_id = idtbl_TipoIntegranteGrupo AND cargo_tipointegrante = 'JEFE DE GRUPO'";
 
             con.Open();
@@ -192,7 +193,7 @@ namespace CapaDatos
         }
 
 
-        public bool IngresarGrupoTrabajo (clsDetalleGrupoTrabajo grupotrabajo)
+        public bool IngresarJefeGrupoTrabajo(clsDetalleGrupoTrabajo grupotrabajo)
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = "localhost";
@@ -204,15 +205,121 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(nombre_grupotrabajo,numero_grupotrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id," +                           
-                                                "values(@nombregrupotrabajo,@numerogrupotrabajo,@integrantegrupoid)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(nombre_grupotrabajo,numero_grupotrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
+                                                "values(@nombregrupotrabajo,@numerogrupotrabajo,@integrantegrupoid,@tipointegranteid)", con);
 
 
             cmd.Parameters.Add("@nombregrupotrabajo", MySqlDbType.VarChar).Value = grupotrabajo.Nombregrupotrabajo;
             cmd.Parameters.Add("@numerogrupotrabajo", MySqlDbType.Int32).Value = grupotrabajo.Numerogrupotrabajo;
-            cmd.Parameters.Add("@integrantegrupoid", MySqlDbType.Int32).Value = grupotrabajo.Idintegrantegrupo;            
-            
-           
+            cmd.Parameters.Add("@integrantegrupoid", MySqlDbType.Int32).Value = grupotrabajo.Idintegrantegrupo;
+            cmd.Parameters.AddWithValue("@tipointegranteid", 1);
+
+            con.Open();
+
+            int exito = cmd.ExecuteNonQuery();
+
+            if (exito == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool IngresarLinieroGrupoTrabajo(clsDetalleGrupoTrabajo grupotrabajo)
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(nombre_grupotrabajo,numero_grupotrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
+                                                "values(@nombregrupotrabajo,@numerogrupotrabajo,@integrantegrupoid,@tipointegranteid)", con);
+
+
+            cmd.Parameters.Add("@nombregrupotrabajo", MySqlDbType.VarChar).Value = grupotrabajo.Nombregrupotrabajo;
+            cmd.Parameters.Add("@numerogrupotrabajo", MySqlDbType.Int32).Value = grupotrabajo.Numerogrupotrabajo;
+            cmd.Parameters.Add("@integrantegrupoid", MySqlDbType.Int32).Value = grupotrabajo.Idintegrantegrupo;
+            cmd.Parameters.AddWithValue("@tipointegranteid", 2);
+
+            con.Open();
+
+            int exito = cmd.ExecuteNonQuery();
+
+            if (exito == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool IngresarAyudanteGrupoTrabajo(clsDetalleGrupoTrabajo grupotrabajo)
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(nombre_grupotrabajo,numero_grupotrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
+                                                "values(@nombregrupotrabajo,@numerogrupotrabajo,@integrantegrupoid,@tipointegranteid)", con);
+
+
+            cmd.Parameters.Add("@nombregrupotrabajo", MySqlDbType.VarChar).Value = grupotrabajo.Nombregrupotrabajo;
+            cmd.Parameters.Add("@numerogrupotrabajo", MySqlDbType.Int32).Value = grupotrabajo.Numerogrupotrabajo;
+            cmd.Parameters.Add("@integrantegrupoid", MySqlDbType.Int32).Value = grupotrabajo.Idintegrantegrupo;
+            cmd.Parameters.AddWithValue("@tipointegranteid", 3);
+
+            con.Open();
+
+            int exito = cmd.ExecuteNonQuery();
+
+            if (exito == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public bool IngresarChoferGrupoTrabajo(clsDetalleGrupoTrabajo grupotrabajo)
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(nombre_grupotrabajo,numero_grupotrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
+                                                "values(@nombregrupotrabajo,@numerogrupotrabajo,@integrantegrupoid,@tipointegranteid)", con);
+
+
+            cmd.Parameters.Add("@nombregrupotrabajo", MySqlDbType.VarChar).Value = grupotrabajo.Nombregrupotrabajo;
+            cmd.Parameters.Add("@numerogrupotrabajo", MySqlDbType.Int32).Value = grupotrabajo.Numerogrupotrabajo;
+            cmd.Parameters.Add("@integrantegrupoid", MySqlDbType.Int32).Value = grupotrabajo.Idintegrantegrupo;
+            cmd.Parameters.AddWithValue("@tipointegranteid", 4);
+
             con.Open();
 
             int exito = cmd.ExecuteNonQuery();
