@@ -12,9 +12,9 @@ using CapaNegocios;
 
 namespace NETCOMMERCE_App
 {
-    public partial class IngresarLinierosGrupo : Form
+    public partial class IngresarAyudantesGrupo : Form
     {
-        public IngresarLinierosGrupo()
+        public IngresarAyudantesGrupo()
         {
             InitializeComponent();
 
@@ -22,38 +22,36 @@ namespace NETCOMMERCE_App
             cbNombreGrupoTrabajo.DisplayMember = "nombre_grupotrabajo";
             cbNombreGrupoTrabajo.ValueMember = "nombre_grupotrabajo";
 
-
             cbNumeroGrupoTrabajo.DataSource = dtsGrupoTrabajo.ListaElementosGrupoTrabajo();
             cbNumeroGrupoTrabajo.DisplayMember = "numero_grupotrabajo";
             cbNumeroGrupoTrabajo.ValueMember = "numero_grupotrabajo";
 
-            cbLiniero.DataSource = dtsGrupoTrabajo.ListaLinieros();
-            cbLiniero.DisplayMember = "nombre_integrantegrupo";
-            cbLiniero.ValueMember = "idtbl_IntegranteGrupo";
+            cbAyudante.DataSource = dtsGrupoTrabajo.ListaAyudantes();
+            cbAyudante.DisplayMember = "nombre_integrantegrupo";
+            cbAyudante.ValueMember = "idtbl_IntegranteGrupo";
         }
 
         clsDatosDetalleGrupoTrabajo dtsGrupoTrabajo = new clsDatosDetalleGrupoTrabajo();
         clsDetalleGrupoTrabajo grupotrabajo = new clsDetalleGrupoTrabajo();
 
-        private void btnIngresarLiniero_Click(object sender, EventArgs e)
+        private void btnIngresarAyudante_Click(object sender, EventArgs e)
         {
             grupotrabajo.Nombregrupotrabajo = cbNombreGrupoTrabajo.SelectedValue.ToString();
             grupotrabajo.Numerogrupotrabajo = Convert.ToInt32(cbNumeroGrupoTrabajo.SelectedValue);
 
-            grupotrabajo.Idintegrantegrupo = Convert.ToInt32(cbLiniero.SelectedValue.ToString());
+            grupotrabajo.Idintegrantegrupo = Convert.ToInt32(cbAyudante.SelectedValue.ToString());
 
-            bool exito = dtsGrupoTrabajo.IngresarLinieroGrupoTrabajo(grupotrabajo);
+            bool exito = dtsGrupoTrabajo.IngresarAyudanteGrupoTrabajo(grupotrabajo);
 
             if (exito == true)
             {
-                MessageBox.Show("Liniero ingresado correctamente");
+                MessageBox.Show("Ayudante ingresado correctamente");
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Error, liniero no ingresado");
+                MessageBox.Show("Error, ayudante no ingresado");
             }
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

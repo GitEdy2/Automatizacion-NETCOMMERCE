@@ -67,7 +67,7 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            string cmd = "SELECT nombre_grupotrabajo,numero_grupotrabajo FROM tbl_DetalleGrupoTrabajo";
+            string cmd = "SELECT DISTINCT nombre_grupotrabajo,numero_grupotrabajo FROM tbl_DetalleGrupoTrabajo";
 
             con.Open();
 
@@ -93,8 +93,8 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            string cmd = "SELECT idtbl_IntegranteGrupo,nombre_integrantegrupo,cargo_tipointegrante" +
-                         "FROM tbl_IntegranteGrupo INNER JOIN tbl_TipoIntegranteGrupo" +
+            string cmd = "SELECT idtbl_IntegranteGrupo,nombre_integrantegrupo,cargo_tipointegrante " +
+                         "FROM tbl_IntegranteGrupo INNER JOIN tbl_TipoIntegranteGrupo " +
                          "ON tbl_TipoIntegranteGrupo_id = idtbl_TipoIntegranteGrupo AND cargo_tipointegrante = 'LINIERO'";
 
             con.Open();
@@ -149,8 +149,8 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            string cmd = "SELECT idtbl_IntegranteGrupo,nombre_integrantegrupo,cargo_tipointegrante" +
-                         "FROM tbl_IntegranteGrupo INNER JOIN tbl_TipoIntegranteGrupo" +
+            string cmd = "SELECT idtbl_IntegranteGrupo,nombre_integrantegrupo,cargo_tipointegrante " +
+                         "FROM tbl_IntegranteGrupo INNER JOIN tbl_TipoIntegranteGrupo " +
                          "ON tbl_TipoIntegranteGrupo_id = idtbl_TipoIntegranteGrupo AND cargo_tipointegrante = 'AYUDANTE'";
 
             con.Open();
@@ -177,8 +177,8 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            string cmd = "SELECT idtbl_IntegranteGrupo,nombre_integrantegrupo,cargo_tipointegrante" +
-                         "FROM tbl_IntegranteGrupo INNER JOIN tbl_TipoIntegranteGrupo" +
+            string cmd = "SELECT idtbl_IntegranteGrupo,nombre_integrantegrupo,cargo_tipointegrante " +
+                         "FROM tbl_IntegranteGrupo INNER JOIN tbl_TipoIntegranteGrupo " +
                          "ON tbl_TipoIntegranteGrupo_id = idtbl_TipoIntegranteGrupo AND cargo_tipointegrante = 'CHOFER'";
 
             con.Open();

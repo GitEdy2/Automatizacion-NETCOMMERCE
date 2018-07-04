@@ -272,7 +272,7 @@ namespace NETCOMMERCE_App
         {
             IngresarDetalleFibra fibra = new IngresarDetalleFibra();
             Principal principal = new Principal();
-            principal.Hide();
+            principal.Close();
             fibra.Show();
         }
 
@@ -280,25 +280,25 @@ namespace NETCOMMERCE_App
         {
             IngresarDetallePostes postes = new IngresarDetallePostes();
             Principal principal = new Principal();
-            principal.Hide();
             postes.Show();
+            principal.Hide();
         }
 
         private void btnIngresarDetallesRetenidas_Click(object sender, EventArgs e)
         {
             IngresarDetalleRetenidas retenidas = new IngresarDetalleRetenidas();
             Principal principal = new Principal();
-            principal.Hide();
             retenidas.Show();
+            principal.Hide();
         }
 
         private void btnDetallesTipoTrabajo_Click(object sender, EventArgs e)
         {
             IngresarTipoTrabajo tipotrabajo = new IngresarTipoTrabajo();
             Principal principal = new Principal();
-            principal.Hide();
+            principal.Close();
             tipotrabajo.Show();
-            
+
         }
 
 
@@ -327,16 +327,17 @@ namespace NETCOMMERCE_App
         {
             IngresarCargoTrabajador cargo = new IngresarCargoTrabajador();
             Principal principal = new Principal();
-            principal.Hide();
             cargo.Show();
+            principal.Hide();
         }
 
         private void btnAsignarLinieros_Click(object sender, EventArgs e)
         {
             IngresarLinierosGrupo linierosgrupo = new IngresarLinierosGrupo();
             Principal principal = new Principal();
-            principal.Hide();
             linierosgrupo.Show();
+            principal.Hide();
+
         }
 
         private void btnCrearGrupoTrabajo_Click(object sender, EventArgs e)
@@ -356,6 +357,22 @@ namespace NETCOMMERCE_App
             {
                 MessageBox.Show("Error, grupo de trabajo no creado");
             }
+        }
+
+        private void btnAsignarAyudantes_Click(object sender, EventArgs e)
+        {
+            IngresarAyudantesGrupo ayudantesgrupo = new IngresarAyudantesGrupo();
+            Principal principal = new Principal();
+            ayudantesgrupo.Show();
+            principal.Hide();
+        }
+
+        private void btnAsignarChofer_Click(object sender, EventArgs e)
+        {
+            IngresarChoferGrupo chofergrupo = new IngresarChoferGrupo();
+            Principal principal = new Principal();
+            chofergrupo.Show();
+            principal.Hide();
         }
     }
 }

@@ -673,6 +673,7 @@
             this.btnAsignarChofer.TabIndex = 27;
             this.btnAsignarChofer.Text = "ASIGNAR CHOFER";
             this.btnAsignarChofer.UseVisualStyleBackColor = true;
+            this.btnAsignarChofer.Click += new System.EventHandler(this.btnAsignarChofer_Click);
             // 
             // btnAsignarAyudantes
             // 
@@ -682,6 +683,7 @@
             this.btnAsignarAyudantes.TabIndex = 26;
             this.btnAsignarAyudantes.Text = "ASIGNAR AYUDANTES";
             this.btnAsignarAyudantes.UseVisualStyleBackColor = true;
+            this.btnAsignarAyudantes.Click += new System.EventHandler(this.btnAsignarAyudantes_Click);
             // 
             // btnAsignarLinieros
             // 
