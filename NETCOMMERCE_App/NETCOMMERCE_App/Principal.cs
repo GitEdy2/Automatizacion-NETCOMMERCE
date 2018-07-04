@@ -52,10 +52,9 @@ namespace NETCOMMERCE_App
             cbJefeGrupo.DataSource = dtsgrupotrabajo.ListaJefeGrupo();
             cbJefeGrupo.DisplayMember = "nombre_integrantegrupo";
             cbJefeGrupo.ValueMember = "idtbl_IntegranteGrupo";
-            
+                      
+        }
 
-            
-        }      
 
         clsRuta ruta = new clsRuta();
         clsDatosRuta dtsRuta = new clsDatosRuta();
@@ -373,6 +372,14 @@ namespace NETCOMMERCE_App
             Principal principal = new Principal();
             chofergrupo.Show();
             principal.Hide();
+        }
+
+        private void btnVerListaTrabajadores_Click(object sender, EventArgs e)
+        {
+            ListaTrabajadoresGrupo trabajadoresgrupo = new ListaTrabajadoresGrupo();
+            Principal principal = new Principal();
+            trabajadoresgrupo.Show();
+            principal.Close();
         }
     }
 }

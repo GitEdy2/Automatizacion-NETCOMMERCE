@@ -86,8 +86,6 @@
             this.txtNombreGrupo = new System.Windows.Forms.TextBox();
             this.lblNombreGrupo = new System.Windows.Forms.Label();
             this.btnCrearGrupoTrabajo = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tbPrograma = new System.Windows.Forms.TabPage();
             this.btnPrograma = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -103,6 +101,9 @@
             this.lblRuta = new System.Windows.Forms.Label();
             this.dtpFechaPrograma = new System.Windows.Forms.DateTimePicker();
             this.lblFechaTrabajo = new System.Windows.Forms.Label();
+            this.btnVerListaTrabajadores = new System.Windows.Forms.Button();
+            this.p = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tcRuta.SuspendLayout();
             this.tbRuta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
@@ -115,11 +116,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbNet)).BeginInit();
             this.tbEquipoTrabajo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numGrupoTrabajo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tbPrograma.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // tcRuta
@@ -132,7 +133,7 @@
             this.tcRuta.Location = new System.Drawing.Point(-1, 3);
             this.tcRuta.Name = "tcRuta";
             this.tcRuta.SelectedIndex = 0;
-            this.tcRuta.Size = new System.Drawing.Size(800, 444);
+            this.tcRuta.Size = new System.Drawing.Size(800, 409);
             this.tcRuta.TabIndex = 0;
             this.tcRuta.Tag = "";
             // 
@@ -646,6 +647,9 @@
             // 
             // tbEquipoTrabajo
             // 
+            this.tbEquipoTrabajo.Controls.Add(this.pictureBox4);
+            this.tbEquipoTrabajo.Controls.Add(this.p);
+            this.tbEquipoTrabajo.Controls.Add(this.btnVerListaTrabajadores);
             this.tbEquipoTrabajo.Controls.Add(this.btnAsignarChofer);
             this.tbEquipoTrabajo.Controls.Add(this.btnAsignarAyudantes);
             this.tbEquipoTrabajo.Controls.Add(this.btnAsignarLinieros);
@@ -656,18 +660,16 @@
             this.tbEquipoTrabajo.Controls.Add(this.txtNombreGrupo);
             this.tbEquipoTrabajo.Controls.Add(this.lblNombreGrupo);
             this.tbEquipoTrabajo.Controls.Add(this.btnCrearGrupoTrabajo);
-            this.tbEquipoTrabajo.Controls.Add(this.pictureBox4);
-            this.tbEquipoTrabajo.Controls.Add(this.pictureBox3);
             this.tbEquipoTrabajo.Location = new System.Drawing.Point(4, 22);
             this.tbEquipoTrabajo.Name = "tbEquipoTrabajo";
-            this.tbEquipoTrabajo.Size = new System.Drawing.Size(792, 418);
+            this.tbEquipoTrabajo.Size = new System.Drawing.Size(792, 383);
             this.tbEquipoTrabajo.TabIndex = 3;
             this.tbEquipoTrabajo.Text = "Equipo de Trabajo";
             this.tbEquipoTrabajo.UseVisualStyleBackColor = true;
             // 
             // btnAsignarChofer
             // 
-            this.btnAsignarChofer.Location = new System.Drawing.Point(32, 328);
+            this.btnAsignarChofer.Location = new System.Drawing.Point(42, 334);
             this.btnAsignarChofer.Name = "btnAsignarChofer";
             this.btnAsignarChofer.Size = new System.Drawing.Size(149, 23);
             this.btnAsignarChofer.TabIndex = 27;
@@ -677,7 +679,7 @@
             // 
             // btnAsignarAyudantes
             // 
-            this.btnAsignarAyudantes.Location = new System.Drawing.Point(32, 299);
+            this.btnAsignarAyudantes.Location = new System.Drawing.Point(42, 305);
             this.btnAsignarAyudantes.Name = "btnAsignarAyudantes";
             this.btnAsignarAyudantes.Size = new System.Drawing.Size(149, 23);
             this.btnAsignarAyudantes.TabIndex = 26;
@@ -687,7 +689,7 @@
             // 
             // btnAsignarLinieros
             // 
-            this.btnAsignarLinieros.Location = new System.Drawing.Point(32, 267);
+            this.btnAsignarLinieros.Location = new System.Drawing.Point(42, 273);
             this.btnAsignarLinieros.Name = "btnAsignarLinieros";
             this.btnAsignarLinieros.Size = new System.Drawing.Size(149, 26);
             this.btnAsignarLinieros.TabIndex = 25;
@@ -701,7 +703,7 @@
             this.cbJefeGrupo.FormattingEnabled = true;
             this.cbJefeGrupo.Items.AddRange(new object[] {
             "(NINGUNO)"});
-            this.cbJefeGrupo.Location = new System.Drawing.Point(187, 144);
+            this.cbJefeGrupo.Location = new System.Drawing.Point(186, 140);
             this.cbJefeGrupo.Name = "cbJefeGrupo";
             this.cbJefeGrupo.Size = new System.Drawing.Size(282, 21);
             this.cbJefeGrupo.TabIndex = 24;
@@ -709,7 +711,7 @@
             // lblJefeGrupo
             // 
             this.lblJefeGrupo.AutoSize = true;
-            this.lblJefeGrupo.Location = new System.Drawing.Point(86, 147);
+            this.lblJefeGrupo.Location = new System.Drawing.Point(85, 143);
             this.lblJefeGrupo.Name = "lblJefeGrupo";
             this.lblJefeGrupo.Size = new System.Drawing.Size(95, 13);
             this.lblJefeGrupo.TabIndex = 23;
@@ -749,29 +751,13 @@
             // 
             // btnCrearGrupoTrabajo
             // 
-            this.btnCrearGrupoTrabajo.Location = new System.Drawing.Point(203, 193);
+            this.btnCrearGrupoTrabajo.Location = new System.Drawing.Point(101, 196);
             this.btnCrearGrupoTrabajo.Name = "btnCrearGrupoTrabajo";
             this.btnCrearGrupoTrabajo.Size = new System.Drawing.Size(130, 47);
             this.btnCrearGrupoTrabajo.TabIndex = 18;
             this.btnCrearGrupoTrabajo.Text = "CREAR GRUPO DE TRABAJO";
             this.btnCrearGrupoTrabajo.UseVisualStyleBackColor = true;
             this.btnCrearGrupoTrabajo.Click += new System.EventHandler(this.btnCrearGrupoTrabajo_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(485, 176);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(290, 117);
-            this.pictureBox4.TabIndex = 17;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(485, 28);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(290, 129);
-            this.pictureBox3.TabIndex = 16;
-            this.pictureBox3.TabStop = false;
             // 
             // tbPrograma
             // 
@@ -914,11 +900,37 @@
             this.lblFechaTrabajo.TabIndex = 0;
             this.lblFechaTrabajo.Text = "FECHA DE TRABAJO:";
             // 
+            // btnVerListaTrabajadores
+            // 
+            this.btnVerListaTrabajadores.Location = new System.Drawing.Point(250, 196);
+            this.btnVerListaTrabajadores.Name = "btnVerListaTrabajadores";
+            this.btnVerListaTrabajadores.Size = new System.Drawing.Size(156, 47);
+            this.btnVerListaTrabajadores.TabIndex = 29;
+            this.btnVerListaTrabajadores.Text = "VER LISTAS";
+            this.btnVerListaTrabajadores.UseVisualStyleBackColor = true;
+            this.btnVerListaTrabajadores.Click += new System.EventHandler(this.btnVerListaTrabajadores_Click);
+            // 
+            // p
+            // 
+            this.p.Location = new System.Drawing.Point(486, 28);
+            this.p.Name = "p";
+            this.p.Size = new System.Drawing.Size(290, 171);
+            this.p.TabIndex = 30;
+            this.p.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(486, 205);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(290, 158);
+            this.pictureBox4.TabIndex = 31;
+            this.pictureBox4.TabStop = false;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 410);
             this.Controls.Add(this.tcRuta);
             this.Name = "Principal";
             this.Text = "Coordinación";
@@ -938,12 +950,12 @@
             this.tbEquipoTrabajo.ResumeLayout(false);
             this.tbEquipoTrabajo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numGrupoTrabajo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tbPrograma.ResumeLayout(false);
             this.tbPrograma.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -987,8 +999,6 @@
         private System.Windows.Forms.Label lblNombreTrabajador;
         private System.Windows.Forms.TabPage tbEquipoTrabajo;
         private System.Windows.Forms.Button btnCrearGrupoTrabajo;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TabPage tbPrograma;
         private System.Windows.Forms.Label lblRuta;
         private System.Windows.Forms.DateTimePicker dtpFechaPrograma;
@@ -1025,5 +1035,8 @@
         private System.Windows.Forms.Label lblNumeroGrupo;
         private System.Windows.Forms.TextBox txtNombreGrupo;
         private System.Windows.Forms.Label lblNombreGrupo;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox p;
+        private System.Windows.Forms.Button btnVerListaTrabajadores;
     }
 }

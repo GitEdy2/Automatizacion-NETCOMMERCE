@@ -9,6 +9,7 @@ using CapaNegocios;
 using System.Web;
 using System.Configuration;
 using System.Data;
+using System.Windows.Forms;
 
 namespace CapaDatos
 {
@@ -78,6 +79,35 @@ namespace CapaDatos
             da.Fill(dt);
 
             return dt;
+        }
+
+
+        public DataTable ListaIntegrantesGrupoTrabajo(string nombregrupo)
+        {
+            DataGridView DataView = new DataGridView();
+
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            string cmd = "SELECT nombre_integrantegrupo,cargo_tipointegrante FROM tbl_IntegranteGrupo INNER JOIN tbl_TipoIntegranteGrupo " +
+                         "ON idtbl_IntegranteGrupo = tbl_IntegranteGrupo_id AND nombre_grupotrabajo = " + nombregrupo;
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd, con);
+
+            DataTable dt = new DataTable();
+
+            con.Open();
+
+            da.Fill(dt);
+
+            return dt;            
         }
 
 
