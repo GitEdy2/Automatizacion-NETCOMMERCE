@@ -16,7 +16,7 @@ namespace CapaDatos
     public class clsDatosDetalleGrupoTrabajo
     {
 
-        public List<clsDetalleGrupoTrabajo> ListarGruposTrabajo()
+        public List<clsDetalleGrupoTrabajo> ListarGruposTrabajo(string nombregrupo)
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = "localhost";
@@ -28,7 +28,11 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("select * from tbl_DetalleGrupoTrabajo", con);
+            MySqlCommand cmd = new MySqlCommand("SELECT nombre_grupotrabajo,numero_grupotrabajo,nombre_integrantegrupo,cargo_tipointegrante FROM tbl_DetalleGrupoTrabajo LEFT JOIN tbl_IntegranteGrupo" +
+                                                "ON tbl_DetalleGrupoTrabajo.tbl_IntegranteGrupo_id = tbl_IntegranteGrupo.idtbl_IntegranteGrupo LEFT JOIN tbl_TipoIntegranteGrupo" +
+                                                "ON tbl_IntegranteGrupo.tbl_TipoIntegranteGrupo_id = tbl_TipoIntegranteGrupo.idtbl_TipoIntegranteGrupo" +
+                                                "AND tbl_DetalleGrupoTrabajo.tbl_TipoIntegranteGrupo_id = tbl_TipoIntegranteGrupo.idtbl_TipoIntegranteGrupo" +
+                                                "AND nombre_grupotrabajo =" +nombregrupo, con);
 
             List<clsDetalleGrupoTrabajo> listagrupotrabajo = new List<clsDetalleGrupoTrabajo>();
 
@@ -41,10 +45,13 @@ namespace CapaDatos
             while (lector.Read())
             {
                 clsDetalleGrupoTrabajo grupotrabajo = new clsDetalleGrupoTrabajo();
+                clsIntegranteGrupo integrante = new clsIntegranteGrupo();
 
                 grupotrabajo.Nombregrupotrabajo = lector.GetString(0);
                 grupotrabajo.Numerogrupotrabajo = lector.GetInt32(1);
-                grupotrabajo.Idintegrantegrupo = lector.GetInt32(2);
+                integrante.Nombreintegrantegrupo = lector.GetString(2);
+                integrante.Cargotipointegrante = lector.GetString(3);
+                
 
                 listagrupotrabajo.Add(grupotrabajo);
             }
@@ -55,7 +62,7 @@ namespace CapaDatos
             return listagrupotrabajo;
         }
 
-
+        
         public DataTable ListaElementosGrupoTrabajo()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();

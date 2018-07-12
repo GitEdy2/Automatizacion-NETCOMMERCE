@@ -23,3 +23,5 @@ D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMM
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.IngresarLinierosGrupo.resources
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.IngresarAyudantesGrupo.resources
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.IngresarChoferGrupo.resources
+D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.ListaTrabajadoresGrupo.resources
+D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\NETCOMMERCE_App\obj\Debug\NETCOMMERCE_App.VentanaGrupoTrabajo.resources

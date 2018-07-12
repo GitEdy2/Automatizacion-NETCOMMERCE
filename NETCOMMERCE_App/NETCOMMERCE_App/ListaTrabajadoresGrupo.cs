@@ -28,7 +28,9 @@ namespace NETCOMMERCE_App
 
         private void btnListaTrabajadores_Click(object sender, EventArgs e)
         {
-
+            VentanaGrupoTrabajo listagrupo = new VentanaGrupoTrabajo();
+            listagrupo.nombre = cbNombreGrupoTrabajo.SelectedValue.ToString();
+            listagrupo.Show();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
