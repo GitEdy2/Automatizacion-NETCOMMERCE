@@ -100,6 +100,32 @@ namespace CapaDatos
         }
 
 
+        public DataTable ListaTrabajosporCodigo()
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            string cmd = "SELECT idtbl_DetalleTrabajo,codigo_trabajo FROM tbl_DetalleTrabajo";
+
+            con.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd, con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
+        }
+
+
         public DataTable ListaFibra()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
@@ -256,10 +282,12 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(tbl_TipoTrabajo_id,tbl_Fibra_id,tbl_Postes_id,tbl_KitsRetenida_id)" +
-                                                "values(@tipotrabajoid,@fibraid,NULL,NULL)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(tbl_TipoTrabajo_id,codigo_trabajo,tbl_Fibra_id,tbl_Postes_id,tbl_KitsRetenida_id)" +
+                                                "values(@tipotrabajoid,@codigotrabajo,@fibraid,NULL,NULL)", con);
 
+           
             cmd.Parameters.Add("@tipotrabajoid", MySqlDbType.Int32).Value = trabajo.Tipotrabajoid;
+            cmd.Parameters.Add("@codigotrabajo", MySqlDbType.VarChar).Value = trabajo.Codigotrabajo;
             cmd.Parameters.Add("@fibraid", MySqlDbType.Int32).Value = trabajo.Fibraid;
 
 
@@ -290,10 +318,12 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(tbl_TipoTrabajo_id,tbl_Fibra_id,tbl_Postes_id,tbl_KitsRetenida_id)" +
-                                                "values(@tipotrabajoid,NULL,@postesid,NULL)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(tbl_TipoTrabajo_id,codigo_trabajo,tbl_Fibra_id,tbl_Postes_id,tbl_KitsRetenida_id)" +
+                                                "values(@tipotrabajoid,@codigotrabajo,NULL,@postesid,NULL)", con);
+
 
             cmd.Parameters.Add("@tipotrabajoid", MySqlDbType.Int32).Value = trabajo.Tipotrabajoid;
+            cmd.Parameters.Add("@codigotrabajo", MySqlDbType.VarChar).Value = trabajo.Codigotrabajo;
             cmd.Parameters.Add("@postesid", MySqlDbType.Int32).Value = trabajo.Postesid;
 
             con.Open();
@@ -323,10 +353,12 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(tbl_TipoTrabajo_id,tbl_Fibra_id,tbl_Postes_id,tbl_KitsRetenida_id)" +
-                                                "values(@tipotrabajoid,NULL,NULL,@kitsretenidasid)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(tbl_TipoTrabajo_id,codigo_trabajo,tbl_Fibra_id,tbl_Postes_id,tbl_KitsRetenida_id)" +
+                                                "values(@tipotrabajoid,@codigotrabajo,NULL,NULL,@kitsretenidasid)", con);
+
 
             cmd.Parameters.Add("@tipotrabajoid", MySqlDbType.Int32).Value = trabajo.Tipotrabajoid;
+            cmd.Parameters.Add("@codigotrabajo", MySqlDbType.VarChar).Value = trabajo.Codigotrabajo;
             cmd.Parameters.Add("@kitsretenidasid", MySqlDbType.Int32).Value = trabajo.Retenidasid;
 
             con.Open();

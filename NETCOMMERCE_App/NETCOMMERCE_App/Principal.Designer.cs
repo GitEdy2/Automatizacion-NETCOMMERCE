@@ -105,7 +105,7 @@
             this.dtpFechaPrograma = new System.Windows.Forms.DateTimePicker();
             this.lblFechaTrabajo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodigoTrabajo = new System.Windows.Forms.TextBox();
             this.tcRuta.SuspendLayout();
             this.tbRuta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
@@ -316,7 +316,7 @@
             // 
             // tbTrabajo
             // 
-            this.tbTrabajo.Controls.Add(this.textBox1);
+            this.tbTrabajo.Controls.Add(this.txtCodigoTrabajo);
             this.tbTrabajo.Controls.Add(this.label1);
             this.tbTrabajo.Controls.Add(this.btnDetallesTipoTrabajo);
             this.tbTrabajo.Controls.Add(this.cbDetalleRetenidas);
@@ -849,6 +849,7 @@
             // 
             // cbTrabajoRealizar
             // 
+            this.cbTrabajoRealizar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTrabajoRealizar.FormattingEnabled = true;
             this.cbTrabajoRealizar.Location = new System.Drawing.Point(160, 254);
             this.cbTrabajoRealizar.Name = "cbTrabajoRealizar";
@@ -866,6 +867,7 @@
             // 
             // cbGrupoTrabajoPrograma
             // 
+            this.cbGrupoTrabajoPrograma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGrupoTrabajoPrograma.FormattingEnabled = true;
             this.cbGrupoTrabajoPrograma.Location = new System.Drawing.Point(160, 199);
             this.cbGrupoTrabajoPrograma.Name = "cbGrupoTrabajoPrograma";
@@ -883,7 +885,11 @@
             // 
             // cbEmpresaPrograma
             // 
+            this.cbEmpresaPrograma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEmpresaPrograma.FormattingEnabled = true;
+            this.cbEmpresaPrograma.Items.AddRange(new object[] {
+            "TELCONET",
+            "TELEFONICA"});
             this.cbEmpresaPrograma.Location = new System.Drawing.Point(160, 145);
             this.cbEmpresaPrograma.Name = "cbEmpresaPrograma";
             this.cbEmpresaPrograma.Size = new System.Drawing.Size(149, 21);
@@ -900,6 +906,7 @@
             // 
             // cbRutaPrograma
             // 
+            this.cbRutaPrograma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRutaPrograma.FormattingEnabled = true;
             this.cbRutaPrograma.Location = new System.Drawing.Point(160, 88);
             this.cbRutaPrograma.Name = "cbRutaPrograma";
@@ -940,12 +947,12 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "CODIGO DE TRABAJO:";
             // 
-            // textBox1
+            // txtCodigoTrabajo
             // 
-            this.textBox1.Location = new System.Drawing.Point(176, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(231, 20);
-            this.textBox1.TabIndex = 33;
+            this.txtCodigoTrabajo.Location = new System.Drawing.Point(176, 34);
+            this.txtCodigoTrabajo.Name = "txtCodigoTrabajo";
+            this.txtCodigoTrabajo.Size = new System.Drawing.Size(231, 20);
+            this.txtCodigoTrabajo.TabIndex = 33;
             // 
             // Principal
             // 
@@ -1059,7 +1066,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox p;
         private System.Windows.Forms.Button btnVerListaTrabajadores;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodigoTrabajo;
         private System.Windows.Forms.Label label1;
     }
 }

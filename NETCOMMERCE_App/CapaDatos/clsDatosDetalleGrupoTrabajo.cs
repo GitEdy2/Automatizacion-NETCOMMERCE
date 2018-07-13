@@ -97,7 +97,7 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            string cmd = "SELECT idtbl_DetalleGrupoTrabajo,nombre_grupotrabajo FROM tbl_DetalleGrupoTrabajo";
+            string cmd = "SELECT idtbl_GrupoTrabajo,nombre_grupotrabajo FROM tbl_DetalleGrupoTrabajo";
 
             con.Open();
 
@@ -109,7 +109,6 @@ namespace CapaDatos
 
             return dt;
         }
-
 
 
         public DataTable ListaElementosGrupoTrabajo()

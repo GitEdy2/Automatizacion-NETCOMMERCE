@@ -55,11 +55,15 @@ namespace NETCOMMERCE_App
 
             cbRutaPrograma.DataSource = dtsRuta.ListaRutas();
             cbRutaPrograma.DisplayMember = "nombre_ruta";
-            cbRutaPrograma.ValueMember = "idtbl_DetaleRuta";
+            cbRutaPrograma.ValueMember = "idtbl_DetalleRuta";
 
             cbGrupoTrabajoPrograma.DataSource = dtsgrupotrabajo.ListaGruposTrabajo();
             cbGrupoTrabajoPrograma.DisplayMember = "nombre_grupotrabajo";
-            cbGrupoTrabajoPrograma.ValueMember = "idtbl_DetalleGrupoTrabajo";
+            cbGrupoTrabajoPrograma.ValueMember = "idtbl_GrupoTrabajo";
+
+            cbTrabajoRealizar.DataSource = dtstrabajo.ListaTrabajosporCodigo();
+            cbTrabajoRealizar.DisplayMember = "codigo_trabajo";
+            cbTrabajoRealizar.ValueMember = "idtbl_DetalleTrabajo";
                       
         }
 
@@ -109,6 +113,7 @@ namespace NETCOMMERCE_App
         private void btnCrearTrabajo_Click(object sender, EventArgs e)
         {
             trabajo.Tipotrabajoid = Convert.ToInt32(cbTipoTrabajo.SelectedValue.ToString());
+            trabajo.Codigotrabajo = txtCodigoTrabajo.Text;
 
             if(cBoxFibra.Checked == true)
             {
