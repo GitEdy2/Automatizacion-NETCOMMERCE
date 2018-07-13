@@ -33,7 +33,7 @@ namespace NETCOMMERCE_App
         {
             lblNombre.Text = numero.ToString();
 
-            dataGridViewGrupo.DataSource = dtsgrupotrabajo.ListaGruposTrabajo(numero);
+            dataGridViewGrupo.DataSource = dtsgrupotrabajo.ListaGruposTrabajoporNumero(numero);
                        
         }
 

@@ -60,6 +60,32 @@ namespace CapaDatos
         }
 
 
+        public DataTable ListaRutas()
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            string cmd = "SELECT idtbl_DetalleRuta,nombre_ruta FROM tbl_DetalleRuta";
+
+            con.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd, con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
+        }
+
+
         public bool IngresarRuta(clsRuta Ruta)
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();

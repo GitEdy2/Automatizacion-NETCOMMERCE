@@ -52,6 +52,14 @@ namespace NETCOMMERCE_App
             cbJefeGrupo.DataSource = dtsgrupotrabajo.ListaJefeGrupo();
             cbJefeGrupo.DisplayMember = "nombre_integrantegrupo";
             cbJefeGrupo.ValueMember = "idtbl_IntegranteGrupo";
+
+            cbRutaPrograma.DataSource = dtsRuta.ListaRutas();
+            cbRutaPrograma.DisplayMember = "nombre_ruta";
+            cbRutaPrograma.ValueMember = "idtbl_DetaleRuta";
+
+            cbGrupoTrabajoPrograma.DataSource = dtsgrupotrabajo.ListaGruposTrabajo();
+            cbGrupoTrabajoPrograma.DisplayMember = "nombre_grupotrabajo";
+            cbGrupoTrabajoPrograma.ValueMember = "idtbl_DetalleGrupoTrabajo";
                       
         }
 
@@ -380,6 +388,11 @@ namespace NETCOMMERCE_App
             Principal principal = new Principal();
             trabajadoresgrupo.Show();
             principal.Close();
+        }
+
+        private void btnGenerarPrograma_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

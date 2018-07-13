@@ -10,6 +10,8 @@ namespace CapaNegocios
     {
         private int detalletrabajoid;
 
+        private string codigotrabajo;
+
         private int tipotrabajoid;
         private string identificadortipotrabajo;
         private string descripciontipotrabajo;
@@ -30,6 +32,8 @@ namespace CapaNegocios
 
         public int Detalletrabajoid { get => detalletrabajoid; set => detalletrabajoid = value; }
 
+        public string Codigotrabajo { get => codigotrabajo; set => codigotrabajo = value; }
+
         public int Tipotrabajoid { get => tipotrabajoid; set => tipotrabajoid = value; }
         public string Identificadortipotrabajo { get => identificadortipotrabajo; set => identificadortipotrabajo = value; }
         public string Descripciontipotrabajo { get => descripciontipotrabajo; set => descripciontipotrabajo = value; }
@@ -45,7 +49,6 @@ namespace CapaNegocios
         public int Fibraid { get => fibraid; set => fibraid = value; }
         public string Detallefibra { get => detallefibra; set => detallefibra = value; }
         public int Metrosfibra { get => metrosfibra; set => metrosfibra = value; }
-
-        
+      
     }
 }

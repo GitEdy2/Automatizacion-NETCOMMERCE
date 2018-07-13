@@ -90,11 +90,11 @@
             this.lblNombreGrupo = new System.Windows.Forms.Label();
             this.btnCrearGrupoTrabajo = new System.Windows.Forms.Button();
             this.tbPrograma = new System.Windows.Forms.TabPage();
-            this.btnPrograma = new System.Windows.Forms.Button();
+            this.btnGenerarPrograma = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cbTrabajoRealizar = new System.Windows.Forms.ComboBox();
             this.lblTrabajoPrograma = new System.Windows.Forms.Label();
             this.cbGrupoTrabajoPrograma = new System.Windows.Forms.ComboBox();
             this.lblGrupoTrabajoPrograma = new System.Windows.Forms.Label();
@@ -104,6 +104,8 @@
             this.lblRuta = new System.Windows.Forms.Label();
             this.dtpFechaPrograma = new System.Windows.Forms.DateTimePicker();
             this.lblFechaTrabajo = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tcRuta.SuspendLayout();
             this.tbRuta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
@@ -314,6 +316,8 @@
             // 
             // tbTrabajo
             // 
+            this.tbTrabajo.Controls.Add(this.textBox1);
+            this.tbTrabajo.Controls.Add(this.label1);
             this.tbTrabajo.Controls.Add(this.btnDetallesTipoTrabajo);
             this.tbTrabajo.Controls.Add(this.cbDetalleRetenidas);
             this.tbTrabajo.Controls.Add(this.btnIngresarDetallesRetenidas);
@@ -342,7 +346,7 @@
             // 
             // btnDetallesTipoTrabajo
             // 
-            this.btnDetallesTipoTrabajo.Location = new System.Drawing.Point(240, 29);
+            this.btnDetallesTipoTrabajo.Location = new System.Drawing.Point(262, 83);
             this.btnDetallesTipoTrabajo.Name = "btnDetallesTipoTrabajo";
             this.btnDetallesTipoTrabajo.Size = new System.Drawing.Size(145, 23);
             this.btnDetallesTipoTrabajo.TabIndex = 31;
@@ -356,17 +360,17 @@
             this.cbDetalleRetenidas.FormattingEnabled = true;
             this.cbDetalleRetenidas.Items.AddRange(new object[] {
             "(NINGUNO)"});
-            this.cbDetalleRetenidas.Location = new System.Drawing.Point(176, 343);
+            this.cbDetalleRetenidas.Location = new System.Drawing.Point(176, 357);
             this.cbDetalleRetenidas.Name = "cbDetalleRetenidas";
-            this.cbDetalleRetenidas.Size = new System.Drawing.Size(209, 21);
+            this.cbDetalleRetenidas.Size = new System.Drawing.Size(231, 21);
             this.cbDetalleRetenidas.TabIndex = 30;
             this.cbDetalleRetenidas.Visible = false;
             // 
             // btnIngresarDetallesRetenidas
             // 
-            this.btnIngresarDetallesRetenidas.Location = new System.Drawing.Point(248, 307);
+            this.btnIngresarDetallesRetenidas.Location = new System.Drawing.Point(248, 328);
             this.btnIngresarDetallesRetenidas.Name = "btnIngresarDetallesRetenidas";
-            this.btnIngresarDetallesRetenidas.Size = new System.Drawing.Size(137, 23);
+            this.btnIngresarDetallesRetenidas.Size = new System.Drawing.Size(159, 23);
             this.btnIngresarDetallesRetenidas.TabIndex = 29;
             this.btnIngresarDetallesRetenidas.Text = "INGRESAR DETALLES";
             this.btnIngresarDetallesRetenidas.UseVisualStyleBackColor = true;
@@ -379,17 +383,17 @@
             this.cbDetallePostes.FormattingEnabled = true;
             this.cbDetallePostes.Items.AddRange(new object[] {
             "(NINGUNO)"});
-            this.cbDetallePostes.Location = new System.Drawing.Point(176, 242);
+            this.cbDetallePostes.Location = new System.Drawing.Point(177, 275);
             this.cbDetallePostes.Name = "cbDetallePostes";
-            this.cbDetallePostes.Size = new System.Drawing.Size(209, 21);
+            this.cbDetallePostes.Size = new System.Drawing.Size(230, 21);
             this.cbDetallePostes.TabIndex = 28;
             this.cbDetallePostes.Visible = false;
             // 
             // btnIngresarDetallesPostes
             // 
-            this.btnIngresarDetallesPostes.Location = new System.Drawing.Point(231, 207);
+            this.btnIngresarDetallesPostes.Location = new System.Drawing.Point(232, 246);
             this.btnIngresarDetallesPostes.Name = "btnIngresarDetallesPostes";
-            this.btnIngresarDetallesPostes.Size = new System.Drawing.Size(154, 23);
+            this.btnIngresarDetallesPostes.Size = new System.Drawing.Size(175, 23);
             this.btnIngresarDetallesPostes.TabIndex = 27;
             this.btnIngresarDetallesPostes.Text = "INGRESAR DETALLES";
             this.btnIngresarDetallesPostes.UseVisualStyleBackColor = true;
@@ -398,9 +402,9 @@
             // 
             // btnIngresarDetallesFibra
             // 
-            this.btnIngresarDetallesFibra.Location = new System.Drawing.Point(231, 111);
+            this.btnIngresarDetallesFibra.Location = new System.Drawing.Point(232, 165);
             this.btnIngresarDetallesFibra.Name = "btnIngresarDetallesFibra";
-            this.btnIngresarDetallesFibra.Size = new System.Drawing.Size(154, 23);
+            this.btnIngresarDetallesFibra.Size = new System.Drawing.Size(175, 23);
             this.btnIngresarDetallesFibra.TabIndex = 26;
             this.btnIngresarDetallesFibra.Text = "INGRESAR DETALLES";
             this.btnIngresarDetallesFibra.UseVisualStyleBackColor = true;
@@ -413,16 +417,16 @@
             this.cbDetalleFibra.FormattingEnabled = true;
             this.cbDetalleFibra.Items.AddRange(new object[] {
             "(NINGUNO)"});
-            this.cbDetalleFibra.Location = new System.Drawing.Point(176, 140);
+            this.cbDetalleFibra.Location = new System.Drawing.Point(177, 194);
             this.cbDetalleFibra.Name = "cbDetalleFibra";
-            this.cbDetalleFibra.Size = new System.Drawing.Size(209, 21);
+            this.cbDetalleFibra.Size = new System.Drawing.Size(230, 21);
             this.cbDetalleFibra.TabIndex = 25;
             this.cbDetalleFibra.Visible = false;
             // 
             // cBoxRetenidas
             // 
             this.cBoxRetenidas.AutoSize = true;
-            this.cBoxRetenidas.Location = new System.Drawing.Point(176, 311);
+            this.cBoxRetenidas.Location = new System.Drawing.Point(176, 332);
             this.cBoxRetenidas.Name = "cBoxRetenidas";
             this.cBoxRetenidas.Size = new System.Drawing.Size(74, 17);
             this.cBoxRetenidas.TabIndex = 22;
@@ -433,7 +437,7 @@
             // cBoxPostes
             // 
             this.cBoxPostes.AutoSize = true;
-            this.cBoxPostes.Location = new System.Drawing.Point(176, 211);
+            this.cBoxPostes.Location = new System.Drawing.Point(177, 250);
             this.cBoxPostes.Name = "cBoxPostes";
             this.cBoxPostes.Size = new System.Drawing.Size(58, 17);
             this.cBoxPostes.TabIndex = 21;
@@ -444,7 +448,7 @@
             // cBoxFibra
             // 
             this.cBoxFibra.AutoSize = true;
-            this.cBoxFibra.Location = new System.Drawing.Point(176, 115);
+            this.cBoxFibra.Location = new System.Drawing.Point(177, 169);
             this.cBoxFibra.Name = "cBoxFibra";
             this.cBoxFibra.Size = new System.Drawing.Size(49, 17);
             this.cBoxFibra.TabIndex = 20;
@@ -481,7 +485,7 @@
             // lblDetalleRetenidas
             // 
             this.lblDetalleRetenidas.AutoSize = true;
-            this.lblDetalleRetenidas.Location = new System.Drawing.Point(30, 346);
+            this.lblDetalleRetenidas.Location = new System.Drawing.Point(30, 360);
             this.lblDetalleRetenidas.Name = "lblDetalleRetenidas";
             this.lblDetalleRetenidas.Size = new System.Drawing.Size(141, 13);
             this.lblDetalleRetenidas.TabIndex = 13;
@@ -491,7 +495,7 @@
             // lblTipoPostes
             // 
             this.lblTipoPostes.AutoSize = true;
-            this.lblTipoPostes.Location = new System.Drawing.Point(48, 245);
+            this.lblTipoPostes.Location = new System.Drawing.Point(49, 278);
             this.lblTipoPostes.Name = "lblTipoPostes";
             this.lblTipoPostes.Size = new System.Drawing.Size(122, 13);
             this.lblTipoPostes.TabIndex = 7;
@@ -501,7 +505,7 @@
             // lblTipoFibra
             // 
             this.lblTipoFibra.AutoSize = true;
-            this.lblTipoFibra.Location = new System.Drawing.Point(60, 140);
+            this.lblTipoFibra.Location = new System.Drawing.Point(61, 194);
             this.lblTipoFibra.Name = "lblTipoFibra";
             this.lblTipoFibra.Size = new System.Drawing.Size(110, 13);
             this.lblTipoFibra.TabIndex = 3;
@@ -518,15 +522,15 @@
             "TENDIDO SOTERRADO",
             "ACOMETIDAS",
             "POSTES"});
-            this.cbTipoTrabajo.Location = new System.Drawing.Point(177, 61);
+            this.cbTipoTrabajo.Location = new System.Drawing.Point(177, 115);
             this.cbTipoTrabajo.Name = "cbTipoTrabajo";
-            this.cbTipoTrabajo.Size = new System.Drawing.Size(208, 21);
+            this.cbTipoTrabajo.Size = new System.Drawing.Size(230, 21);
             this.cbTipoTrabajo.TabIndex = 2;
             // 
             // lblTipoTrabajo
             // 
             this.lblTipoTrabajo.AutoSize = true;
-            this.lblTipoTrabajo.Location = new System.Drawing.Point(66, 34);
+            this.lblTipoTrabajo.Location = new System.Drawing.Point(66, 88);
             this.lblTipoTrabajo.Name = "lblTipoTrabajo";
             this.lblTipoTrabajo.Size = new System.Drawing.Size(105, 13);
             this.lblTipoTrabajo.TabIndex = 0;
@@ -787,11 +791,11 @@
             // 
             // tbPrograma
             // 
-            this.tbPrograma.Controls.Add(this.btnPrograma);
+            this.tbPrograma.Controls.Add(this.btnGenerarPrograma);
             this.tbPrograma.Controls.Add(this.pictureBox6);
             this.tbPrograma.Controls.Add(this.pictureBox5);
             this.tbPrograma.Controls.Add(this.label3);
-            this.tbPrograma.Controls.Add(this.comboBox4);
+            this.tbPrograma.Controls.Add(this.cbTrabajoRealizar);
             this.tbPrograma.Controls.Add(this.lblTrabajoPrograma);
             this.tbPrograma.Controls.Add(this.cbGrupoTrabajoPrograma);
             this.tbPrograma.Controls.Add(this.lblGrupoTrabajoPrograma);
@@ -803,19 +807,20 @@
             this.tbPrograma.Controls.Add(this.lblFechaTrabajo);
             this.tbPrograma.Location = new System.Drawing.Point(4, 22);
             this.tbPrograma.Name = "tbPrograma";
-            this.tbPrograma.Size = new System.Drawing.Size(792, 383);
+            this.tbPrograma.Size = new System.Drawing.Size(792, 408);
             this.tbPrograma.TabIndex = 4;
             this.tbPrograma.Text = "Programa";
             this.tbPrograma.UseVisualStyleBackColor = true;
             // 
-            // btnPrograma
+            // btnGenerarPrograma
             // 
-            this.btnPrograma.Location = new System.Drawing.Point(160, 356);
-            this.btnPrograma.Name = "btnPrograma";
-            this.btnPrograma.Size = new System.Drawing.Size(149, 32);
-            this.btnPrograma.TabIndex = 13;
-            this.btnPrograma.Text = "GENERAR PROGRAMA";
-            this.btnPrograma.UseVisualStyleBackColor = true;
+            this.btnGenerarPrograma.Location = new System.Drawing.Point(160, 356);
+            this.btnGenerarPrograma.Name = "btnGenerarPrograma";
+            this.btnGenerarPrograma.Size = new System.Drawing.Size(149, 32);
+            this.btnGenerarPrograma.TabIndex = 13;
+            this.btnGenerarPrograma.Text = "GENERAR PROGRAMA";
+            this.btnGenerarPrograma.UseVisualStyleBackColor = true;
+            this.btnGenerarPrograma.Click += new System.EventHandler(this.btnGenerarPrograma_Click);
             // 
             // pictureBox6
             // 
@@ -842,13 +847,13 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "ARCHIVO DE PLANO:";
             // 
-            // comboBox4
+            // cbTrabajoRealizar
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(160, 254);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(224, 21);
-            this.comboBox4.TabIndex = 9;
+            this.cbTrabajoRealizar.FormattingEnabled = true;
+            this.cbTrabajoRealizar.Location = new System.Drawing.Point(160, 254);
+            this.cbTrabajoRealizar.Name = "cbTrabajoRealizar";
+            this.cbTrabajoRealizar.Size = new System.Drawing.Size(224, 21);
+            this.cbTrabajoRealizar.TabIndex = 9;
             // 
             // lblTrabajoPrograma
             // 
@@ -896,7 +901,7 @@
             // cbRutaPrograma
             // 
             this.cbRutaPrograma.FormattingEnabled = true;
-            this.cbRutaPrograma.Location = new System.Drawing.Point(160, 85);
+            this.cbRutaPrograma.Location = new System.Drawing.Point(160, 88);
             this.cbRutaPrograma.Name = "cbRutaPrograma";
             this.cbRutaPrograma.Size = new System.Drawing.Size(224, 21);
             this.cbRutaPrograma.TabIndex = 3;
@@ -925,6 +930,22 @@
             this.lblFechaTrabajo.Size = new System.Drawing.Size(115, 13);
             this.lblFechaTrabajo.TabIndex = 0;
             this.lblFechaTrabajo.Text = "FECHA DE TRABAJO:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(49, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 13);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "CODIGO DE TRABAJO:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(176, 34);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(231, 20);
+            this.textBox1.TabIndex = 33;
             // 
             // Principal
             // 
@@ -1006,11 +1027,11 @@
         private System.Windows.Forms.ComboBox cbEmpresaPrograma;
         private System.Windows.Forms.Label lblEmpresaPrograma;
         private System.Windows.Forms.ComboBox cbRutaPrograma;
-        private System.Windows.Forms.Button btnPrograma;
+        private System.Windows.Forms.Button btnGenerarPrograma;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cbTrabajoRealizar;
         private System.Windows.Forms.Label lblTrabajoPrograma;
         private System.Windows.Forms.ComboBox cbGrupoTrabajoPrograma;
         private System.Windows.Forms.Label lblGrupoTrabajoPrograma;
@@ -1038,5 +1059,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox p;
         private System.Windows.Forms.Button btnVerListaTrabajadores;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

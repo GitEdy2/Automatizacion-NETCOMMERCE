@@ -59,7 +59,7 @@ namespace CapaDatos
         }
 
 
-        public DataTable ListaGruposTrabajo(int numerogrupo)
+        public DataTable ListaGruposTrabajoporNumero(int numerogrupo)
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = "localhost";
@@ -84,7 +84,34 @@ namespace CapaDatos
             return dt;
         }
 
-        
+
+        public DataTable ListaGruposTrabajo()
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            string cmd = "SELECT idtbl_DetalleGrupoTrabajo,nombre_grupotrabajo FROM tbl_DetalleGrupoTrabajo";
+
+            con.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd, con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
+        }
+
+
+
         public DataTable ListaElementosGrupoTrabajo()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();

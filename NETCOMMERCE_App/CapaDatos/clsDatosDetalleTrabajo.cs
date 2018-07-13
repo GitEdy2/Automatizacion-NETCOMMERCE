@@ -43,10 +43,11 @@ namespace CapaDatos
                 clsDetalleTrabajo trabajo = new clsDetalleTrabajo();
 
                 trabajo.Detalletrabajoid = lector.GetInt32(0);
-                trabajo.Fibraid = lector.GetInt32(1);
-                trabajo.Retenidasid = lector.GetInt32(2);
-                trabajo.Postesid = lector.GetInt32(3);
-                trabajo.Tipotrabajoid = lector.GetInt32(4);
+                trabajo.Codigotrabajo = lector.GetString(1);
+                trabajo.Fibraid = lector.GetInt32(2);
+                trabajo.Retenidasid = lector.GetInt32(3);
+                trabajo.Postesid = lector.GetInt32(4);
+                trabajo.Tipotrabajoid = lector.GetInt32(5);
 
                 listatrabajos.Add(trabajo);                
             }
@@ -99,48 +100,6 @@ namespace CapaDatos
         }
 
 
-        public List<clsDetalleTrabajo> ListarFibra()
-
-
-        {
-            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = "localhost";
-            builder.Port = 3306;
-            builder.UserID = "root";
-            builder.Password = "Mysqlwarmachine2";
-            builder.SslMode = MySqlSslMode.None;
-            builder.Database = "dbcoordinacion";
-
-            MySqlConnection con = new MySqlConnection(builder.ToString());
-
-
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM tbl_Fibra", con);
-
-            List<clsDetalleTrabajo> listafibra = new List<clsDetalleTrabajo>();
- 
-            con.Open();
-
-            MySqlDataReader lector = cmd.ExecuteReader();
-            
-
-            while (lector.Read())
-            {
-                clsDetalleTrabajo fibra = new clsDetalleTrabajo();
-
-                fibra.Fibraid = lector.GetInt32(0);
-                fibra.Detallefibra = lector.GetString(1);
-                fibra.Metrosfibra = lector.GetInt32(2);
-
-                listafibra.Add(fibra);
-            }
-
- 
-            con.Close();
-
-            return listafibra;
-        }
-
-
         public DataTable ListaFibra()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
@@ -167,46 +126,6 @@ namespace CapaDatos
         }
 
 
-        public List<clsDetalleTrabajo> ListarRetenidas()
-        {
-            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = "localhost";
-            builder.Port = 3306;
-            builder.UserID = "root";
-            builder.Password = "Mysqlwarmachine2";
-            builder.SslMode = MySqlSslMode.None;
-            builder.Database = "dbcoordinacion";
-
-            MySqlConnection con = new MySqlConnection(builder.ToString());
-
-
-            MySqlCommand cmd = new MySqlCommand("select * from tbl_KitsRetenida", con);
-
-            List<clsDetalleTrabajo> listaretenidas = new List<clsDetalleTrabajo>();
-
-
-            con.Open();
-
-            MySqlDataReader lector = cmd.ExecuteReader();
-
-            while (lector.Read())
-            {
-                clsDetalleTrabajo retenidas = new clsDetalleTrabajo();
-
-                retenidas.Retenidasid = lector.GetInt32(0);
-                retenidas.Detalleretenidas = lector.GetString(1);
-                retenidas.Numeroretenidas = lector.GetInt32(2);
-
-                listaretenidas.Add(retenidas);
-            }
-
-
-            con.Close();
-
-            return listaretenidas;
-        }
-
-
         public DataTable ListaRetenidas()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
@@ -230,46 +149,6 @@ namespace CapaDatos
             da.Fill(dt);
 
             return dt;
-        }
-
-
-        public List<clsDetalleTrabajo> ListarPostes()
-        {
-            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = "localhost";
-            builder.Port = 3306;
-            builder.UserID = "root";
-            builder.Password = "Mysqlwarmachine2";
-            builder.SslMode = MySqlSslMode.None;
-            builder.Database = "dbcoordinacion";
-
-            MySqlConnection con = new MySqlConnection(builder.ToString());
-
-
-            MySqlCommand cmd = new MySqlCommand("select * from tbl_Postes", con);
-
-            List<clsDetalleTrabajo> listarpostes = new List<clsDetalleTrabajo>();
-
-
-            con.Open();
-
-            MySqlDataReader lector = cmd.ExecuteReader();
-
-            while (lector.Read())
-            {
-                clsDetalleTrabajo postes = new clsDetalleTrabajo();
-
-                postes.Postesid = lector.GetInt32(0);
-                postes.Detallepostes = lector.GetString(1);
-                postes.Numeropostes = lector.GetInt32(2);
-
-                listarpostes.Add(postes);
-            }
-
-
-            con.Close();
-
-            return listarpostes;
         }
 
 
@@ -339,10 +218,11 @@ namespace CapaDatos
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(tbl_tipotrabajo_id,tbl_Fibra_id,tbl_KitsRetenida_id,tbl_Postes_id)" +
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleTrabajo(codigo_trabajo,tbl_tipotrabajo_id,tbl_Fibra_id,tbl_KitsRetenida_id,tbl_Postes_id)" +
                                                 "values(@tipotrabajoid,@fibraid,@retenidasid,@postesid)", con);
 
 
+            cmd.Parameters.Add("@codigotrabajo", MySqlDbType.VarChar).Value = trabajo.Codigotrabajo;
             cmd.Parameters.Add("@tipotrabajoid", MySqlDbType.Int32).Value = trabajo.Tipotrabajoid;
             cmd.Parameters.Add("@fibraid", MySqlDbType.Int32).Value = trabajo.Fibraid;
             cmd.Parameters.Add("@retenidasid", MySqlDbType.Int32).Value = trabajo.Retenidasid;
@@ -604,17 +484,6 @@ namespace CapaDatos
                 return false;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
