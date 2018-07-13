@@ -3,4 +3,3 @@ D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMM
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\CapaNegocios\obj\Debug\CapaNegocios.csproj.CoreCompileInputs.cache
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\CapaNegocios\obj\Debug\CapaNegocios.dll
 D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\CapaNegocios\obj\Debug\CapaNegocios.pdb
-D:\Proyecto Automatizacion NETCOMMERCE\Github\Automatizacion-NETCOMMERCE\NETCOMMERCE_App\CapaNegocios\obj\Debug\CapaNegocios.csprojAssemblyReference.cache

@@ -40,9 +40,9 @@
             this.lblGrupoTrabajo.AutoSize = true;
             this.lblGrupoTrabajo.Location = new System.Drawing.Point(24, 29);
             this.lblGrupoTrabajo.Name = "lblGrupoTrabajo";
-            this.lblGrupoTrabajo.Size = new System.Drawing.Size(169, 13);
+            this.lblGrupoTrabajo.Size = new System.Drawing.Size(170, 13);
             this.lblGrupoTrabajo.TabIndex = 0;
-            this.lblGrupoTrabajo.Text = "NOMBRE GRUPO DE TRABAJO:";
+            this.lblGrupoTrabajo.Text = "NUMERO GRUPO DE TRABAJO:";
             // 
             // lblNombre
             // 
@@ -81,7 +81,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblGrupoTrabajo);
             this.Name = "VentanaGrupoTrabajo";
-            this.Text = "VentanaGrupoTrabajo";
+            this.Text = "LISTA DE INTEGRANTES DE GRUPO DE TRABAJO";
             this.Load += new System.EventHandler(this.VentanaGrupoTrabajo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGrupo)).EndInit();
             this.ResumeLayout(false);

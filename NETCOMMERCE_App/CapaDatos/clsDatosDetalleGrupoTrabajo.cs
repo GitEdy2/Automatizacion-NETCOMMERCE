@@ -28,11 +28,7 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("SELECT nombre_grupotrabajo,numero_grupotrabajo,nombre_integrantegrupo,cargo_tipointegrante FROM tbl_DetalleGrupoTrabajo LEFT JOIN tbl_IntegranteGrupo" +
-                                                "ON tbl_DetalleGrupoTrabajo.tbl_IntegranteGrupo_id = tbl_IntegranteGrupo.idtbl_IntegranteGrupo LEFT JOIN tbl_TipoIntegranteGrupo" +
-                                                "ON tbl_IntegranteGrupo.tbl_TipoIntegranteGrupo_id = tbl_TipoIntegranteGrupo.idtbl_TipoIntegranteGrupo" +
-                                                "AND tbl_DetalleGrupoTrabajo.tbl_TipoIntegranteGrupo_id = tbl_TipoIntegranteGrupo.idtbl_TipoIntegranteGrupo" +
-                                                "AND nombre_grupotrabajo =" +nombregrupo, con);
+            MySqlCommand cmd = new MySqlCommand("SELECT nombre_grupotrabajo,numero_grupotrabajo,nombre_integrantegrupo,cargo_tipointegrante FROM tbl_DetalleGrupoTrabajo LEFT JOIN tbl_IntegranteGrupo ON tbl_DetalleGrupoTrabajo.tbl_IntegranteGrupo_id = tbl_IntegranteGrupo.idtbl_IntegranteGrupo LEFT JOIN tbl_TipoIntegranteGrupo ON tbl_IntegranteGrupo.tbl_TipoIntegranteGrupo_id = tbl_TipoIntegranteGrupo.idtbl_TipoIntegranteGrupo AND tbl_DetalleGrupoTrabajo.tbl_TipoIntegranteGrupo_id = tbl_TipoIntegranteGrupo.idtbl_TipoIntegranteGrupo AND nombre_grupotrabajo =" +nombregrupo, con);
 
             List<clsDetalleGrupoTrabajo> listagrupotrabajo = new List<clsDetalleGrupoTrabajo>();
 
@@ -60,6 +56,32 @@ namespace CapaDatos
             con.Close();
 
             return listagrupotrabajo;
+        }
+
+
+        public DataTable ListaGruposTrabajo(int numerogrupo)
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            string cmd = "SELECT nombre_grupotrabajo,numero_grupotrabajo,nombre_integrantegrupo,cargo_tipointegrante FROM tbl_DetalleGrupoTrabajo LEFT JOIN tbl_IntegranteGrupo ON tbl_DetalleGrupoTrabajo.tbl_IntegranteGrupo_id = tbl_IntegranteGrupo.idtbl_IntegranteGrupo LEFT JOIN tbl_TipoIntegranteGrupo ON tbl_IntegranteGrupo.tbl_TipoIntegranteGrupo_id = tbl_TipoIntegranteGrupo.idtbl_TipoIntegranteGrupo AND tbl_DetalleGrupoTrabajo.tbl_TipoIntegranteGrupo_id = tbl_TipoIntegranteGrupo.idtbl_TipoIntegranteGrupo AND numero_grupotrabajo = " + numerogrupo;
+
+            con.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd, con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
         }
 
         

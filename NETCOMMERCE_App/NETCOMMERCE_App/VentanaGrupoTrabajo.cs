@@ -14,29 +14,27 @@ namespace NETCOMMERCE_App
 {
     public partial class VentanaGrupoTrabajo : Form
     {
-        public string nombre;
+        public int numero;
 
         clsDatosDetalleGrupoTrabajo dtsgrupotrabajo = new clsDatosDetalleGrupoTrabajo();
         clsDetalleGrupoTrabajo grupotrabajo = new clsDetalleGrupoTrabajo();
 
         
-
         public VentanaGrupoTrabajo()
         {
             InitializeComponent();
 
-            lblNombre.Text = nombre;
+            lblNombre.Text = numero.ToString();
         }
 
         
 
         private void VentanaGrupoTrabajo_Load(object sender, EventArgs e)
         {
-            lblNombre.Text = nombre;
+            lblNombre.Text = numero.ToString();
 
-            dataGridViewGrupo.DataSource = dtsgrupotrabajo.ListarGruposTrabajo(nombre);
-            
-            
+            dataGridViewGrupo.DataSource = dtsgrupotrabajo.ListaGruposTrabajo(numero);
+                       
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

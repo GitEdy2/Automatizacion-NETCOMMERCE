@@ -20,7 +20,7 @@ namespace NETCOMMERCE_App
 
             cbNombreGrupoTrabajo.DataSource = dtsgrupotrabajo.ListaElementosGrupoTrabajo();
             cbNombreGrupoTrabajo.DisplayMember = "nombre_grupotrabajo";
-            cbNombreGrupoTrabajo.ValueMember = "nombre_grupotrabajo";
+            cbNombreGrupoTrabajo.ValueMember = "numero_grupotrabajo";
         }
 
         clsDetalleGrupoTrabajo grupotrabajo = new clsDetalleGrupoTrabajo();
@@ -29,7 +29,7 @@ namespace NETCOMMERCE_App
         private void btnListaTrabajadores_Click(object sender, EventArgs e)
         {
             VentanaGrupoTrabajo listagrupo = new VentanaGrupoTrabajo();
-            listagrupo.nombre = cbNombreGrupoTrabajo.SelectedValue.ToString();
+            listagrupo.numero = Convert.ToInt32(cbNombreGrupoTrabajo.SelectedValue.ToString());
             listagrupo.Show();
         }
 
