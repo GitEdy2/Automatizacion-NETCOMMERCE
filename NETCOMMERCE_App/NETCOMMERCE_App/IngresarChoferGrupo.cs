@@ -20,11 +20,8 @@ namespace NETCOMMERCE_App
 
             cbNombreGrupoTrabajo.DataSource = dtsGrupoTrabajo.ListaElementosGrupoTrabajo();
             cbNombreGrupoTrabajo.DisplayMember = "nombre_grupotrabajo";
-            cbNombreGrupoTrabajo.ValueMember = "nombre_grupotrabajo";
+            cbNombreGrupoTrabajo.ValueMember = "tbl_GrupoTrabajo_id";
 
-            cbNumeroGrupoTrabajo.DataSource = dtsGrupoTrabajo.ListaElementosGrupoTrabajo();
-            cbNumeroGrupoTrabajo.DisplayMember = "numero_grupotrabajo";
-            cbNumeroGrupoTrabajo.ValueMember = "numero_grupotrabajo";
 
             cbChofer.DataSource = dtsGrupoTrabajo.ListaChofer();
             cbChofer.DisplayMember = "nombre_integrantegrupo";
@@ -36,8 +33,7 @@ namespace NETCOMMERCE_App
 
         private void btnIngresarChofer_Click(object sender, EventArgs e)
         {
-            grupotrabajo.Nombregrupotrabajo = cbNombreGrupoTrabajo.SelectedValue.ToString();
-            grupotrabajo.Numerogrupotrabajo = Convert.ToInt32(cbNumeroGrupoTrabajo.SelectedValue);
+            grupotrabajo.Nombregrupotrabajo = cbNombreGrupoTrabajo.SelectedValue.ToString();         
 
             grupotrabajo.Idintegrantegrupo = Convert.ToInt32(cbChofer.SelectedValue.ToString());
 

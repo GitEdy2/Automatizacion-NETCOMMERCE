@@ -97,7 +97,7 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            string cmd = "SELECT idtbl_GrupoTrabajo,nombre_grupotrabajo FROM tbl_DetalleGrupoTrabajo";
+            string cmd = "SELECT DISTINCT idtbl_GrupoTrabajo,nombre_grupotrabajo FROM tbl_GrupoTrabajo";
 
             con.Open();
 
@@ -123,7 +123,7 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            string cmd = "SELECT DISTINCT nombre_grupotrabajo,numero_grupotrabajo FROM tbl_DetalleGrupoTrabajo";
+            string cmd = "SELECT DISTINCT idtbl_GrupoTrabajo,nombre_grupotrabajo FROM tbl_GrupoTrabajo";
 
             con.Open();
 
@@ -278,6 +278,39 @@ namespace CapaDatos
         }
 
 
+        public bool IngresarGrupoTrabajo(clsDetalleGrupoTrabajo grupotrabajo)
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Port = 3306;
+            builder.UserID = "root";
+            builder.Password = "Mysqlwarmachine2";
+            builder.SslMode = MySqlSslMode.None;
+            builder.Database = "dbcoordinacion";
+
+            MySqlConnection con = new MySqlConnection(builder.ToString());
+
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_GrupoTrabajo(nombre_grupotrabajo,numero_grupotrabajo)" +
+                                                "values(@nombregrupo,@numerogrupo)", con);
+
+            cmd.Parameters.Add("@nombregrupo", MySqlDbType.VarChar).Value = grupotrabajo.Nombregrupotrabajo;
+            cmd.Parameters.Add("@numerogrupo", MySqlDbType.Int32).Value = grupotrabajo.Numerogrupotrabajo;
+
+            con.Open();
+
+            int exito = cmd.ExecuteNonQuery();
+
+            if (exito == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
         public bool IngresarJefeGrupoTrabajo(clsDetalleGrupoTrabajo grupotrabajo)
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
@@ -290,12 +323,12 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(nombre_grupotrabajo,numero_grupotrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
-                                                "values(@nombregrupotrabajo,@numerogrupotrabajo,@integrantegrupoid,@tipointegranteid)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(codigo_detallegrupotrabajo,tbl_GrupoTrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
+                                                "values(@codigogrupo,@grupoid,@integrantegrupoid,@tipointegranteid)", con);
 
 
-            cmd.Parameters.Add("@nombregrupotrabajo", MySqlDbType.VarChar).Value = grupotrabajo.Nombregrupotrabajo;
-            cmd.Parameters.Add("@numerogrupotrabajo", MySqlDbType.Int32).Value = grupotrabajo.Numerogrupotrabajo;
+            cmd.Parameters.Add("@codigogrupo", MySqlDbType.VarChar).Value = grupotrabajo.Codigodetallegrupotrabajo;
+            cmd.Parameters.Add("@grupoid", MySqlDbType.Int32).Value = grupotrabajo.Idgrupotrabajo;
             cmd.Parameters.Add("@integrantegrupoid", MySqlDbType.Int32).Value = grupotrabajo.Idintegrantegrupo;
             cmd.Parameters.AddWithValue("@tipointegranteid", 1);
 
@@ -325,12 +358,12 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(nombre_grupotrabajo,numero_grupotrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
-                                                "values(@nombregrupotrabajo,@numerogrupotrabajo,@integrantegrupoid,@tipointegranteid)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(codigo_detallegrupotrabajo,tbl_GrupoTrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
+                                                "values(@codigogrupo,@grupoid,@integrantegrupoid,@tipointegranteid)", con);
 
 
-            cmd.Parameters.Add("@nombregrupotrabajo", MySqlDbType.VarChar).Value = grupotrabajo.Nombregrupotrabajo;
-            cmd.Parameters.Add("@numerogrupotrabajo", MySqlDbType.Int32).Value = grupotrabajo.Numerogrupotrabajo;
+            cmd.Parameters.Add("@codigogrupo", MySqlDbType.VarChar).Value = grupotrabajo.Codigodetallegrupotrabajo;
+            cmd.Parameters.Add("@grupoid", MySqlDbType.Int32).Value = grupotrabajo.Idgrupotrabajo;
             cmd.Parameters.Add("@integrantegrupoid", MySqlDbType.Int32).Value = grupotrabajo.Idintegrantegrupo;
             cmd.Parameters.AddWithValue("@tipointegranteid", 2);
 
@@ -360,12 +393,12 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(nombre_grupotrabajo,numero_grupotrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
-                                                "values(@nombregrupotrabajo,@numerogrupotrabajo,@integrantegrupoid,@tipointegranteid)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(codigo_detallegrupotrabajo,tbl_GrupoTrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
+                                                "values(@codigogrupo,@grupoid,@integrantegrupoid,@tipointegranteid)", con);
 
 
-            cmd.Parameters.Add("@nombregrupotrabajo", MySqlDbType.VarChar).Value = grupotrabajo.Nombregrupotrabajo;
-            cmd.Parameters.Add("@numerogrupotrabajo", MySqlDbType.Int32).Value = grupotrabajo.Numerogrupotrabajo;
+            cmd.Parameters.Add("@codigogrupo", MySqlDbType.VarChar).Value = grupotrabajo.Codigodetallegrupotrabajo;
+            cmd.Parameters.Add("@grupoid", MySqlDbType.Int32).Value = grupotrabajo.Idgrupotrabajo;
             cmd.Parameters.Add("@integrantegrupoid", MySqlDbType.Int32).Value = grupotrabajo.Idintegrantegrupo;
             cmd.Parameters.AddWithValue("@tipointegranteid", 3);
 
@@ -396,12 +429,12 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(nombre_grupotrabajo,numero_grupotrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
-                                                "values(@nombregrupotrabajo,@numerogrupotrabajo,@integrantegrupoid,@tipointegranteid)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(codigo_detallegrupotrabajo,tbl_GrupoTrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
+                                                "values(@codigogrupo,@grupoid,@integrantegrupoid,@tipointegranteid)", con);
 
 
-            cmd.Parameters.Add("@nombregrupotrabajo", MySqlDbType.VarChar).Value = grupotrabajo.Nombregrupotrabajo;
-            cmd.Parameters.Add("@numerogrupotrabajo", MySqlDbType.Int32).Value = grupotrabajo.Numerogrupotrabajo;
+            cmd.Parameters.Add("@codigogrupo", MySqlDbType.VarChar).Value = grupotrabajo.Codigodetallegrupotrabajo;
+            cmd.Parameters.Add("@grupoid", MySqlDbType.Int32).Value = grupotrabajo.Idgrupotrabajo;
             cmd.Parameters.Add("@integrantegrupoid", MySqlDbType.Int32).Value = grupotrabajo.Idintegrantegrupo;
             cmd.Parameters.AddWithValue("@tipointegranteid", 4);
 

@@ -165,40 +165,6 @@ namespace CapaDatos
         }
 
 
-        /*
-        public bool IngresarFechaRegistro (clsUsuarios fecharegistro)
-        {
-            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = "localhost";
-            builder.Port = 3306;
-            builder.UserID = "root";
-            builder.Password = "Mysqlwarmachine2";
-            builder.SslMode = MySqlSslMode.None;
-            builder.Database = "dbcoordinacion";
-
-            MySqlConnection con = new MySqlConnection(builder.ToString());
-
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO tbl_usuarios(fecharegistro_usuario) VALUES(NOW())", con);
-
-            con.Open();
-            //conBD.AbrirConexion();
-            //conBD.ConexionBaseDatos().Open();
-
-            int exito = cmd.ExecuteNonQuery();
-
-            if (exito == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        */
-        
-
-
         public int Autenticar(String nombreusuario, String password, String rolempresa)
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();

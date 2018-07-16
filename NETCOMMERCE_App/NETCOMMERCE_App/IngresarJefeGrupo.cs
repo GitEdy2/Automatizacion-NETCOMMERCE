@@ -12,9 +12,9 @@ using CapaNegocios;
 
 namespace NETCOMMERCE_App
 {
-    public partial class IngresarLinierosGrupo : Form
+    public partial class IngresarJefeGrupo : Form
     {
-        public IngresarLinierosGrupo()
+        public IngresarJefeGrupo()
         {
             InitializeComponent();
 
@@ -22,31 +22,30 @@ namespace NETCOMMERCE_App
             cbNombreGrupoTrabajo.DisplayMember = "nombre_grupotrabajo";
             cbNombreGrupoTrabajo.ValueMember = "tbl_GrupoTrabajo_id";
 
+            cbJefeGrupo.DataSource = dtsGrupoTrabajo.ListaJefeGrupo();
+            cbJefeGrupo.DisplayMember = "nombre_integrantegrupo";
+            cbJefeGrupo.ValueMember = "idtbl_IntegranteGrupo";
 
-            cbLiniero.DataSource = dtsGrupoTrabajo.ListaLinieros();
-            cbLiniero.DisplayMember = "nombre_integrantegrupo";
-            cbLiniero.ValueMember = "idtbl_IntegranteGrupo";
         }
 
         clsDatosDetalleGrupoTrabajo dtsGrupoTrabajo = new clsDatosDetalleGrupoTrabajo();
         clsDetalleGrupoTrabajo grupotrabajo = new clsDetalleGrupoTrabajo();
 
-        private void btnIngresarLiniero_Click(object sender, EventArgs e)
+        private void btnIngresarJefeGrupo_Click(object sender, EventArgs e)
         {
             grupotrabajo.Nombregrupotrabajo = cbNombreGrupoTrabajo.SelectedValue.ToString();
-           
-            grupotrabajo.Idintegrantegrupo = Convert.ToInt32(cbLiniero.SelectedValue.ToString());
+            grupotrabajo.Idintegrantegrupo = Convert.ToInt32(cbJefeGrupo.SelectedValue.ToString());
 
-            bool exito = dtsGrupoTrabajo.IngresarLinieroGrupoTrabajo(grupotrabajo);
+            bool exito = dtsGrupoTrabajo.IngresarJefeGrupoTrabajo(grupotrabajo);
 
             if (exito == true)
             {
-                MessageBox.Show("Liniero ingresado correctamente");
+                MessageBox.Show("Jefe de Grupo ingresado correctamente");
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Error, liniero no ingresado");
+                MessageBox.Show("Error, Jefe de Grupo no ingresado");
             }
 
         }

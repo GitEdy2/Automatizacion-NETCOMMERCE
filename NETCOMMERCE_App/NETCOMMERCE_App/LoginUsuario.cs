@@ -90,11 +90,14 @@ namespace NETCOMMERCE_App
                 }
                 else
                     MessageBox.Show("Usuario o Contraseñas incorrectos");
+                    txtUsuario.Clear();
+                    txtPassword.Clear();
 
             }
             else
                 MessageBox.Show("Usuario o Contraseñas incorrectos");
-
+                txtUsuario.Clear();
+                txtPassword.Clear();
         }
 
 

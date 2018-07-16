@@ -28,24 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNumeroGrupo = new System.Windows.Forms.Label();
             this.lblNombreGrupo = new System.Windows.Forms.Label();
             this.cbNombreGrupoTrabajo = new System.Windows.Forms.ComboBox();
-            this.cbNumeroGrupoTrabajo = new System.Windows.Forms.ComboBox();
             this.lblLiniero = new System.Windows.Forms.Label();
             this.cbLiniero = new System.Windows.Forms.ComboBox();
             this.btnIngresarLiniero = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lblNumeroGrupo
-            // 
-            this.lblNumeroGrupo.AutoSize = true;
-            this.lblNumeroGrupo.Location = new System.Drawing.Point(32, 103);
-            this.lblNumeroGrupo.Name = "lblNumeroGrupo";
-            this.lblNumeroGrupo.Size = new System.Drawing.Size(170, 13);
-            this.lblNumeroGrupo.TabIndex = 25;
-            this.lblNumeroGrupo.Text = "NUMERO GRUPO DE TRABAJO:";
             // 
             // lblNombreGrupo
             // 
@@ -65,19 +54,10 @@
             this.cbNombreGrupoTrabajo.Size = new System.Drawing.Size(244, 21);
             this.cbNombreGrupoTrabajo.TabIndex = 26;
             // 
-            // cbNumeroGrupoTrabajo
-            // 
-            this.cbNumeroGrupoTrabajo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbNumeroGrupoTrabajo.FormattingEnabled = true;
-            this.cbNumeroGrupoTrabajo.Location = new System.Drawing.Point(207, 103);
-            this.cbNumeroGrupoTrabajo.Name = "cbNumeroGrupoTrabajo";
-            this.cbNumeroGrupoTrabajo.Size = new System.Drawing.Size(79, 21);
-            this.cbNumeroGrupoTrabajo.TabIndex = 27;
-            // 
             // lblLiniero
             // 
             this.lblLiniero.AutoSize = true;
-            this.lblLiniero.Location = new System.Drawing.Point(149, 153);
+            this.lblLiniero.Location = new System.Drawing.Point(148, 128);
             this.lblLiniero.Name = "lblLiniero";
             this.lblLiniero.Size = new System.Drawing.Size(53, 13);
             this.lblLiniero.TabIndex = 28;
@@ -87,14 +67,14 @@
             // 
             this.cbLiniero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLiniero.FormattingEnabled = true;
-            this.cbLiniero.Location = new System.Drawing.Point(208, 150);
+            this.cbLiniero.Location = new System.Drawing.Point(207, 125);
             this.cbLiniero.Name = "cbLiniero";
             this.cbLiniero.Size = new System.Drawing.Size(209, 21);
             this.cbLiniero.TabIndex = 29;
             // 
             // btnIngresarLiniero
             // 
-            this.btnIngresarLiniero.Location = new System.Drawing.Point(95, 240);
+            this.btnIngresarLiniero.Location = new System.Drawing.Point(103, 205);
             this.btnIngresarLiniero.Name = "btnIngresarLiniero";
             this.btnIngresarLiniero.Size = new System.Drawing.Size(137, 27);
             this.btnIngresarLiniero.TabIndex = 30;
@@ -104,7 +84,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(251, 240);
+            this.btnCancelar.Location = new System.Drawing.Point(259, 205);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(132, 27);
             this.btnCancelar.TabIndex = 31;
@@ -116,14 +96,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 308);
+            this.ClientSize = new System.Drawing.Size(523, 262);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnIngresarLiniero);
             this.Controls.Add(this.cbLiniero);
             this.Controls.Add(this.lblLiniero);
-            this.Controls.Add(this.cbNumeroGrupoTrabajo);
             this.Controls.Add(this.cbNombreGrupoTrabajo);
-            this.Controls.Add(this.lblNumeroGrupo);
             this.Controls.Add(this.lblNombreGrupo);
             this.Name = "IngresarLinierosGrupo";
             this.Text = "IngresarLinierosGrupo";
@@ -133,10 +111,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblNumeroGrupo;
         private System.Windows.Forms.Label lblNombreGrupo;
         private System.Windows.Forms.ComboBox cbNombreGrupoTrabajo;
-        private System.Windows.Forms.ComboBox cbNumeroGrupoTrabajo;
         private System.Windows.Forms.Label lblLiniero;
         private System.Windows.Forms.ComboBox cbLiniero;
         private System.Windows.Forms.Button btnIngresarLiniero;

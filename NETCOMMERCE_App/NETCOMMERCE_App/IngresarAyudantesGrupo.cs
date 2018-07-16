@@ -20,11 +20,7 @@ namespace NETCOMMERCE_App
 
             cbNombreGrupoTrabajo.DataSource = dtsGrupoTrabajo.ListaElementosGrupoTrabajo();
             cbNombreGrupoTrabajo.DisplayMember = "nombre_grupotrabajo";
-            cbNombreGrupoTrabajo.ValueMember = "nombre_grupotrabajo";
-
-            cbNumeroGrupoTrabajo.DataSource = dtsGrupoTrabajo.ListaElementosGrupoTrabajo();
-            cbNumeroGrupoTrabajo.DisplayMember = "numero_grupotrabajo";
-            cbNumeroGrupoTrabajo.ValueMember = "numero_grupotrabajo";
+            cbNombreGrupoTrabajo.ValueMember = "tbl_GrupoTrabajo_id";
 
             cbAyudante.DataSource = dtsGrupoTrabajo.ListaAyudantes();
             cbAyudante.DisplayMember = "nombre_integrantegrupo";
@@ -37,7 +33,6 @@ namespace NETCOMMERCE_App
         private void btnIngresarAyudante_Click(object sender, EventArgs e)
         {
             grupotrabajo.Nombregrupotrabajo = cbNombreGrupoTrabajo.SelectedValue.ToString();
-            grupotrabajo.Numerogrupotrabajo = Convert.ToInt32(cbNumeroGrupoTrabajo.SelectedValue);
 
             grupotrabajo.Idintegrantegrupo = Convert.ToInt32(cbAyudante.SelectedValue.ToString());
 

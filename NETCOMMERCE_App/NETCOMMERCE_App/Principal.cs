@@ -27,7 +27,7 @@ namespace NETCOMMERCE_App
             cbDetalleRetenidas.SelectedIndex = 0;
             cbEmpresa.SelectedIndex = 0;
             cbCargo.SelectedIndex = 0;
-            cbJefeGrupo.SelectedIndex = 0;
+            cbEmpresaPrograma.SelectedIndex = 0;
 
             cbCargo.DataSource = dtsintegrante.ListaCargosIntegrante();
             cbCargo.DisplayMember = "cargo_tipointegrante";
@@ -48,10 +48,6 @@ namespace NETCOMMERCE_App
             cbDetalleRetenidas.DataSource = dtstrabajo.ListaRetenidas();
             cbDetalleRetenidas.DisplayMember = "detalle_retenidas";
             cbDetalleRetenidas.ValueMember = "idtbl_KitsRetenida";
-
-            cbJefeGrupo.DataSource = dtsgrupotrabajo.ListaJefeGrupo();
-            cbJefeGrupo.DisplayMember = "nombre_integrantegrupo";
-            cbJefeGrupo.ValueMember = "idtbl_IntegranteGrupo";
 
             cbRutaPrograma.DataSource = dtsRuta.ListaRutas();
             cbRutaPrograma.DisplayMember = "nombre_ruta";
@@ -357,9 +353,8 @@ namespace NETCOMMERCE_App
             grupotrabajo.Nombregrupotrabajo = txtNombreGrupo.Text;
             grupotrabajo.Numerogrupotrabajo = Convert.ToInt32(numGrupoTrabajo.Value);
 
-            grupotrabajo.Idintegrantegrupo = Convert.ToInt32(cbJefeGrupo.SelectedValue.ToString());
 
-            bool exito = dtsgrupotrabajo.IngresarJefeGrupoTrabajo(grupotrabajo);
+            bool exito = dtsgrupotrabajo.IngresarGrupoTrabajo(grupotrabajo);
 
             if (exito == true)
             {
@@ -398,6 +393,14 @@ namespace NETCOMMERCE_App
         private void btnGenerarPrograma_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAsignarJefeGrupo_Click(object sender, EventArgs e)
+        {
+            IngresarJefeGrupo jefegrupo = new IngresarJefeGrupo();
+            Principal principal = new Principal();
+            jefegrupo.Show();
+            principal.Close();
         }
     }
 }
