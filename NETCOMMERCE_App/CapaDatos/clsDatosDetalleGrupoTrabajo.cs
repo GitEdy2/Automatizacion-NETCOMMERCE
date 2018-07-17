@@ -123,7 +123,7 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            string cmd = "SELECT DISTINCT idtbl_GrupoTrabajo,nombre_grupotrabajo FROM tbl_GrupoTrabajo";
+            string cmd = "SELECT * FROM tbl_GrupoTrabajo";
 
             con.Open();
 
@@ -323,11 +323,10 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(codigo_detallegrupotrabajo,tbl_GrupoTrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
-                                                "values(@codigogrupo,@grupoid,@integrantegrupoid,@tipointegranteid)", con);
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(tbl_GrupoTrabajo_id,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
+                                                "values(@grupoid,@integrantegrupoid,@tipointegranteid)", con);
 
 
-            cmd.Parameters.Add("@codigogrupo", MySqlDbType.VarChar).Value = grupotrabajo.Codigodetallegrupotrabajo;
             cmd.Parameters.Add("@grupoid", MySqlDbType.Int32).Value = grupotrabajo.Idgrupotrabajo;
             cmd.Parameters.Add("@integrantegrupoid", MySqlDbType.Int32).Value = grupotrabajo.Idintegrantegrupo;
             cmd.Parameters.AddWithValue("@tipointegranteid", 1);
@@ -358,7 +357,7 @@ namespace CapaDatos
 
             MySqlConnection con = new MySqlConnection(builder.ToString());
 
-            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(codigo_detallegrupotrabajo,tbl_GrupoTrabajo,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
+            MySqlCommand cmd = new MySqlCommand("insert into tbl_DetalleGrupoTrabajo(codigo_detallegrupotrabajo,tbl_GrupoTrabajo_id,tbl_IntegranteGrupo_id,tbl_TipoIntegranteGrupo_id)" +
                                                 "values(@codigogrupo,@grupoid,@integrantegrupoid,@tipointegranteid)", con);
 
 

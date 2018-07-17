@@ -12,7 +12,6 @@ namespace CapaNegocios
         private string nombregrupotrabajo;
         private int numerogrupotrabajo;
 
-        private string codigodetallegrupotrabajo;
         private int idgrupotrabajo;
         private int idintegrantegrupo;
         private int idtipointegrante;
@@ -22,7 +21,7 @@ namespace CapaNegocios
         public string Nombregrupotrabajo { get => nombregrupotrabajo; set => nombregrupotrabajo = value; }
         public int Numerogrupotrabajo { get => numerogrupotrabajo; set => numerogrupotrabajo = value; }
 
-        public string Codigodetallegrupotrabajo { get => codigodetallegrupotrabajo; set => codigodetallegrupotrabajo = value; }
+
         public int Idgrupotrabajo { get => idgrupotrabajo; set => idgrupotrabajo = value; }
         public int Idintegrantegrupo { get => idintegrantegrupo; set => idintegrantegrupo = value; }
         public int Idtipointegrante { get => idtipointegrante; set => idtipointegrante = value; }
