@@ -20,7 +20,7 @@ namespace NETCOMMERCE_App
 
             cbNombreGrupoTrabajo.DataSource = dtsGrupoTrabajo.ListaElementosGrupoTrabajo();
             cbNombreGrupoTrabajo.DisplayMember = "nombre_grupotrabajo";
-            cbNombreGrupoTrabajo.ValueMember = "tbl_GrupoTrabajo_id";
+            cbNombreGrupoTrabajo.ValueMember = "idtbl_GrupoTrabajo";
 
             cbJefeGrupo.DataSource = dtsGrupoTrabajo.ListaJefeGrupo();
             cbJefeGrupo.DisplayMember = "nombre_integrantegrupo";

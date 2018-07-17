@@ -53,9 +53,7 @@ namespace NETCOMMERCE_App
             {
                 MessageBox.Show("Usuario Ingresado Exitosamente");
                 this.Hide();
-
-                Principal principal = new Principal();
-                principal.Show();
+               
             }
             else
             {

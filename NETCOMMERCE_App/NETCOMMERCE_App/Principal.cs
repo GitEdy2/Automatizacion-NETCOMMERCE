@@ -121,6 +121,7 @@ namespace NETCOMMERCE_App
                 if (exito == true)
                 {
                     MessageBox.Show("Trabajo ingresado correctamente");
+                    txtCodigoTrabajo.Clear();
                 }
                 else
                 {

@@ -14,21 +14,13 @@ namespace CapaDatos
 {
     public class clsDatosRuta
     {
-        //private string cadenaConexion;
-
-        /*
-        public clsDatosRuta()
-        {
-            cadenaConexion = ConfigurationManager.ConnectionStrings["protocol=Socket;server=localhost;port=3306;user id=root;persistsecurityinfo=True;database=dbcoordinacion;sslmode=Prefered;certificatestorelocation=None;compress=False;allowuservariables=True;allowzerodatetime=False;Integrated Security=False;treattinyasboolean=False;defaultcommandtimeout=30;connectiontimeout=60"].ConnectionString;
-        }
-        */
-
+        
         clsConexionBD conBD = new clsConexionBD();
 
 
         public List<clsRuta> ListarRutas()
         {
-            //MySqlConnection con = new MySqlConnection(con);
+ 
             MySqlCommand cmd = new MySqlCommand("select * from tbl_DetalleRuta", conBD.ConexionBaseDatos());
       
             List<clsRuta> listaruta = new List<clsRuta>();
@@ -111,8 +103,7 @@ namespace CapaDatos
             cmd.Parameters.Add("@referenciaruta", MySqlDbType.VarChar).Value = Ruta.Referenciaruta;
 
             con.Open();
-            //conBD.AbrirConexion();
-            //conBD.ConexionBaseDatos().Open();
+            
 
             int exito = cmd.ExecuteNonQuery();
 
