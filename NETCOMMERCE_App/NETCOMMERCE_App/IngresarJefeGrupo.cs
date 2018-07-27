@@ -36,6 +36,7 @@ namespace NETCOMMERCE_App
             grupotrabajo.Nombregrupotrabajo = cbNombreGrupoTrabajo.SelectedValue.ToString();
             grupotrabajo.Idintegrantegrupo = Convert.ToInt32(cbJefeGrupo.SelectedValue.ToString());
 
+
             bool exito = dtsGrupoTrabajo.IngresarJefeGrupoTrabajo(grupotrabajo);
 
             if (exito == true)
