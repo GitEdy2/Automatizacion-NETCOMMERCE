@@ -361,7 +361,7 @@ namespace CapaDatos
                                                 "values(@codigogrupo,@grupoid,@integrantegrupoid,@tipointegranteid)", con);
 
 
-            cmd.Parameters.Add("@codigogrupo", MySqlDbType.VarChar).Value = grupotrabajo.Codigodetallegrupotrabajo;
+            //cmd.Parameters.Add("@codigogrupo", MySqlDbType.VarChar).Value = grupotrabajo.Codigodetallegrupotrabajo;
             cmd.Parameters.Add("@grupoid", MySqlDbType.Int32).Value = grupotrabajo.Idgrupotrabajo;
             cmd.Parameters.Add("@integrantegrupoid", MySqlDbType.Int32).Value = grupotrabajo.Idintegrantegrupo;
             cmd.Parameters.AddWithValue("@tipointegranteid", 2);
@@ -396,7 +396,7 @@ namespace CapaDatos
                                                 "values(@codigogrupo,@grupoid,@integrantegrupoid,@tipointegranteid)", con);
 
 
-            cmd.Parameters.Add("@codigogrupo", MySqlDbType.VarChar).Value = grupotrabajo.Codigodetallegrupotrabajo;
+            //cmd.Parameters.Add("@codigogrupo", MySqlDbType.VarChar).Value = grupotrabajo.Codigodetallegrupotrabajo;
             cmd.Parameters.Add("@grupoid", MySqlDbType.Int32).Value = grupotrabajo.Idgrupotrabajo;
             cmd.Parameters.Add("@integrantegrupoid", MySqlDbType.Int32).Value = grupotrabajo.Idintegrantegrupo;
             cmd.Parameters.AddWithValue("@tipointegranteid", 3);
@@ -432,7 +432,7 @@ namespace CapaDatos
                                                 "values(@codigogrupo,@grupoid,@integrantegrupoid,@tipointegranteid)", con);
 
 
-            cmd.Parameters.Add("@codigogrupo", MySqlDbType.VarChar).Value = grupotrabajo.Codigodetallegrupotrabajo;
+            //cmd.Parameters.Add("@codigogrupo", MySqlDbType.VarChar).Value = grupotrabajo.Codigodetallegrupotrabajo;
             cmd.Parameters.Add("@grupoid", MySqlDbType.Int32).Value = grupotrabajo.Idgrupotrabajo;
             cmd.Parameters.Add("@integrantegrupoid", MySqlDbType.Int32).Value = grupotrabajo.Idintegrantegrupo;
             cmd.Parameters.AddWithValue("@tipointegranteid", 4);
