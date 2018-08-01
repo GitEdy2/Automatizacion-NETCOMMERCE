@@ -345,6 +345,7 @@ namespace CapaDatos
             }
         }
 
+
         public bool IngresarLinieroGrupoTrabajo(clsDetalleGrupoTrabajo grupotrabajo)
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
@@ -378,6 +379,7 @@ namespace CapaDatos
                 return false;
             }
         }
+
 
         public bool IngresarAyudanteGrupoTrabajo(clsDetalleGrupoTrabajo grupotrabajo)
         {

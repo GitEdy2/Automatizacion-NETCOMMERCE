@@ -37,6 +37,7 @@ namespace NETCOMMERCE_App
             grupotrabajo.Idintegrantegrupo = Convert.ToInt32(cbJefeGrupo.SelectedValue.ToString());
 
 
+
             bool exito = dtsGrupoTrabajo.IngresarJefeGrupoTrabajo(grupotrabajo);
 
             if (exito == true)
@@ -48,7 +49,6 @@ namespace NETCOMMERCE_App
             {
                 MessageBox.Show("Error, Jefe de Grupo no ingresado");
             }
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
